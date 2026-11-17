@@ -3,7 +3,7 @@
 Hiện chưa có tệp nào: các bài đặt `amThanh: false`. Bé đọc theo tiếng mõ (tạo trong trình duyệt); nút 🔊 nghe câu, nghe cả bài tạm đọc bằng giọng máy của thiết bị qua bộ mẫu (`TTV.phat({ tep, chu })`, quy tắc 7). Trang không gọi speechSynthesis trực tiếp.
 Khi chép đủ tệp của một bài vào `audio/<ma-bai>/`, đổi `amThanh: true` cho bài đó trong `data/bai-hat.js`: nút 🔊 sẽ phát tệp của trường (tệp lỗi thì bộ mẫu tự đọc bằng giọng máy).
 
-Tổng cộng: **94 tệp** cho 12 bài.
+Tổng cộng: **134 tệp** cho 16 bài.
 
 Tệp này sinh từ dữ liệu bằng `node tools/tao-am-thanh.js`; sửa lời bài thì chạy lại.
 
@@ -175,3 +175,65 @@ Tệp này sinh từ dữ liệu bằng `node tools/tao-am-thanh.js`; sửa lờ
 | cau-04.mp3 | Có ván cơm xôi |
 | cau-05.mp3 | Có nồi cơm nếp |
 | cau-06.mp3 | Có nệp bánh chưng |
+
+## Phần 2 – Vè
+
+### Bài 13 – Vè chim (`audio/ve-chim/`): 17 tệp
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Hay chạy lon xon |
+| cau-02.mp3 | Là gà mới nở |
+| cau-03.mp3 | Vừa đi vừa nhảy |
+| cau-04.mp3 | Là em sáo xinh |
+| cau-05.mp3 | Hay nói linh tinh |
+| cau-06.mp3 | Là con liếu điếu |
+| cau-07.mp3 | Hay nghịch hay tếu |
+| cau-08.mp3 | Là cậu chìa vôi |
+| cau-09.mp3 | Hay chao đớp mồi |
+| cau-10.mp3 | Là chim chèo bẻo |
+| cau-11.mp3 | Tính hay mách lẻo |
+| cau-12.mp3 | Thím khách trước nhà |
+| cau-13.mp3 | Hay nhặt lân la |
+| cau-14.mp3 | Là bà chim sẻ |
+| cau-15.mp3 | Có tình có nghĩa |
+| cau-16.mp3 | Là mẹ chim sâu |
+
+### Bài 14 – Con mèo mà trèo cây cau (`audio/ve-ca/`): 5 tệp
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Con mèo mà trèo cây cau |
+| cau-02.mp3 | Hỏi thăm chú chuột đi đâu vắng nhà |
+| cau-03.mp3 | Chú chuột đi chợ đường xa |
+| cau-04.mp3 | Mua mắm mua muối giỗ cha chú mèo |
+
+### Bài 15 – Lúa ngô là cô đậu nành (`audio/ve-trai-cay/`): 7 tệp
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Lúa ngô là cô đậu nành |
+| cau-02.mp3 | Đậu nành là anh dưa chuột |
+| cau-03.mp3 | Dưa chuột là ruột dưa gang |
+| cau-04.mp3 | Dưa gang là nàng dưa hấu |
+| cau-05.mp3 | Dưa hấu là cậu lúa ngô |
+| cau-06.mp3 | Lúa ngô là cô đậu nành |
+
+### Bài 16 – Bao giờ cho đến tháng ba (`audio/ve-loai-vat/`): 11 tệp
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Bao giờ cho đến tháng ba |
+| cau-02.mp3 | Ếch cắn cổ rắn tha ra ngoài đồng |
+| cau-03.mp3 | Hùm nằm cho lợn liếm lông |
+| cau-04.mp3 | Một chục quả hồng nuốt lão tám mươi |
+| cau-05.mp3 | Nắm xôi nuốt trẻ lên mười |
+| cau-06.mp3 | Con gà, be rượu nuốt người lao đao |
+| cau-07.mp3 | Lươn nằm cho trúm bò vào |
+| cau-08.mp3 | Một đàn cào cào đuổi bắt cá rô |
+| cau-09.mp3 | Thóc giống cắn chuột trong bồ |
+| cau-10.mp3 | Một trăm lá mạ đổ xô nhổ người |

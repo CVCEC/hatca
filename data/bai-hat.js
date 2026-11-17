@@ -910,11 +910,308 @@ window.HAT_CA = {
       }
     },
 
-    /* ================= PHẦN 2 – VÈ (dự kiến) ================= */
-    { ma: "ve-chim", so: 13, phan: "ve", trangThai: "du-kien", ten: "Vè chim", en: "The bird rhyme", troChoi: "Đoán tên chim" },
-    { ma: "ve-ca", so: 14, phan: "ve", trangThai: "du-kien", ten: "Vè cá", en: "The fish rhyme", troChoi: "Đi chợ cá" },
-    { ma: "ve-trai-cay", so: 15, phan: "ve", trangThai: "du-kien", ten: "Vè trái cây", en: "The fruit rhyme", troChoi: "Đố quả" },
-    { ma: "ve-loai-vat", so: 16, phan: "ve", trangThai: "du-kien", ten: "Vè loài vật", en: "The animal rhyme", troChoi: "Làm động tác con vật" },
+    /* ================= PHẦN 2 – VÈ ================= */
+    {
+      ma: "ve-chim", so: 13, phan: "ve", trangThai: "san-sang",
+      ten: "Vè chim",
+      en: "The bird rhyme",
+      nguon: "Vè dân gian Việt Nam",
+      diBan: "Bản phổ biến (bản quen thuộc trong sách Tiếng Việt lớp 2); có dị bản. Góc học lấy 16 câu đầu; bài đủ còn có cô tu hú và bác cú mèo.",
+      troChoi: "Đố tên chim",
+      tempo: { cham: 84, vua: 108 },
+      amThanh: false,
+      loi: [
+        "Hay chạy lon xon",
+        "Là gà mới nở",
+        "Vừa đi vừa nhảy",
+        "Là em sáo xinh",
+        "Hay nói linh tinh",
+        "Là con liếu điếu",
+        "Hay nghịch hay tếu",
+        "Là cậu chìa vôi",
+        "Hay chao đớp mồi",
+        "Là chim chèo bẻo",
+        "Tính hay mách lẻo",
+        "Thím khách trước nhà",
+        "Hay nhặt lân la",
+        "Là bà chim sẻ",
+        "Có tình có nghĩa",
+        "Là mẹ chim sâu"
+      ],
+      gioiThieu: {
+        vi: "Bài vè kể về các loài chim, mỗi loài một nết. Câu trước tả đặc điểm, câu sau nói tên: chạy lon xon là gà mới nở, vừa đi vừa nhảy là chim sáo, hay nói linh tinh là liếu điếu… Các loài chim được gọi như người trong nhà: em sáo, cậu chìa vôi, thím khách, bà chim sẻ, mẹ chim sâu. Vè chim vừa vui vừa giúp các bạn nhớ tên nhiều loài chim ở làng quê Việt Nam.",
+        en: "A folk list-rhyme about birds, each with its own personality. One line describes, the next names the bird: running about is the newly hatched chick, hopping as it walks is the myna, chattering away is the liếu điếu… The birds are called like family members: little sister myna, uncle wagtail, auntie treepie, granny sparrow, mother flowerpecker. It is a fun way to learn the names of many birds of the Vietnamese countryside."
+      },
+      tuKho: [
+        { tu: "lon xon", hinh: "🐥", nghia: "chạy bước ngắn và nhanh, lăng xăng", en: "running about with quick little steps" },
+        { tu: "linh tinh", hinh: "💬", nghia: "đủ thứ chuyện, không đâu vào đâu", en: "about all sorts of things, chatter" },
+        { tu: "tếu", hinh: "😄", nghia: "vui, hay pha trò", en: "jokey, playful" },
+        { tu: "chao", hinh: "🕊️", nghia: "nghiêng cánh bay lượn qua lại", en: "to swoop, to tilt in the air" },
+        { tu: "đớp mồi", hinh: "🐛", nghia: "há mỏ bắt lấy thức ăn thật nhanh", en: "to snap up food" },
+        { tu: "mách lẻo", hinh: "🤫", nghia: "đem chuyện của người này kể cho người khác", en: "to tell tales, to tattle" },
+        { tu: "lân la", hinh: "🚶", nghia: "đi lại gần dần dần", en: "to come closer little by little" },
+        { tu: "có tình có nghĩa", hinh: "💗", nghia: "thương yêu và tốt với mọi người", en: "loving and loyal, kind to others" }
+      ],
+      cauHoi: [
+        { hoi: "Con gì hay chạy lon xon?", en: "Who runs about with quick little steps?",
+          chon: [{ chu: "Gà mới nở", hinh: "🐥" }, { chu: "Chim sẻ", hinh: "🐦" }, { chu: "Chèo bẻo", hinh: "🐦‍⬛" }], dung: 0 },
+        { hoi: "Em sáo đi thế nào?", en: "How does the myna move?",
+          chon: [{ chu: "Vừa đi vừa nhảy", hinh: "🦘" }, { chu: "Bơi dưới nước", hinh: "🏊" }, { chu: "Nằm ngủ", hinh: "😴" }], dung: 0 },
+        { hoi: "Con chim nào hay nói linh tinh?", en: "Which bird chatters away?",
+          chon: [{ chu: "Liếu điếu", hinh: "💬" }, { chu: "Chim sâu", hinh: "🐦" }, { chu: "Gà mới nở", hinh: "🐥" }], dung: 0 },
+        { hoi: "Chèo bẻo có tính gì?", en: "What is the drongo like?",
+          chon: [{ chu: "Hay mách lẻo", hinh: "🤫" }, { chu: "Hay ngủ", hinh: "😴" }, { chu: "Hay khóc", hinh: "😢" }], dung: 0 },
+        { hoi: "Ai có tình có nghĩa?", en: "Who is loving and loyal?",
+          chon: [{ chu: "Mẹ chim sâu", hinh: "💗" }, { chu: "Cậu chìa vôi", hinh: "🐦" }, { chu: "Thím khách", hinh: "🏠" }], dung: 0 }
+      ],
+      dienTu: [[0, "xon"], [1, "nở"], [3, "xinh"], [5, "điếu"], [7, "vôi"], [9, "bẻo"], [13, "sẻ"]],
+      nhieu: ["cò", "vịt", "ngủ", "bay", "quạ"],
+      vanCap: [["xinh", "tinh"], ["vôi", "mồi"], ["bẻo", "lẻo"], ["nhà", "la"], ["xon", "con"], ["sâu", "mau"]],
+      cungChoi: {
+        ten: "Đố tên chim (đọc vè đối đáp)",
+        nguoi: "2 nhóm, hoặc một người lớn và bé",
+        cho: "Ở đâu cũng chơi được",
+        buoc: [
+          { hinh: "👥", chu: "Chia làm hai nhóm: nhóm Hỏi và nhóm Đáp." },
+          { hinh: "❓", chu: "Nhóm Hỏi đọc câu tả, giọng như câu đố: “Hay chạy lon xon?”" },
+          { hinh: "🐥", chu: "Nhóm Đáp đọc ngay câu tên: “Là gà mới nở!” và làm động tác con chim đó." },
+          { hinh: "🔄", chu: "Đọc hết bài thì đổi vai. Lượt sau nhóm Hỏi đọc lộn thứ tự để khó hơn." }
+        ],
+        en: "Split into two groups: Askers and Answerers. Askers say a describing line like a riddle: “Hay chạy lon xon?” Answerers reply at once with the naming line – “Là gà mới nở!” – and act out the bird. At the end, swap roles. Next round, ask in a mixed-up order to make it harder.",
+        anToan: "Làm động tác chim bay ở chỗ rộng, dang tay không chạm vào bạn."
+      },
+      thuThach: [
+        "Đọc thuộc 8 câu đầu cho ông bà hoặc cha mẹ nghe",
+        "Chơi đố tên chim với một người trong nhà",
+        "Nhìn ra cửa sổ hoặc ra công viên, tìm một con chim và nói tên nó bằng tiếng Việt"
+      ],
+      goiY: {
+        nghe: "Vè đọc nhanh, vui, mỗi câu 4 tiếng. Câu tả đọc lên giọng như câu đố, câu tên đọc dứt khoát.",
+        hieu: "Vè gọi chim như gọi người: em, cậu, thím, bà, mẹ. Đây là dịp ôn cách xưng hô trong gia đình Việt. Nếu có thể, tìm tranh các loài chim để bé xem.",
+        nho: "Học theo cặp câu: một câu tả, một câu tên. Thuộc 2–4 câu mỗi ngày là đủ.",
+        choi: "Cho bé tự đặt một cặp câu vè về con vật nhà mình, ví dụ: “Hay nằm sưởi nắng / Là chú mèo con”.",
+        cungChoi: "Trò đối đáp giúp bé phản xạ nhanh. Ở lớp, chia hai dãy bàn đối đáp; ở nhà, người lớn hỏi, bé đáp."
+      }
+    },
+
+    {
+      ma: "ve-ca", so: 14, phan: "ve", trangThai: "san-sang",
+      ten: "Con mèo mà trèo cây cau",
+      en: "The cat and the mouse",
+      nguon: "Đồng dao, ca dao dân gian Việt Nam",
+      diBan: "Bản phổ biến; có dị bản “Chú chuột đi chợ đằng xa”.",
+      troChoi: "Mèo đuổi chuột",
+      tempo: { cham: 72, vua: 96 },
+      amThanh: false,
+      loi: [
+        "Con mèo mà trèo cây cau",
+        "Hỏi thăm chú chuột đi đâu vắng nhà",
+        "Chú chuột đi chợ đường xa",
+        "Mua mắm mua muối giỗ cha chú mèo"
+      ],
+      gioiThieu: {
+        vi: "Con mèo trèo lên cây cau, hỏi thăm chú chuột đi đâu mà vắng nhà. Câu trả lời thật buồn cười: chú chuột đi chợ đường xa, mua mắm mua muối để làm giỗ cha của… chú mèo! Mèo hay bắt chuột, nên chuột trốn đi và nói đùa cho vui. Bài viết theo thể lục bát (câu 6 tiếng, câu 8 tiếng), đọc nhẹ nhàng như kể chuyện.",
+        en: "A cat climbs an areca palm and asks where the mouse has gone, since no one is home. The funny answer: the mouse has gone to a faraway market to buy fish sauce and salt for the memorial feast of… the cat's father! Cats chase mice, so the mouse stays away and makes a cheeky joke. It is written in lục bát verse (a 6-syllable line, then an 8-syllable line) and read gently, like telling a story."
+      },
+      tuKho: [
+        { tu: "trèo", hinh: "🧗", nghia: "leo lên cao bằng tay chân", en: "to climb" },
+        { tu: "cây cau", hinh: "🌴", nghia: "cây thân thẳng và cao, quả nhỏ; ngày xưa người ta ăn quả cau với lá trầu", en: "areca palm; its nuts were chewed with betel leaves" },
+        { tu: "hỏi thăm", hinh: "🗣️", nghia: "hỏi để biết tin", en: "to ask after someone" },
+        { tu: "vắng nhà", hinh: "🏚️", nghia: "không có ở nhà", en: "not at home" },
+        { tu: "mắm", hinh: "🐟", nghia: "món làm từ cá hoặc tôm ướp muối lâu ngày, như nước mắm", en: "fermented fish or shrimp sauce, like fish sauce" },
+        { tu: "muối", hinh: "🧂", nghia: "hạt trắng, mặn, dùng nêm thức ăn", en: "salt" },
+        { tu: "giỗ", hinh: "🕯️", nghia: "ngày nhớ người thân đã mất; cả nhà nấu cơm, mời họ hàng đến", en: "a memorial day for a family member who has died; the family cooks a meal and invites relatives" }
+      ],
+      cauHoi: [
+        { hoi: "Con mèo trèo lên cây gì?", en: "What tree does the cat climb?",
+          chon: [{ chu: "Cây cau", hinh: "🌴" }, { chu: "Cây chuối", hinh: "🍌" }, { chu: "Cây tre", hinh: "🎋" }], dung: 0 },
+        { hoi: "Mèo hỏi thăm ai?", en: "Whom does the cat ask about?",
+          chon: [{ chu: "Chú chuột", hinh: "🐭" }, { chu: "Chú chó", hinh: "🐶" }, { chu: "Chú gà", hinh: "🐔" }], dung: 0 },
+        { hoi: "Chú chuột đi đâu?", en: "Where did the mouse go?",
+          chon: [{ chu: "Đi chợ", hinh: "🧺" }, { chu: "Đi học", hinh: "🎒" }, { chu: "Đi ngủ", hinh: "😴" }], dung: 0 },
+        { hoi: "Chú chuột mua gì?", en: "What does the mouse buy?",
+          chon: [{ chu: "Mắm và muối", hinh: "🧂" }, { chu: "Kẹo và bánh", hinh: "🍬" }, { chu: "Sữa", hinh: "🥛" }], dung: 0 },
+        { hoi: "Vì sao chú chuột trốn đi?", en: "Why does the mouse stay away?",
+          chon: [{ chu: "Vì mèo hay bắt chuột", hinh: "🐱" }, { chu: "Vì trời mưa", hinh: "🌧️" }, { chu: "Vì chuột đói", hinh: "🍽️" }], dung: 0 }
+      ],
+      dienTu: [[0, "cau"], [1, "chuột"], [1, "nhà"], [2, "chợ"], [2, "xa"], [3, "muối"], [3, "mèo"]],
+      nhieu: ["chó", "trường", "gạo", "gần", "cá"],
+      vanCap: [["trèo", "mèo"], ["nhà", "cha"], ["cau", "sau"], ["chuột", "ruột"], ["muối", "chuối"], ["mắm", "tắm"]],
+      cungChoi: {
+        ten: "Mèo đuổi chuột",
+        nguoi: "Từ 6 bạn trở lên",
+        cho: "Sân rộng hoặc phòng lớn",
+        buoc: [
+          { hinh: "🧑‍🤝‍🧑", chu: "Các bạn nắm tay nhau đứng thành vòng tròn rộng, giơ tay cao làm “lỗ hổng” giữa hai người." },
+          { hinh: "🐭", chu: "Chọn một bạn làm chuột đứng trong vòng, một bạn làm mèo đứng ngoài vòng." },
+          { hinh: "🎶", chu: "Cả vòng đọc bài “Con mèo mà trèo cây cau”. Đọc hết bài thì chuột chạy, luồn qua các lỗ hổng; mèo đuổi theo." },
+          { hinh: "🔁", chu: "Mèo phải chạy đúng đường chuột đã chạy. Mèo bắt được chuột thì hai bạn đổi vai, hoặc chọn hai bạn khác." }
+        ],
+        en: "Hold hands in a wide circle with arms raised to make gaps. One child is the mouse inside the circle, one is the cat outside. Everyone chants; at the end the mouse runs, weaving in and out through the gaps, and the cat chases, following exactly the mouse's path. When the cat catches the mouse, they swap roles or two new children play. (This game also has its own chant, “Mèo đuổi chuột”.)",
+        anToan: "Chạy vừa phải; các bạn đứng vòng không ngáng chân mèo hay chuột."
+      },
+      thuThach: [
+        "Đọc thuộc bài cho ông bà hoặc cha mẹ nghe",
+        "Chơi “Mèo đuổi chuột” cùng các bạn",
+        "Tìm trong bếp nhà mình chai nước mắm và hũ muối, rồi nói tên bằng tiếng Việt"
+      ],
+      goiY: {
+        nghe: "Thể lục bát: câu 6 tiếng, câu 8 tiếng. Đọc như kể chuyện, ngừng một chút trước câu cuối để bé chờ đoạn buồn cười.",
+        hieu: "Giải thích “giỗ”: ngày cả nhà nhớ người thân đã mất. Câu đùa ở chỗ chuột lấy cớ đi mua đồ làm giỗ cha của mèo để trốn mèo.",
+        nho: "Câu 2 và câu 3 đều có “chú chuột”; câu 1 và câu 4 đều có “mèo”: nhắc bé để nhớ thứ tự.",
+        choi: "Chỉ cho bé cặp vần trèo – mèo ở đầu và cuối bài, và cặp nhà – xa – cha nối các câu lục bát.",
+        cungChoi: "Trò chạy nhiều, hợp giờ ra chơi. Nhắc bé: mèo chạy đúng đường của chuột mới tính."
+      }
+    },
+
+    {
+      ma: "ve-trai-cay", so: 15, phan: "ve", trangThai: "san-sang",
+      ten: "Lúa ngô là cô đậu nành",
+      en: "Corn, soybean and melons",
+      nguon: "Đồng dao dân gian Việt Nam",
+      diBan: "Bản phổ biến; có dị bản đổi thứ tự hoặc tên vài loại cây. Lời đồng dao dân gian; các bản phổ nhạc có tác giả không dùng ở đây.",
+      troChoi: "Nối vòng cây trái",
+      tempo: { cham: 80, vua: 104 },
+      amThanh: false,
+      loi: [
+        "Lúa ngô là cô đậu nành",
+        "Đậu nành là anh dưa chuột",
+        "Dưa chuột là ruột dưa gang",
+        "Dưa gang là nàng dưa hấu",
+        "Dưa hấu là cậu lúa ngô",
+        "Lúa ngô là cô đậu nành"
+      ],
+      gioiThieu: {
+        vi: "Bài đồng dao kể tên cây trái ngoài đồng: lúa ngô, đậu nành, dưa chuột, dưa gang, dưa hấu. Mỗi loại cây được gọi như người trong nhà (cô, anh, nàng, cậu), và tên ở cuối câu trước lại mở đầu câu sau, nối thành một vòng tròn: đọc hết bài lại quay về câu đầu. Trong mỗi câu còn có hai tiếng vần với nhau: ngô – cô, nành – anh, chuột – ruột, gang – nàng, hấu – cậu.",
+        en: "A chant naming crops from the fields: corn, soybean, cucumber, oriental melon and watermelon. Each plant is called like a family member, and the plant at the end of one line starts the next, making a circle: the last line takes you back to the start. Each line also has two rhyming words: ngô – cô, nành – anh, chuột – ruột, gang – nàng, hấu – cậu."
+      },
+      tuKho: [
+        { tu: "lúa ngô", hinh: "🌽", nghia: "cây ngô (miền Nam gọi là bắp)", en: "corn, maize" },
+        { tu: "đậu nành", hinh: "🫘", nghia: "hạt đậu tròn, vàng nhạt, dùng làm đậu phụ, sữa đậu nành", en: "soybean" },
+        { tu: "dưa chuột", hinh: "🥒", nghia: "quả dài, vỏ xanh, ăn sống giòn mát (miền Nam gọi là dưa leo)", en: "cucumber" },
+        { tu: "dưa gang", hinh: "🍈", nghia: "quả dưa to và dài, vỏ xanh có sọc, ruột mềm, ăn với đường", en: "a large oriental melon" },
+        { tu: "dưa hấu", hinh: "🍉", nghia: "quả to, vỏ xanh, ruột đỏ, ngọt và nhiều nước; hay có trong ngày Tết", en: "watermelon" },
+        { tu: "ruột", hinh: "❤️", nghia: "phần bên trong; “anh em ruột” là anh em cùng cha mẹ", en: "the inside; also “blood” sibling" },
+        { tu: "nàng", hinh: "👸", nghia: "cô gái (cách gọi cũ, nhẹ nhàng)", en: "a young lady (old, gentle word)" }
+      ],
+      cauHoi: [
+        { hoi: "Ruột dưa hấu màu gì?", en: "What colour is a watermelon inside?",
+          chon: [{ chu: "Màu đỏ", hinh: "🍉" }, { chu: "Màu tím", hinh: "🍇" }, { chu: "Màu trắng", hinh: "🥥" }], dung: 0 },
+        { hoi: "Đậu nành là anh của ai?", en: "Soybean is the big brother of whom?",
+          chon: [{ chu: "Dưa chuột", hinh: "🥒" }, { chu: "Dưa hấu", hinh: "🍉" }, { chu: "Lúa ngô", hinh: "🌽" }], dung: 0 },
+        { hoi: "Câu cuối bài giống câu nào?", en: "The last line is the same as which line?",
+          chon: [{ chu: "Câu đầu", hinh: "🔁" }, { chu: "Câu giữa", hinh: "⏺️" }, { chu: "Không câu nào", hinh: "🚫" }], dung: 0 },
+        { hoi: "Miền Nam gọi dưa chuột là gì?", en: "What do southerners call dưa chuột?",
+          chon: [{ chu: "Dưa leo", hinh: "🥒" }, { chu: "Dưa hấu", hinh: "🍉" }, { chu: "Dưa gang", hinh: "🍈" }], dung: 0 },
+        { hoi: "Tiếng nào vần với “ngô”?", en: "Which word rhymes with “ngô”?",
+          chon: [{ chu: "cô", hinh: "👩" }, { chu: "anh", hinh: "👨" }, { chu: "nàng", hinh: "👸" }], dung: 0 }
+      ],
+      dienTu: [[0, "cô"], [1, "anh"], [2, "ruột"], [3, "nàng"], [4, "cậu"], [5, "nành"]],
+      nhieu: ["chú", "bà", "em", "dì", "bác"],
+      vanCap: [["ngô", "cô"], ["nành", "anh"], ["chuột", "ruột"], ["gang", "nàng"], ["hấu", "cậu"], ["lúa", "múa"]],
+      cungChoi: {
+        ten: "Nối vòng cây trái",
+        nguoi: "Từ 3 bạn trở lên",
+        cho: "Ngồi thành vòng tròn, trong nhà hoặc lớp học",
+        buoc: [
+          { hinh: "⭕", chu: "Các bạn ngồi thành vòng tròn." },
+          { hinh: "🎶", chu: "Bạn thứ nhất đọc câu 1, bạn bên cạnh đọc câu 2, cứ thế đọc nối quanh vòng; mỗi tiếng vỗ tay một cái." },
+          { hinh: "🔁", chu: "Hết bài thì quay lại câu đầu và đọc tiếp, mỗi vòng nhanh hơn một chút." },
+          { hinh: "🌽", chu: "Bạn nào quên câu thì đứng lên nói tên một loại rau, quả bằng tiếng Việt rồi chơi tiếp." }
+        ],
+        en: "Sit in a circle. The first child says line 1, the next says line 2, and so on around the circle, clapping on each syllable. When you reach the end, start again from line 1, a little faster each round. If you forget your line, stand up, name a fruit or vegetable in Vietnamese, then keep playing.",
+        anToan: "Trò ngồi một chỗ, an toàn; nhắc các bạn vỗ tay nhẹ, không vỗ vào bạn bên cạnh."
+      },
+      thuThach: [
+        "Đọc thuộc bài cho ông bà hoặc cha mẹ nghe",
+        "Cùng cha mẹ đi chợ, tìm và gọi tên bằng tiếng Việt: dưa chuột, dưa hấu, ngô",
+        "Kể tên 3 loại quả khác bằng tiếng Việt"
+      ],
+      goiY: {
+        nghe: "Mỗi câu 6 tiếng, có vần ngay trong câu (ngô – cô). Đọc chậm để bé nghe rõ hai tiếng vần.",
+        hieu: "Cho bé xem quả thật hoặc tranh: ngô, đậu nành, dưa chuột, dưa gang, dưa hấu. Nói thêm cách gọi miền Nam: bắp, dưa leo.",
+        nho: "Mẹo nhớ: tên ở cuối câu trước là tên ở đầu câu sau. Bé chỉ cần nhớ câu đầu là đọc nối được cả bài.",
+        choi: "Lật thẻ tìm vần chính là các cặp vần trong bài. Hỏi thêm: “Tiếng nào vần với ‘anh’?” (xanh, canh, nhanh…).",
+        cungChoi: "Đây là hoạt động đọc nối vòng, giúp bé tập trung và nghe bạn. Bé nhỏ có thể cầm tranh loại quả trong câu của mình."
+      }
+    },
+
+    {
+      ma: "ve-loai-vat", so: 16, phan: "ve", trangThai: "san-sang",
+      ten: "Bao giờ cho đến tháng ba",
+      en: "The topsy-turvy rhyme",
+      nguon: "Vè nói ngược, dân gian Việt Nam",
+      diBan: "Bản phổ biến; có dị bản: “Thóc giống đuổi chuột trong bồ”, “Con gà be rượu nuốt người lao đao”… mỗi nơi đọc khác vài chữ.",
+      troChoi: "Nói ngược, làm ngược",
+      tempo: { cham: 72, vua: 96 },
+      amThanh: false,
+      loi: [
+        "Bao giờ cho đến tháng ba",
+        "Ếch cắn cổ rắn tha ra ngoài đồng",
+        "Hùm nằm cho lợn liếm lông",
+        "Một chục quả hồng nuốt lão tám mươi",
+        "Nắm xôi nuốt trẻ lên mười",
+        "Con gà, be rượu nuốt người lao đao",
+        "Lươn nằm cho trúm bò vào",
+        "Một đàn cào cào đuổi bắt cá rô",
+        "Thóc giống cắn chuột trong bồ",
+        "Một trăm lá mạ đổ xô nhổ người"
+      ],
+      gioiThieu: {
+        vi: "Đây là bài vè nói ngược: mọi chuyện trong bài đều ngược đời để gây cười. Con ếch nhỏ lại cắn cổ con rắn, con hùm (con hổ) nằm yên cho lợn liếm lông, quả hồng nuốt ông lão, nắm xôi nuốt em bé, đàn cào cào đuổi bắt cá rô, thóc giống cắn chuột, lá mạ nhổ người… Các bạn đọc và tìm xem ngoài đời thật thì thế nào nhé: rắn bắt ếch, người ăn hồng, người nhổ mạ!",
+        en: "A topsy-turvy rhyme: everything happens the wrong way round to make people laugh. The little frog bites the snake's neck, the tiger lies still while the pig licks its fur, persimmons swallow an old man, a ball of sticky rice swallows a child, grasshoppers chase a fish, seed rice bites a rat, rice seedlings pull up a person… Read it and work out what really happens: snakes catch frogs, people eat persimmons, people pull up seedlings!"
+      },
+      tuKho: [
+        { tu: "nói ngược", hinh: "🔄", nghia: "nói trái với sự thật để đùa cho vui", en: "to say things the wrong way round, as a joke" },
+        { tu: "hùm", hinh: "🐯", nghia: "con hổ", en: "tiger" },
+        { tu: "lươn", hinh: "🐍", nghia: "con vật dài như rắn, sống trong bùn ở ruộng", en: "a rice-field eel" },
+        { tu: "trúm", hinh: "🪤", nghia: "ống tre dùng để bắt lươn", en: "a bamboo trap for catching eels" },
+        { tu: "cào cào", hinh: "🦗", nghia: "con vật nhỏ, chân dài, nhảy giỏi, sống ở bãi cỏ", en: "grasshopper" },
+        { tu: "thóc giống", hinh: "🌾", nghia: "hạt thóc tốt để dành gieo vụ sau", en: "seed rice saved for planting" },
+        { tu: "bồ", hinh: "🧺", nghia: "đồ đan bằng tre, to, để đựng thóc", en: "a big woven bamboo bin for rice" },
+        { tu: "lá mạ", hinh: "🌱", nghia: "cây lúa non, được nhổ lên đem đi cấy", en: "rice seedlings" }
+      ],
+      cauHoi: [
+        { hoi: "Trong bài, con gì cắn cổ con rắn?", en: "In the rhyme, who bites the snake's neck?",
+          chon: [{ chu: "Con ếch", hinh: "🐸" }, { chu: "Con mèo", hinh: "🐱" }, { chu: "Con gà", hinh: "🐔" }], dung: 0 },
+        { hoi: "Ngoài đời thật, ai bắt ai?", en: "In real life, who catches whom?",
+          chon: [{ chu: "Rắn bắt ếch", hinh: "🐍" }, { chu: "Ếch bắt rắn", hinh: "🐸" }, { chu: "Ếch bắt hổ", hinh: "🐯" }], dung: 0 },
+        { hoi: "“Hùm” là con gì?", en: "What animal is “hùm”?",
+          chon: [{ chu: "Con hổ", hinh: "🐯" }, { chu: "Con lợn", hinh: "🐷" }, { chu: "Con chó", hinh: "🐶" }], dung: 0 },
+        { hoi: "Đàn cào cào đuổi bắt con gì?", en: "What do the grasshoppers chase?",
+          chon: [{ chu: "Cá rô", hinh: "🐟" }, { chu: "Con chuột", hinh: "🐭" }, { chu: "Con lươn", hinh: "🐍" }], dung: 0 },
+        { hoi: "Vì sao bài này buồn cười?", en: "Why is this rhyme funny?",
+          chon: [{ chu: "Vì mọi chuyện đều ngược", hinh: "🔄" }, { chu: "Vì có nhiều bánh kẹo", hinh: "🍬" }, { chu: "Vì bài rất dài", hinh: "📜" }], dung: 0 }
+      ],
+      dienTu: [[1, "rắn"], [2, "lông"], [3, "hồng"], [6, "trúm"], [7, "rô"], [8, "chuột"], [9, "người"]],
+      nhieu: ["mèo", "voi", "gạo", "trâu", "dưa"],
+      vanCap: [["ba", "ra"], ["đồng", "lông"], ["mươi", "mười"], ["đao", "vào"], ["rô", "bồ"], ["hồng", "sông"]],
+      cungChoi: {
+        ten: "Nói ngược, làm ngược",
+        nguoi: "Từ 2 bạn trở lên",
+        cho: "Trong nhà hoặc lớp học, chỗ rộng",
+        buoc: [
+          { hinh: "🐸", chu: "Một bạn đọc một câu vè, các bạn khác làm động tác con vật trong câu: ếch nhảy, rắn trườn, hổ vồ, cào cào nhảy…" },
+          { hinh: "🔄", chu: "Sau mỗi câu, cả nhóm “nói xuôi” lại cho đúng: “Rắn bắt ếch!”, “Người ăn hồng!”" },
+          { hinh: "😄", chu: "Lượt sau, mỗi bạn tự nghĩ một câu nói ngược thật vui, ví dụ “Con chuột đuổi con mèo”." },
+          { hinh: "🏆", chu: "Bạn làm động tác giống nhất được đọc câu tiếp theo." }
+        ],
+        en: "One child says a line; the others act out the animals in it: the frog hops, the snake slithers, the tiger pounces, grasshoppers jump… After each line, everyone says it “the right way round”: “Rắn bắt ếch!” (the snake catches the frog), “Người ăn hồng!” (people eat persimmons). Then each child makes up a funny topsy-turvy line, such as “Con chuột đuổi con mèo”. The best actor reads the next line.",
+        anToan: "Làm động tác con vật ở chỗ rộng, không vồ, không cắn thật vào bạn."
+      },
+      thuThach: [
+        "Đọc thuộc 4 câu đầu cho ông bà hoặc cha mẹ nghe",
+        "Nói xuôi lại 3 câu trong bài cho đúng với đời thật",
+        "Tự đặt một câu nói ngược về con vật nhà mình và đọc cho cả nhà nghe"
+      ],
+      goiY: {
+        nghe: "Thể lục bát: câu 6 tiếng, câu 8 tiếng. Bài dài 10 câu, nghe 2–3 lần trước khi học thuộc; có thể học 4 câu mỗi ngày.",
+        hieu: "Trọng tâm là hiểu cái “ngược”: hỏi bé “Ngoài đời, ai bắt ai?”. Nhiều từ chỉ đồ vật ở làng quê (trúm, bồ, mạ); cho bé xem tranh nếu có. Câu “Con gà, be rượu nuốt người lao đao” nói người ăn uống no say đến chóng mặt; với bé nhỏ, chỉ cần nói “người ăn no quá”.",
+        nho: "Mỗi câu có một cặp “ai làm gì ai” bị đảo ngược. Nhớ cặp con vật (ếch – rắn, hùm – lợn, lươn – trúm) là nhớ câu.",
+        choi: "Vần lục bát nối câu: “ba” vần với “ra”, “đồng” vần với “lông”. Cho bé tìm thêm cặp vần trong bài.",
+        cungChoi: "Trò này luyện câu “Con A cắn con B” rồi đảo thành “Con B cắn con A”. Rất hợp lớp học tiếng Việt."
+      }
+    },
 
     /* ================= PHẦN 3 – DÂN CA & HÁT RU (dự kiến; cần bản thu giọng hát) ================= */
     { ma: "bac-kim-thang", so: 17, phan: "baihat", trangThai: "du-kien", ten: "Bắc kim thang", en: "The bamboo bridge", mien: "Nam Bộ", troChoi: "Vỗ tay theo nhịp" },
