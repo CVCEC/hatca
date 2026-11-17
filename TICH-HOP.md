@@ -34,7 +34,7 @@ Chữ trắng trên màu đậm #7E2A6B đạt tỉ lệ tương phản khoảng
       { vi: "Dân ca & hát ru (Bài 17–24)", en: "Folk songs & lullabies (Lessons 17–24)" }
     ],
     vaoThang: true, // trang chủ đã có Mục tiêu, Học xong, Tổng quan, Hướng dẫn
-    thu: { url: "https://hatca.cvcec.org/bai.html#dung-dang-dung-de", duong: ["/", "/bai.html"], baiThu: "dung-dang-dung-de", ten: { vi: "Bài 1: Dung dăng dung dẻ", en: "Lesson 1: Dung dăng dung dẻ (Walking hand in hand)" } }
+    thu: { url: "https://hatca.cvcec.org/", duong: ["/", "/bai.html"], baiThu: "dung-dang-dung-de", ten: { vi: "Bài 1: Dung dăng dung dẻ", en: "Lesson 1: Dung dăng dung dẻ (Walking hand in hand)" } }
   },
 ```
 
