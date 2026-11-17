@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài học – Hát cùng Trâu Con – Trường Tiếng Việt Của Em</title>
+<meta name="theme-color" content="#FFF8EC">
+<meta name="robots" content="noimageindex">
+<link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
+<link rel="stylesheet" href="css/hat-ca.css">
+<script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
+<script src="data/bai-hat.js"></script>
+<script src="js/chung.js"></script>
+</head>
+<body class="ttv-trang">
+
+<header class="ttv-canh hc-dau-bai">
+  <div class="hc-dau-bai-trong">
+    <a class="ttv-nut-phu hc-ve" href="index.html">← Các bài</a>
+    <div class="hc-ten-bai">
+      <span class="hc-nhan" id="nhan-bai"></span>
+      <h1 class="ttv-tieu-de" id="ten-bai"></h1>
+      <p class="hc-phu" id="en-bai" lang="en"></p>
+    </div>
+    <img src="https://mau.cvcec.org/assets/trau-listening.png" alt="">
+  </div>
+</header>
+
+<main class="hc-bai" data-ttv-nen="don-gian">
+  <div class="hc-khung-bai">
+    <nav class="hc-buoc-nav" id="buoc-nav" aria-label="Các bước của bài"></nav>
+    <div id="noi-dung" class="hc-noi-dung"></div>
+  </div>
+</main>
+
+<div class="hc-thong-bao" id="thong-bao" role="status" aria-live="polite"><span class="ttv-sao"></span><span id="thong-bao-chu"></span></div>
+<footer data-ttv-chan></footer>
+
+<script>
+(function () {
+  "use strict";
+  var D = window.HAT_CA, tao = HC.tao;
+
+  /* ---------- Chọn bài theo #ma-bai ---------- */
+  var ma = decodeURIComponent(location.hash.slice(1));
+  var b = HC.bai(ma);
+  if (!b) { b = D.bai.filter(function (x) { return x.trangThai !== "du-kien"; })[0]; history.replaceState(null, "", "#" + b.ma); }
+  window.addEventListener("hashchange", function () { location.reload(); });
+  var p = HC.phan(b.phan);
+  document.title = b.ten + " – Hát cùng Trâu Con – Trường Tiếng Việt Của Em";
+  document.getElementById("nhan-bai").textContent = "Phần " + p.so + " · " + p.ten + " · Bài " + b.so;
+  document.getElementById("ten-bai").textContent = b.ten;
+  document.getElementById("en-bai").textContent = b.en;
+
+  // Học thử (khách chưa đăng nhập): cổng báo chế độ học, bộ mẫu tự mời đăng nhập nếu không phải bài thử
+  document.addEventListener("ttv-che-do", function () { if (window.TTV && TTV.choPhepBai) TTV.choPhepBai(b.ma); });
+
+  var noiDung = document.getElementById("noi-dung");
+  var nav = document.getElementById("buoc-nav");
+
+  /* ---------- Bài đang soạn ---------- */
+  if (b.trangThai === "du-kien") {
+    nav.hidden = true;
+    var o = tao("section", "ttv-the hc-dang-soan");
+    var im = tao("img"); im.src = HC.trau("trau-peeking.png"); im.alt = ""; o.appendChild(im);
+    o.appendChild(tao("h2", "ttv-tieu-de", "Bài này đang được soạn"));
+    o.appendChild(tao("p", null, "Mình đang chuẩn bị bài “" + b.ten + "” cho các bạn. Các bạn học bài khác trước nhé!"));
+    var ve = tao("a", "ttv-nut", "Về danh sách bài"); ve.href = "index.html"; o.appendChild(ve);
+    noiDung.appendChild(o);
+    return;
+  }
+
+  var tt = HC.doc(b.ma);
+  function luu() { HC.ghi(b.ma, tt); }
+  var nhip = "cham";          // nhịp đang chọn: "cham" | "vua"
+  var dangChay = null;        // lượt đọc theo nhịp đang chạy
+  function dungNhip() { if (dangChay) { dangChay.dung(); dangChay = null; } }
+
+  /* ---------- Năm bước ---------- */
+  var BUOC = [
+    { id: "nghe", bieu: "🎵", ten: "Nghe & đọc theo", ngan: "Nghe", trau: "trau-listening.png",
+      loi: "Các bạn vỗ tay theo tiếng mõ nhé: mỗi tiếng một cái vỗ. Nghe tiếng trống “tùng” là hết một câu!" },
+    { id: "hieu", bieu: "🔍", ten: "Hiểu lời", ngan: "Hiểu lời", trau: "trau-reading.png",
+      loi: "Bài này nói gì nhỉ? Các bạn lật từng thẻ để biết nghĩa, rồi trả lời mấy câu hỏi của mình nhé." },
+    { id: "nho", bieu: "🧠", ten: "Nhớ lời", ngan: "Nhớ lời", trau: "trau-thinking.png",
+      loi: "Mình cùng học thuộc nhé! Các bạn làm lần lượt ba hoạt động: điền từ, xếp câu và che dần chữ." },
+    { id: "choi", bieu: "🎮", ten: "Chơi mà nhớ", ngan: "Chơi", trau: "trau-cheer.png",
+      loi: "Đến giờ chơi rồi! Các bạn lật thẻ tìm tiếng cùng vần, rồi tiếp sức đọc bài để đưa mình về quê nhé." },
+    { id: "cungChoi", bieu: "🤸", ten: "Cùng chơi", ngan: "Cùng chơi", trau: "trau-wave.png",
+      loi: "Bây giờ các bạn rủ cả nhà, rủ bạn bè cùng chơi trò dân gian thật nhé!" }
+  ];
+  var buocHien = Math.max(0, BUOC.findIndex(function (x) { return !tt.sao[x.id]; }));
+  if (HC.soSao(b.ma) === 5) buocHien = 0;
+
+  function veNav() {
+    nav.textContent = "";
+    BUOC.forEach(function (x, i) {
+      var n = tao("button"); n.type = "button";
+      if (i === buocHien) n.setAttribute("aria-current", "step");
+      n.appendChild(tao("span", "bieu", x.bieu));
+      n.appendChild(tao("span", "chu", x.ngan));
+      var s = tao("span", "ttv-sao" + (tt.sao[x.id] ? "" : " ttv-sao-tat"));
+      s.setAttribute("aria-label", tt.sao[x.id] ? "đã có sao" : "chưa có sao"); n.appendChild(s);
+      n.setAttribute("aria-label", "Bước " + (i + 1) + ": " + x.ten);
+      n.addEventListener("click", function () { moBuoc(i); });
+      nav.appendChild(n);
+    });
+  }
+
+  /* ---------- Phản hồi chung ---------- */
+  var hopTB = document.getElementById("thong-bao"), henTB = null;
+  function thongBao(chu) {
+    document.getElementById("thong-bao-chu").textContent = chu;
+    hopTB.classList.add("hien"); clearTimeout(henTB);
+    henTB = setTimeout(function () { hopTB.classList.remove("hien"); }, 2200);
+  }
+  function nhan(noi, dung, chu) {
+    noi.textContent = "";
+    noi.appendChild(tao("span", dung ? "ttv-nhan-dung" : "ttv-nhan-sai", dung ? "Đúng rồi!" : "Thử lại nhé"));
+    if (chu) noi.appendChild(tao("span", null, chu));
+  }
+  function lac(el) { el.classList.remove("lac"); void el.offsetWidth; el.classList.add("lac"); }
+  function datSao(id) {
+    if (tt.sao[id]) return;
+    tt.sao[id] = true; luu(); HC.ting(); veNav();
+    var n = HC.soSao(b.ma);
+    thongBao(n === 5 ? "Đủ 5 sao! Các bạn đã thuộc bài!" : "Được 1 sao! (" + n + "/5)");
+    if (n === 5) { var x = veXongBai(); noiDung.insertBefore(x, noiDung.children[2] || null); x.scrollIntoView({ behavior: "smooth", block: "center" }); }
+  }
+  function ghiXong(k) { if (!tt.xong[k]) { tt.xong[k] = true; luu(); } }
+  function nutEn(idDich) {
+    var n = tao("button", "hc-en", "EN"); n.type = "button"; n.lang = "en";
+    n.setAttribute("aria-expanded", "false"); n.setAttribute("aria-controls", idDich);
+    n.addEventListener("click", function () {
+      var o = document.getElementById(idDich), mo = !o.classList.contains("mo");
+      o.classList.toggle("mo", mo); n.setAttribute("aria-expanded", mo ? "true" : "false");
+    });
+    return n;
+  }
+  function the(tieuDe, nutPhai) {
+    var o = tao("section", "hc-the");
+    if (tieuDe) {
+      var d = tao("div", "hc-the-dau"); d.appendChild(tao("h3", null, tieuDe));
+      if (nutPhai) d.appendChild(nutPhai);
+      o.appendChild(d);
+    }
+    return o;
+  }
+  function nut(lop, chu, bam) { var n = tao("button", lop, chu); n.type = "button"; n.addEventListener("click", bam); return n; }
+
+  /* ---------- Vẽ lời bài: mỗi tiếng một ô ---------- */
+  // an(i, j, n) → true thì che tiếng thứ j của câu i (câu có n tiếng)
+  function veLoi(noi, tuyChon) {
+    tuyChon = tuyChon || {};
+    var khoi = tao("div", "hc-loi" + (b.loi.length > 6 ? " hc-hai-cot" : "")), o = [];
+    b.loi.forEach(function (cau, i) {
+      var dong = tao("p", "hc-cau"), ts = HC.tieng(cau); o[i] = [];
+      ts.forEach(function (t, j) {
+        var s = tao("span", "hc-tieng", t);
+        if (tuyChon.an && tuyChon.an(i, j, ts.length)) {
+          s.classList.add("an"); s.setAttribute("role", "button"); s.tabIndex = 0;
+          s.setAttribute("aria-label", "Chữ bị che, chạm để xem");
+          s.addEventListener("click", function () { s.classList.toggle("lo"); });
+        }
+        dong.appendChild(s); o[i].push(s);
+      });
+      if (tuyChon.ngheCau && b.amThanh) {
+        var n = nut("hc-cau-nghe", "🔊", function () { HC.phatTep(HC.tepCau(b, i)); });
+        n.setAttribute("aria-label", "Nghe câu " + (i + 1)); dong.appendChild(n);
+      }
+      khoi.appendChild(dong);
+    });
+    noi.appendChild(khoi);
+    return o;
+  }
+  function boSang(o) { o.forEach(function (d) { d.forEach(function (s) { s.classList.remove("dang"); }); }); }
+  // Chạy nhịp mõ trên các ô chữ; goiXong(r) khi hết bài
+  function docTheoNhip(o, goiXong) {
+    dungNhip();
+    var r = HC.chayNhip(b.loi, b.tempo[nhip], {
+      tieng: function (i, j) { boSang(o); o[i][j].classList.add("dang"); },
+      xong: function () { boSang(o); dangChay = null; if (goiXong) goiXong(r); },
+      loi: function () { thongBao("Máy này chưa phát được tiếng mõ."); }
+    });
+    dangChay = r;
+    return r;
+  }
+  function chonNhip() {
+    var g = tao("div", "hc-nhom"); g.setAttribute("role", "group"); g.setAttribute("aria-label", "Chọn nhịp");
+    [["cham", "🐢 Chậm"], ["vua", "🐇 Vừa"]].forEach(function (x) {
+      var n = nut("", x[1], function () { nhip = x[0]; g.querySelectorAll("button").forEach(function (k) { k.setAttribute("aria-pressed", String(k === n)); }); });
+      n.setAttribute("aria-pressed", String(nhip === x[0])); g.appendChild(n);
+    });
+    return g;
+  }
+
+  /* =============== BƯỚC 1: NGHE & ĐỌC THEO =============== */
+  function veNghe(noi) {
+    var t = the("Lời bài"), o = veLoi(t, { ngheCau: true });
+    var hang = tao("div", "hc-hang-nut");
+    var nutDoc = nut("ttv-nut", "▶ Đọc theo nhịp", function () {
+      if (dangChay) { dungNhip(); boSang(o); nutDoc.textContent = "▶ Đọc theo nhịp"; return; }
+      HC.moAmThanh();
+      trung = {}; soVo = 0; ketQua.textContent = "Vỗ tay vào đây theo nhịp nhé! Mỗi tiếng một cái vỗ.";
+      nutDoc.textContent = "⏹ Dừng";
+      docTheoNhip(o, function (r) {
+        nutDoc.textContent = "▶ Đọc lại";
+        var tong = r.lich.length, dung = Object.keys(trung).length;
+        ketQua.textContent = soVo ? "Bạn vỗ trúng nhịp " + dung + "/" + tong + " tiếng. " + (dung >= tong * 0.7 ? "Giỏi quá!" : nhip === "vua" ? "Lần sau thử nhịp Chậm nhé!" : "Đọc lại và vỗ tay cùng mõ nhé!") : "Các bạn đã đọc hết bài theo nhịp. Lần sau vỗ tay cùng nhé!";
+        datSao("nghe");
+      });
+    });
+    hang.appendChild(nutDoc); hang.appendChild(chonNhip());
+    if (b.amThanh) hang.appendChild(nut("ttv-nut-phu", "🔊 Nghe cả bài", function () { dungNhip(); HC.phatTep(HC.tepCaBai(b)); }));
+    t.appendChild(hang);
+
+    // Ô vỗ tay: chạm đúng lúc mõ gõ thì sáng xanh
+    var vo = tao("div", "hc-vo-tay"), nutVo = nut("", "👏", null), ketQua = tao("p", null, "Vỗ tay vào đây theo nhịp nhé! Mỗi tiếng một cái vỗ.");
+    nutVo.setAttribute("aria-label", "Vỗ tay");
+    var trung = {}, soVo = 0;
+    nutVo.addEventListener("pointerdown", function (e) {
+      e.preventDefault();
+      if (!dangChay) { ketQua.textContent = "Bấm “▶ Đọc theo nhịp” trước, rồi vỗ tay theo nhé!"; return; }
+      soVo++;
+      var bay = dangChay.bayGio(), gan = -1, lech = 9;
+      dangChay.lich.forEach(function (x, k) { var d = Math.abs(x.t - bay); if (d < lech) { lech = d; gan = k; } });
+      var ok = lech < 0.2 && !trung[gan]; if (ok) trung[gan] = true;
+      nutVo.classList.remove("trung", "truot"); void nutVo.offsetWidth; nutVo.classList.add(ok ? "trung" : "truot");
+      setTimeout(function () { nutVo.classList.remove("trung", "truot"); }, 160);
+    });
+    vo.appendChild(nutVo); vo.appendChild(ketQua); t.appendChild(vo);
+    t.appendChild(tao("p", "hc-nho-chu", b.nguon + ". " + (b.diBan || "") + (b.amThanh ? "" : " Giọng đọc của trường sẽ được thêm sau; hiện các bạn đọc theo tiếng mõ.")));
+    noi.appendChild(t);
+  }
+
+  /* =============== BƯỚC 2: HIỂU LỜI =============== */
+  function veHieu(noi) {
+    var t1 = the("Bài " + (p.id === "dongdao" ? "đồng dao" : p.id === "ve" ? "vè" : "hát") + " này nói gì?", nutEn("en-gt"));
+    t1.appendChild(tao("p", "hc-giai-en", b.gioiThieu.en)).id = "en-gt";
+    t1.querySelector("#en-gt").lang = "en";
+    var gt = tao("p", null, b.gioiThieu.vi); gt.style.cssText = "margin:0;font-size:1.12rem;line-height:1.65"; t1.appendChild(gt);
+    noi.appendChild(t1);
+
+    // Thẻ từ cần biết
+    var nutE = tao("button", "hc-en", "EN"); nutE.type = "button"; nutE.lang = "en"; nutE.setAttribute("aria-pressed", "false");
+    var t2 = the("Từ cần biết", nutE);
+    var dem = tao("p", "hc-tien-do"), luoi = tao("div", "hc-the-tu-luoi"), daXem = {};
+    function capDem() {
+      var n = Object.keys(daXem).length;
+      dem.textContent = "Đã lật " + n + "/" + b.tuKho.length + " thẻ";
+      if (n === b.tuKho.length) { ghiXong("theTu"); kiemSao(); }
+    }
+    nutE.addEventListener("click", function () {
+      var mo = nutE.getAttribute("aria-pressed") !== "true"; nutE.setAttribute("aria-pressed", String(mo));
+      nutE.style.background = mo ? "var(--ttv-goc-dam)" : ""; nutE.style.color = mo ? "#fff" : "";
+      luoi.querySelectorAll(".nghia-en").forEach(function (x) { x.hidden = !mo; });
+    });
+    b.tuKho.forEach(function (w, k) {
+      var c = tao("button", "hc-the-tu"); c.type = "button"; c.setAttribute("aria-label", "Thẻ từ: " + w.tu + ". Chạm để lật");
+      var trong = tao("span", "trong");
+      var m1 = tao("span", "mat truoc"); m1.appendChild(tao("span", "hinh", w.hinh)); m1.appendChild(tao("span", "tu", w.tu));
+      var m2 = tao("span", "mat sau"); m2.appendChild(tao("span", "tu", w.tu)); m2.appendChild(tao("span", "nghia", w.nghia));
+      var en = tao("span", "nghia-en", w.en); en.lang = "en"; en.hidden = true; m2.appendChild(en);
+      trong.appendChild(m1); trong.appendChild(m2); c.appendChild(trong);
+      c.addEventListener("click", function () { c.classList.toggle("lat"); if (!daXem[k]) { daXem[k] = 1; c.classList.add("da-xem"); capDem(); } });
+      luoi.appendChild(c);
+    });
+    t2.appendChild(dem); t2.appendChild(luoi); noi.appendChild(t2);
+    capDem();
+
+    // Câu hỏi nhanh
+    var t3 = the("Câu hỏi nhanh"), k = 0, khung = tao("div");
+    t3.appendChild(khung); noi.appendChild(t3);
+    function veCau() {
+      khung.textContent = "";
+      if (k >= b.cauHoi.length) {
+        khung.appendChild(tao("p", "ttv-nhan-dung", "Bạn trả lời đúng hết " + b.cauHoi.length + " câu!"));
+        khung.appendChild(nut("ttv-nut-phu", "Làm lại", function () { k = 0; veCau(); }));
+        ghiXong("cauHoi"); kiemSao(); return;
+      }
+      var q = b.cauHoi[k];
+      khung.appendChild(tao("p", "hc-tien-do", "Câu " + (k + 1) + "/" + b.cauHoi.length));
+      var dh = tao("div", "hc-the-dau"); dh.appendChild(tao("p", "hc-hoi", q.hoi));
+      var idE = "en-q" + k; dh.appendChild(nutEn(idE)); khung.appendChild(dh);
+      var e = tao("p", "hc-giai-en hc-hoi-en", q.en); e.id = idE; e.lang = "en"; khung.appendChild(e);
+      var ph = tao("div", "hc-phan-hoi"), chon = tao("div", "hc-chon");
+      HC.tron(q.chon.map(function (c, i) { return { c: c, i: i }; })).forEach(function (x) {
+        var n = tao("button"); n.type = "button";
+        n.appendChild(tao("span", "hinh", x.c.hinh)); n.appendChild(tao("span", null, x.c.chu));
+        n.addEventListener("click", function () {
+          if (x.i === q.dung) { n.classList.add("dung"); nhan(ph, true); chon.querySelectorAll("button").forEach(function (z) { z.disabled = true; }); setTimeout(function () { k++; veCau(); }, 900); }
+          else { n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
+        });
+        chon.appendChild(n);
+      });
+      khung.appendChild(chon); khung.appendChild(ph);
+    }
+    veCau();
+    function kiemSao() { if (tt.xong.theTu && tt.xong.cauHoi) datSao("hieu"); }
+  }
+
+  /* ---------- Thanh chọn hoạt động con ---------- */
+  function chonHoatDong(noi, ds, hien, doi) {
+    var g = tao("div", "hc-hd-chon" + (ds.length === 2 ? " hai" : "")); g.setAttribute("role", "group");
+    ds.forEach(function (x, i) {
+      var n = tao("button"); n.type = "button"; n.setAttribute("aria-pressed", String(i === hien));
+      n.appendChild(tao("span", "bieu", x.bieu));
+      var c = tao("span"); c.appendChild(document.createTextNode(x.ten)); c.appendChild(tao("small", null, x.mo)); n.appendChild(c);
+      if (tt.xong[x.id]) n.appendChild(tao("span", "xong", "✓"));
+      n.addEventListener("click", function () { doi(i); });
+      g.appendChild(n);
+    });
+    noi.appendChild(g);
+  }
+
+  /* =============== BƯỚC 3: NHỚ LỜI =============== */
+  var HD_NHO = [
+    { id: "dienTu", bieu: "✏️", ten: "Điền từ", mo: "Chọn tiếng còn thiếu" },
+    { id: "xepCau", bieu: "🔢", ten: "Xếp câu", mo: "Xếp lại bài cho đúng" },
+    { id: "anDan", bieu: "🙈", ten: "Che dần", mo: "Đọc thuộc khi chữ bị che" }
+  ];
+  var hdNho = Math.max(0, HD_NHO.findIndex(function (x) { return !tt.xong[x.id]; }));
+  function veNho(noi) {
+    var khung = tao("div"); khung.style.cssText = "display:grid;gap:14px"; noi.appendChild(khung);
+    function ve() {
+      dungNhip(); khung.textContent = "";
+      chonHoatDong(khung, HD_NHO, hdNho, function (i) { hdNho = i; ve(); });
+      var t = the(); khung.appendChild(t);
+      [dienTu, xepCau, anDan][hdNho](t, function xong(id) {
+        ghiXong(id);
+        if (HD_NHO.every(function (x) { return tt.xong[x.id]; })) datSao("nho");
+        var tiep = HD_NHO.findIndex(function (x) { return !tt.xong[x.id]; });
+        var hang = tao("div", "hc-hang-nut"); hang.style.marginTop = "12px";
+        if (tiep >= 0) hang.appendChild(nut("ttv-nut", "Hoạt động tiếp: " + HD_NHO[tiep].ten + " →", function () { hdNho = tiep; ve(); }));
+        hang.appendChild(nut("ttv-nut-phu", "Làm lại", function () { ve(); }));
+        t.appendChild(hang);
+        var nc = khung.querySelectorAll(".hc-hd-chon button")[hdNho]; if (!nc.querySelector(".xong")) nc.appendChild(tao("span", "xong", "✓"));
+      });
+    }
+    ve();
+  }
+
+  // Điền từ: bài hiện đủ, chỗ trống sáng lần lượt
+  function dienTu(t, xong) {
+    t.appendChild(tao("p", "hc-hoi", "Ô đang sáng cần tiếng nào?"));
+    var ds = b.dienTu.slice().sort(function (x, y) { return x[0] - y[0]; });
+    var o = {}, khoi = tao("div", "hc-loi" + (b.loi.length > 6 ? " hc-hai-cot" : ""));
+    b.loi.forEach(function (cau, i) {
+      var dong = tao("p", "hc-cau");
+      HC.tieng(cau).forEach(function (w) {
+        var k = ds.findIndex(function (x, m) { return !o[m] && x[0] === i && HC.nfc(HC.boDau(w)).toLowerCase() === HC.nfc(x[1]).toLowerCase(); });
+        if (k >= 0) { var s = tao("span", "hc-o-trong", w); o[k] = s; dong.appendChild(s); }
+        else dong.appendChild(tao("span", "hc-tieng", w));
+      });
+      khoi.appendChild(dong);
+    });
+    t.appendChild(khoi);
+    var chon = tao("div", "hc-chon ngan"), ph = tao("div", "hc-phan-hoi"), k = 0;
+    t.appendChild(chon); t.appendChild(ph);
+    var kho = ds.map(function (x) { return x[1]; }).concat(b.nhieu || []);
+    function veO() {
+      Object.keys(o).forEach(function (x) { o[x].classList.toggle("dang", +x === k); });
+      chon.textContent = "";
+      if (k >= ds.length) { nhan(ph, true, "Bạn điền đủ " + ds.length + " chỗ trống!"); xong("dienTu"); return; }
+      var dung = ds[k][1];
+      var sai = HC.tron(kho.filter(function (w) { return HC.nfc(w) !== HC.nfc(dung); })).slice(0, 2);
+      HC.tron([dung].concat(sai)).forEach(function (w) {
+        var n = nut("", w, function () {
+          if (w === dung) { o[k].classList.add("dien"); nhan(ph, true); k++; veO(); }
+          else { n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
+        });
+        chon.appendChild(n);
+      });
+    }
+    veO();
+  }
+
+  // Xếp câu: chạm câu tiếp theo theo đúng thứ tự
+  function xepCau(t, xong) {
+    t.appendChild(tao("p", "hc-hoi", "Chạm vào câu tiếp theo của bài nhé!"));
+    var vung = tao("div", "hc-xep");
+    var trai = tao("div", "hc-xep-khung"), phai = tao("div", "hc-xep-khung");
+    trai.appendChild(tao("h4", null, "Các câu bị xáo trộn")); phai.appendChild(tao("h4", null, "Bài của em"));
+    var dsT = tao("div", "hc-xep-ds"), dsP = tao("div", "hc-xep-ds");
+    trai.appendChild(dsT); phai.appendChild(dsP); vung.appendChild(trai); vung.appendChild(phai); t.appendChild(vung);
+    var ph = tao("div", "hc-phan-hoi"), canTim = 0, cac = [];
+    var thuTu = b.loi.map(function (_, i) { return i; }), tr = HC.tron(thuTu);
+    if (tr.every(function (x, i) { return x === i; })) tr.reverse();
+    tr.forEach(function (i) {
+      var n = nut("", b.loi[i], function () {
+        if (i === canTim) {
+          n.remove(); var d = tao("div", "da"); d.appendChild(tao("span", "so", String(i + 1))); d.appendChild(tao("span", null, b.loi[i])); dsP.appendChild(d);
+          canTim++; nhan(ph, true);
+          if (canTim === b.loi.length) { nhan(ph, true, "Bạn đã xếp xong cả bài!"); goiY.remove(); xong("xepCau"); }
+        } else { nhan(ph, false); lac(n); }
+      });
+      cac[i] = n; dsT.appendChild(n);
+    });
+    var goiY = nut("ttv-nut-phu", "💡 Gợi ý", function () {
+      var n = cac[canTim]; if (!n) return; n.classList.add("goi-y"); setTimeout(function () { n.classList.remove("goi-y"); }, 1300);
+    });
+    var hang = tao("div", "hc-hang-nut"); hang.style.marginTop = "10px"; hang.appendChild(goiY);
+    t.appendChild(hang); t.appendChild(ph);
+  }
+
+  // Che dần: bốn vòng, mỗi vòng che thêm chữ
+  function anDan(t, xong) {
+    var VONG = [
+      { ten: "Vòng 1/4: Đọc cả bài", an: function () { return false; } },
+      { ten: "Vòng 2/4: Che tiếng cuối câu", an: function (i, j, n) { return j === n - 1; } },
+      { ten: "Vòng 3/4: Che nửa câu", an: function (i, j, n) { return j >= Math.ceil(n / 2); } },
+      { ten: "Vòng 4/4: Chỉ còn tiếng đầu câu", an: function (i, j) { return j >= 1; } }
+    ];
+    var v = 0, khung = tao("div"); t.appendChild(khung);
+    function ve() {
+      dungNhip(); khung.textContent = "";
+      khung.appendChild(tao("p", "hc-tien-do", VONG[v].ten));
+      khung.appendChild(tao("p", null, v ? "Đọc to cả bài theo nhịp. Quên chữ nào thì chạm vào ô đó để xem." : "Đọc to cả bài theo nhịp một lần nhé."));
+      var o = veLoi(khung, { an: VONG[v].an });
+      var hang = tao("div", "hc-hang-nut"), nd = nut("ttv-nut-phu", "▶ Đọc theo nhịp", function () {
+        if (dangChay) { dungNhip(); boSang(o); nd.textContent = "▶ Đọc theo nhịp"; return; }
+        nd.textContent = "⏹ Dừng"; docTheoNhip(o, function () { nd.textContent = "▶ Đọc lại"; });
+      });
+      hang.appendChild(nd); hang.appendChild(chonNhip());
+      hang.appendChild(nut("ttv-nut", v < 3 ? "Mình đọc được rồi →" : "Mình thuộc bài rồi! ✓", function () {
+        if (v < 3) { v++; ve(); }
+        else { dungNhip(); khung.textContent = ""; khung.appendChild(tao("p", "ttv-nhan-dung", "Tuyệt vời! Các bạn đọc thuộc cả bài rồi!")); xong("anDan"); }
+      }));
+      khung.appendChild(hang);
+    }
+    ve();
+  }
+
+  /* =============== BƯỚC 4: CHƠI MÀ NHỚ =============== */
+  var HD_CHOI = [
+    { id: "latThe", bieu: "🃏", ten: "Lật thẻ tìm vần", mo: "Tìm hai tiếng cùng vần" },
+    { id: "tiepSuc", bieu: "🏃", ten: "Tiếp sức đọc bài", mo: "Chọn câu tiếp theo, đưa Trâu Con về quê" }
+  ];
+  var hdChoi = Math.max(0, HD_CHOI.findIndex(function (x) { return !tt.xong[x.id]; }));
+  function veChoi(noi) {
+    var khung = tao("div"); khung.style.cssText = "display:grid;gap:14px"; noi.appendChild(khung);
+    function ve() {
+      khung.textContent = "";
+      chonHoatDong(khung, HD_CHOI, hdChoi, function (i) { hdChoi = i; ve(); });
+      var t = the(); khung.appendChild(t);
+      [latThe, tiepSuc][hdChoi](t, function xong(id) {
+        ghiXong(id);
+        if (HD_CHOI.every(function (x) { return tt.xong[x.id]; })) datSao("choi");
+        var tiep = HD_CHOI.findIndex(function (x) { return !tt.xong[x.id]; });
+        var hang = tao("div", "hc-hang-nut"); hang.style.marginTop = "12px";
+        if (tiep >= 0) hang.appendChild(nut("ttv-nut", "Trò tiếp: " + HD_CHOI[tiep].ten + " →", function () { hdChoi = tiep; ve(); }));
+        hang.appendChild(nut("ttv-nut-phu", "Chơi lại", function () { ve(); }));
+        t.appendChild(hang);
+        var nc = khung.querySelectorAll(".hc-hd-chon button")[hdChoi]; if (!nc.querySelector(".xong")) nc.appendChild(tao("span", "xong", "✓"));
+      });
+    }
+    ve();
+  }
+
+  function latThe(t, xong) {
+    t.appendChild(tao("p", "hc-hoi", "Lật hai thẻ. Hai tiếng cùng vần thì giữ lại!"));
+    var dem = tao("p", "hc-tien-do"), luoi = tao("div", "hc-lat-luoi"), ph = tao("div", "hc-phan-hoi");
+    t.appendChild(dem); t.appendChild(luoi); t.appendChild(ph);
+    var the2 = [];
+    b.vanCap.forEach(function (c, k) { the2.push({ chu: c[0], cap: k }); the2.push({ chu: c[1], cap: k }); });
+    var mo = [], luot = 0, khop = 0, ban = false;
+    function capDem() { dem.textContent = "Lượt lật: " + luot + " · Cặp vần đã tìm: " + khop + "/" + b.vanCap.length; }
+    HC.tron(the2).forEach(function (x) {
+      var n = tao("button", "hc-lat"); n.type = "button"; n.setAttribute("aria-label", "Thẻ úp");
+      var trong = tao("span", "trong"); trong.appendChild(tao("span", "mat truoc", "♪")); trong.appendChild(tao("span", "mat sau", x.chu));
+      n.appendChild(trong);
+      n.addEventListener("click", function () {
+        if (ban || n.classList.contains("mo") || n.classList.contains("khop")) return;
+        n.classList.add("mo"); n.setAttribute("aria-label", x.chu); mo.push({ n: n, x: x });
+        if (mo.length < 2) return;
+        luot++; var a = mo[0], c = mo[1]; mo = [];
+        if (a.x.cap === c.x.cap) {
+          a.n.classList.add("khop"); c.n.classList.add("khop"); khop++; HC.ting();
+          nhan(ph, true, a.x.chu + " – " + c.x.chu);
+          if (khop === b.vanCap.length) {
+            capDem();
+            nhan(ph, true, "Bạn tìm đủ " + khop + " cặp vần sau " + luot + " lượt lật!");
+            xong("latThe"); return;
+          }
+        } else {
+          ban = true; nhan(ph, false);
+          setTimeout(function () { a.n.classList.remove("mo"); c.n.classList.remove("mo"); a.n.setAttribute("aria-label", "Thẻ úp"); c.n.setAttribute("aria-label", "Thẻ úp"); ban = false; }, 950);
+        }
+        capDem();
+      });
+      luoi.appendChild(n);
+    });
+    capDem();
+  }
+
+  function tiepSuc(t, xong) {
+    var duong = tao("div", "hc-duong"), da = [];
+    for (var i = 0; i < b.loi.length - 1; i++) { var s = tao("span", "hc-da"); da.push(s); duong.appendChild(s); }
+    duong.appendChild(tao("span", "dich", "🏡"));
+    var trau = tao("img", "trau-di"); trau.src = HC.trau("trau-hiking.png"); trau.alt = "Trâu Con"; duong.appendChild(trau);
+    t.appendChild(duong);
+    var daDoc = tao("div", "hc-da-doc"), hoi = tao("p", "hc-hoi", "Câu tiếp theo là gì?"), chon = tao("div", "hc-chon"), ph = tao("div", "hc-phan-hoi");
+    t.appendChild(daDoc); t.appendChild(hoi); t.appendChild(chon); t.appendChild(ph);
+    var k = 0;
+    function dat() {
+      var w = duong.clientWidth, buoc = (w - 70) / Math.max(1, b.loi.length - 1);
+      trau.style.left = (k >= b.loi.length - 1 ? w - 62 : Math.max(4, 8 + k * buoc - 10)) + "px";
+      da.forEach(function (s, i) { s.classList.toggle("qua", i < k); });
+    }
+    function ve() {
+      daDoc.textContent = "";
+      b.loi.slice(Math.max(0, k - 2), k + 1).forEach(function (c) { daDoc.appendChild(tao("p", null, c)); });
+      dat(); chon.textContent = "";
+      if (k >= b.loi.length - 1) {
+        hoi.textContent = "Trâu Con về đến quê rồi! Cảm ơn các bạn!";
+        nhan(ph, true, "Bạn đã tiếp sức đọc hết bài!"); xong("tiepSuc"); return;
+      }
+      var dung = k + 1, khac = HC.tron(b.loi.map(function (_, i) { return i; }).filter(function (i) { return i !== dung && i !== k; })).slice(0, 2);
+      HC.tron([dung].concat(khac)).forEach(function (i) {
+        var n = nut("", b.loi[i], function () {
+          if (i === dung) { nhan(ph, true); k++; ve(); }
+          else { n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
+        });
+        chon.appendChild(n);
+      });
+    }
+    ve();
+    window.addEventListener("resize", dat);
+  }
+
+  /* =============== BƯỚC 5: CÙNG CHƠI =============== */
+  function veCungChoi(noi) {
+    var c = b.cungChoi;
+    var t1 = the("🎲 Trò chơi: " + c.ten, nutEn("en-tro"));
+    var e = tao("p", "hc-giai-en", c.en); e.id = "en-tro"; e.lang = "en"; t1.appendChild(e);
+    var tin = tao("ul", "hc-tro-tin");
+    tin.appendChild(tao("li", null, "👥 " + c.nguoi)); tin.appendChild(tao("li", null, "📍 " + c.cho));
+    t1.appendChild(tin);
+    var ol = tao("ol", "hc-tro-buoc");
+    c.buoc.forEach(function (x) { var li = tao("li"); li.appendChild(tao("span", "hinh", x.hinh)); li.appendChild(document.createTextNode(x.chu)); ol.appendChild(li); });
+    t1.appendChild(ol);
+    var at = tao("p", "hc-an-toan"); at.appendChild(tao("span", null, "🛟")); at.appendChild(tao("span", null, c.anToan)); t1.appendChild(at);
+    noi.appendChild(t1);
+
+    var t2 = the("Thử thách cho cả nhà"), ds = tao("ul", "hc-thu-thach");
+    b.thuThach.forEach(function (x, i) {
+      var li = tao("li"), lb = tao("label"), cb = tao("input"); cb.type = "checkbox"; cb.checked = !!tt.thuThach[i];
+      cb.addEventListener("change", function () {
+        tt.thuThach[i] = cb.checked; luu();
+        if (b.thuThach.every(function (_, k) { return tt.thuThach[k]; })) datSao("cungChoi");
+      });
+      lb.appendChild(cb); lb.appendChild(tao("span", null, x)); li.appendChild(lb); ds.appendChild(li);
+    });
+    t2.appendChild(ds);
+    t2.appendChild(tao("p", "hc-nho-chu", "Cha mẹ hoặc thầy cô đánh dấu khi bé làm xong. Không cần chụp ảnh hay ghi âm."));
+    noi.appendChild(t2);
+  }
+
+  /* ---------- Xong bài ---------- */
+  function veXongBai() {
+    var o = tao("section", "hc-xong-bai");
+    var im = tao("img"); im.src = HC.trau("trau-cheer.png"); im.alt = ""; o.appendChild(im);
+    var c = tao("div");
+    c.appendChild(tao("h3", null, "Các bạn đã thuộc bài “" + b.ten + "”!"));
+    var sao = tao("p"); for (var i = 0; i < 5; i++) sao.appendChild(tao("span", "ttv-sao")); c.appendChild(sao);
+    var tiep = D.bai.filter(function (x) { return x.so > b.so && x.trangThai !== "du-kien"; })[0];
+    var hang = tao("div", "hc-hang-nut");
+    if (tiep) { var a = tao("a", "ttv-nut", "Bài tiếp: " + tiep.ten + " →"); a.href = "bai.html#" + tiep.ma; hang.appendChild(a); }
+    var v = tao("a", tiep ? "ttv-nut-phu" : "ttv-nut", "Về danh sách bài"); v.href = "index.html"; hang.appendChild(v);
+    c.appendChild(hang); o.appendChild(c);
+    return o;
+  }
+
+  /* ---------- Mở một bước ---------- */
+  var VE = { nghe: veNghe, hieu: veHieu, nho: veNho, choi: veChoi, cungChoi: veCungChoi };
+  function moBuoc(i) {
+    dungNhip(); buocHien = i; veNav(); noiDung.textContent = "";
+    var x = BUOC[i];
+    var h = tao("h2", "hc-buoc-ten"); h.appendChild(tao("span", null, x.bieu)); h.appendChild(tao("span", null, "Bước " + (i + 1) + ": " + x.ten));
+    noiDung.appendChild(h);
+    var lt = tao("div", "hc-loi-trau"), im = tao("img"); im.src = HC.trau(x.trau); im.alt = "Trâu Con";
+    lt.appendChild(im); lt.appendChild(tao("div", "ttv-bong-thoai", x.loi)); noiDung.appendChild(lt);
+    VE[x.id](noiDung);
+    if (i === 4 && HC.soSao(b.ma) === 5) noiDung.appendChild(veXongBai());
+    if (b.goiY && b.goiY[x.id]) {
+      var gy = tao("details", "hc-goi-y"), sm = tao("summary");
+      sm.appendChild(tao("span", null, "🧭")); sm.appendChild(tao("span", null, "Gợi ý cho cha mẹ & thầy cô"));
+      gy.appendChild(sm); gy.appendChild(tao("p", null, b.goiY[x.id])); noiDung.appendChild(gy);
+    }
+    var cv = tao("div", "hc-chuyen");
+    cv.appendChild(i > 0 ? nut("ttv-nut-phu", "← " + BUOC[i - 1].ten, function () { moBuoc(i - 1); go(); }) : tao("span"));
+    if (i < 4) cv.appendChild(nut("ttv-nut", BUOC[i + 1].ten + " →", function () { moBuoc(i + 1); go(); }));
+    else { var a = tao("a", "ttv-nut-phu", "Về danh sách bài"); a.href = "index.html"; cv.appendChild(a); }
+    noiDung.appendChild(cv);
+  }
+  function go() { nav.scrollIntoView({ behavior: "smooth", block: "start" }); }
+
+  moBuoc(buocHien);
+})();
+</script>
+</body>
+</html>
