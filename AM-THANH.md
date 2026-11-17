@@ -3,7 +3,7 @@
 Hiện chưa có tệp nào: các bài đặt `amThanh: false`. Bé đọc theo tiếng mõ (tạo trong trình duyệt); nút 🔊 nghe câu, nghe cả bài tạm đọc bằng giọng máy của thiết bị qua bộ mẫu (`TTV.phat({ tep, chu })`, quy tắc 7). Trang không gọi speechSynthesis trực tiếp.
 Khi chép đủ tệp của một bài vào `audio/<ma-bai>/`, đổi `amThanh: true` cho bài đó trong `data/bai-hat.js`: nút 🔊 sẽ phát tệp của trường (tệp lỗi thì bộ mẫu tự đọc bằng giọng máy).
 
-Tổng cộng: **134 tệp** cho 16 bài.
+Tổng cộng: **187 tệp** cho 24 bài.
 
 Tệp này sinh từ dữ liệu bằng `node tools/tao-am-thanh.js`; sửa lời bài thì chạy lại.
 
@@ -237,3 +237,98 @@ Tệp này sinh từ dữ liệu bằng `node tools/tao-am-thanh.js`; sửa lờ
 | cau-08.mp3 | Một đàn cào cào đuổi bắt cá rô |
 | cau-09.mp3 | Thóc giống cắn chuột trong bồ |
 | cau-10.mp3 | Một trăm lá mạ đổ xô nhổ người |
+
+## Phần 3 – Dân ca & hát ru
+
+### Bài 17 – Bắc kim thang (`audio/bac-kim-thang/`): 7 tệp · giọng hát, Nam Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Bắc kim thang cà lang bí rợ |
+| cau-02.mp3 | Cột qua kèo là kèo qua cột |
+| cau-03.mp3 | Chú bán dầu qua cầu mà té |
+| cau-04.mp3 | Chú bán ếch ở lại làm chi |
+| cau-05.mp3 | Con le le đánh trống thổi kèn |
+| cau-06.mp3 | Con bìm bịp thổi tò tí te tò te |
+
+### Bài 18 – Ru em (hát ru xứ Huế) (`audio/ly-cay-bong/`): 5 tệp · giọng hát, Trung Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Ru em em ngủ cho muồi |
+| cau-02.mp3 | Để mẹ đi chợ mua vôi ăn trầu |
+| cau-03.mp3 | Mua vôi chợ Quán chợ Cầu |
+| cau-04.mp3 | Mua cau Nam Phổ mua trầu chợ Dinh |
+
+### Bài 19 – Trống cơm (`audio/trong-com/`): 7 tệp · giọng hát, Bắc Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Tình bằng có cái trống cơm |
+| cau-02.mp3 | Khen ai khéo vỗ, ố mấy bông mà nên bông |
+| cau-03.mp3 | Một bầy tang tình con nhện |
+| cau-04.mp3 | Ố mấy giăng tơ, ố mấy giăng tơ |
+| cau-05.mp3 | Một bầy tang tình con nhện ơi |
+| cau-06.mp3 | Nó ra ố mấy đường tơ |
+
+### Bài 20 – Cò lả (`audio/co-la/`): 6 tệp · giọng hát, Bắc Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Con cò cò bay lả lả bay la |
+| cau-02.mp3 | Bay qua cửa phủ, bay về Đồng Đăng |
+| cau-03.mp3 | Tình tính tang, tang tính tình |
+| cau-04.mp3 | Dặn rằng, ơ người ơi |
+| cau-05.mp3 | Người có nhớ ta chăng? |
+
+### Bài 21 – Cái ngủ mày ngủ cho lâu (`audio/ly-con-sao/`): 5 tệp · giọng hát, Bắc Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Cái ngủ mày ngủ cho lâu |
+| cau-02.mp3 | Mẹ mày đi cấy đồng sâu chưa về |
+| cau-03.mp3 | Bắt được con trắm con trê |
+| cau-04.mp3 | Cầm cổ lôi về cho cái ngủ ăn |
+
+### Bài 22 – Lý ngựa ô (`audio/ly-ngua-o/`): 11 tệp · giọng hát, Nam Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Khớp con ngựa ngựa ô |
+| cau-02.mp3 | Ngựa ô anh khớp |
+| cau-03.mp3 | Khớp cái kiệu vàng |
+| cau-04.mp3 | Anh tra khớp bạc |
+| cau-05.mp3 | Lục lạc đồng đen |
+| cau-06.mp3 | Búp sen lá dặm |
+| cau-07.mp3 | Dây cương nhuộm thắm |
+| cau-08.mp3 | Cán roi anh bịt vàng |
+| cau-09.mp3 | Anh đưa nàng |
+| cau-10.mp3 | Anh đưa nàng về dinh |
+
+### Bài 23 – Ru con (`audio/ru-con/`): 7 tệp · giọng hát, Bắc Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Con cò mà đi ăn đêm |
+| cau-02.mp3 | Đậu phải cành mềm lộn cổ xuống ao |
+| cau-03.mp3 | Ông ơi ông vớt tôi nao |
+| cau-04.mp3 | Tôi có lòng nào ông hãy xáo măng |
+| cau-05.mp3 | Có xáo thì xáo nước trong |
+| cau-06.mp3 | Đừng xáo nước đục đau lòng cò con |
+
+### Bài 24 – Ví dầu (`audio/vi-dau/`): 5 tệp · giọng hát, Nam Bộ
+
+| Tệp | Lời |
+|---|---|
+| ca-bai.mp3 | Cả bài |
+| cau-01.mp3 | Ví dầu cầu ván đóng đinh |
+| cau-02.mp3 | Cầu tre lắt lẻo gập ghềnh khó đi |
+| cau-03.mp3 | Khó đi mẹ dắt con đi |
+| cau-04.mp3 | Con thi trường học, mẹ thi trường đời |

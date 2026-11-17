@@ -1213,14 +1213,590 @@ window.HAT_CA = {
       }
     },
 
-    /* ================= PHẦN 3 – DÂN CA & HÁT RU (dự kiến; cần bản thu giọng hát) ================= */
-    { ma: "bac-kim-thang", so: 17, phan: "baihat", trangThai: "du-kien", ten: "Bắc kim thang", en: "The bamboo bridge", mien: "Nam Bộ", troChoi: "Vỗ tay theo nhịp" },
-    { ma: "ly-cay-bong", so: 18, phan: "baihat", trangThai: "du-kien", ten: "Lý cây bông", en: "The flower song", mien: "Nam Bộ", troChoi: "Kể tên các loài hoa" },
-    { ma: "trong-com", so: 19, phan: "baihat", trangThai: "du-kien", ten: "Trống cơm", en: "The rice drum", mien: "Bắc Bộ", troChoi: "Gõ trống" },
-    { ma: "co-la", so: 20, phan: "baihat", trangThai: "du-kien", ten: "Cò lả", en: "The flying stork", mien: "Bắc Bộ", troChoi: "Múa cánh cò" },
-    { ma: "ly-con-sao", so: 21, phan: "baihat", trangThai: "du-kien", ten: "Lý con sáo", en: "The starling", mien: "Nam Bộ", troChoi: "Chim sáo bay" },
-    { ma: "ly-ngua-o", so: 22, phan: "baihat", trangThai: "du-kien", ten: "Lý ngựa ô", en: "The black horse", mien: "Nam Bộ", troChoi: "Cưỡi ngựa gỗ" },
-    { ma: "ru-con", so: 23, phan: "baihat", trangThai: "du-kien", ten: "Ru con", en: "A northern lullaby", mien: "Bắc Bộ", troChoi: "Ru em búp bê" },
-    { ma: "vi-dau", so: 24, phan: "baihat", trangThai: "du-kien", ten: "Ví dầu", en: "A southern lullaby", mien: "Nam Bộ", troChoi: "Ru em búp bê" }
+    /* ================= PHẦN 3 – DÂN CA & HÁT RU (cần bản thu giọng hát) ================= */
+    {
+      ma: "bac-kim-thang", so: 17, phan: "baihat", trangThai: "san-sang",
+      ten: "Bắc kim thang",
+      en: "The bamboo bridge",
+      mien: "Nam Bộ",
+      nguon: "Đồng dao, dân ca Nam Bộ",
+      diBan: "Bản phổ biến; khi hát, mỗi nơi thêm tiếng đệm và lặp lời khác nhau. Câu đầu được giải thích theo nhiều cách.",
+      troChoi: "Vỗ tay đôi theo nhịp",
+      tempo: { cham: 84, vua: 108 },
+      amThanh: false,
+      loi: [
+        "Bắc kim thang cà lang bí rợ",
+        "Cột qua kèo là kèo qua cột",
+        "Chú bán dầu qua cầu mà té",
+        "Chú bán ếch ở lại làm chi",
+        "Con le le đánh trống thổi kèn",
+        "Con bìm bịp thổi tò tí te tò te"
+      ],
+      gioiThieu: {
+        vi: "Đây là bài đồng dao, dân ca Nam Bộ rất quen với trẻ em miền Nam. Câu đầu nói chuyện bắc giàn cho dây cà, dây bí leo (người ta giải thích mỗi người một khác). Sau đó bài kể chuyện vui: chú bán dầu đi qua cây cầu tre bị té, chú bán ếch đứng lại; con le le đánh trống, con bìm bịp thổi kèn “tò tí te”. Các bạn vừa hát vừa vỗ tay theo nhịp.",
+        en: "A well-known chant and folk song from southern Vietnam. The first line is about putting up a trellis for squash vines to climb (people explain it in different ways). Then comes a funny story: the oil seller slips crossing the bamboo bridge, the frog seller stays behind; the whistling duck beats a drum and the coucal blows a horn, “tò tí te”. Clap to the beat as you sing."
+      },
+      tuKho: [
+        { tu: "bắc", hinh: "🪜", nghia: "đặt, dựng (thang, cầu, giàn) để đi qua hay leo lên", en: "to set up (a ladder, bridge or trellis)" },
+        { tu: "bí rợ", hinh: "🎃", nghia: "quả bí đỏ (cách gọi ở miền Nam)", en: "pumpkin (southern word)" },
+        { tu: "cột, kèo", hinh: "🏠", nghia: "cây gỗ dựng nhà: cột đứng thẳng, kèo đỡ mái", en: "the posts and rafters of a house" },
+        { tu: "té", hinh: "🤕", nghia: "ngã (cách nói ở miền Nam)", en: "to fall (southern word)" },
+        { tu: "làm chi", hinh: "❓", nghia: "làm gì (cách nói ở miền Trung, miền Nam)", en: "what for? (regional)" },
+        { tu: "le le", hinh: "🦆", nghia: "loài chim giống vịt nhỏ, sống ở đầm, ao", en: "a whistling duck, like a small wild duck" },
+        { tu: "bìm bịp", hinh: "🐦", nghia: "loài chim lông nâu đen, hay kêu “bìm bịp” trong bụi rậm ven sông", en: "the coucal, a bird that calls “bìm bịp” in riverside bushes" },
+        { tu: "tò tí te", hinh: "🎺", nghia: "tiếng kèn thổi vui", en: "the sound of a horn" }
+      ],
+      cauHoi: [
+        { hoi: "Bài này là dân ca của miền nào?", en: "Which region is this song from?",
+          chon: [{ chu: "Nam Bộ", hinh: "🛶" }, { chu: "Bắc Bộ", hinh: "⛰️" }, { chu: "Trung Bộ", hinh: "🏯" }], dung: 0 },
+        { hoi: "Chú bán dầu bị làm sao?", en: "What happened to the oil seller?",
+          chon: [{ chu: "Qua cầu bị té", hinh: "🤕" }, { chu: "Bị lạc đường", hinh: "🧭" }, { chu: "Ngủ quên", hinh: "😴" }], dung: 0 },
+        { hoi: "Con le le làm gì?", en: "What does the whistling duck do?",
+          chon: [{ chu: "Đánh trống", hinh: "🥁" }, { chu: "Gảy đàn", hinh: "🎸" }, { chu: "Bơi lội", hinh: "🏊" }], dung: 0 },
+        { hoi: "Con bìm bịp làm gì?", en: "What does the coucal do?",
+          chon: [{ chu: "Thổi kèn tò tí te", hinh: "🎺" }, { chu: "Đánh trống", hinh: "🥁" }, { chu: "Bán ếch", hinh: "🐸" }], dung: 0 },
+        { hoi: "Ở miền Nam, “té” nghĩa là gì?", en: "In the South, what does “té” mean?",
+          chon: [{ chu: "Ngã", hinh: "🤕" }, { chu: "Chạy", hinh: "🏃" }, { chu: "Ăn", hinh: "🍚" }], dung: 0 }
+      ],
+      dienTu: [[0, "thang"], [1, "Cột"], [2, "cầu"], [2, "té"], [3, "ếch"], [4, "trống"], [5, "bịp"]],
+      nhieu: ["sáo", "đàn", "mưa", "cá", "ghe"],
+      vanCap: [["thang", "lang"], ["dầu", "cầu"], ["le", "te"], ["té", "bé"], ["kèn", "đèn"]],
+      cungChoi: {
+        ten: "Vỗ tay đôi theo nhịp",
+        nguoi: "2 bạn một đôi",
+        cho: "Ngồi hoặc đứng đối mặt, ở đâu cũng chơi được",
+        buoc: [
+          { hinh: "🤝", chu: "Hai bạn ngồi đối mặt." },
+          { hinh: "👏", chu: "Nhịp 1: tự vỗ hai tay vào nhau. Nhịp 2: vỗ tay phải vào tay phải của bạn. Nhịp 3: tự vỗ tay. Nhịp 4: vỗ tay trái vào tay trái của bạn." },
+          { hinh: "🎶", chu: "Vừa hát “Bắc kim thang” vừa vỗ lặp lại theo nhịp; đến “tò tí te tò te” thì cả hai làm động tác thổi kèn." },
+          { hinh: "🐇", chu: "Lần sau hát nhanh hơn; đôi nào giữ nhịp đều đến hết bài là giỏi." }
+        ],
+        en: "Sit face to face. Beat 1: clap your own hands. Beat 2: clap right hands with your partner. Beat 3: clap your own hands. Beat 4: clap left hands. Repeat while singing “Bắc kim thang”; on “tò tí te tò te”, both pretend to blow a horn. Next time go faster – keep the beat to the end!",
+        anToan: "Vỗ tay vừa phải, không vỗ mạnh vào tay bạn."
+      },
+      thuThach: [
+        "Hát hoặc đọc thuộc bài cho ông bà hoặc cha mẹ nghe",
+        "Chơi vỗ tay đôi với một người trong nhà đến hết bài",
+        "Hỏi ông bà, cha mẹ: Ở miền Nam, người ta gọi “ngã” là gì, gọi “bí đỏ” là gì?"
+      ],
+      goiY: {
+        nghe: "Câu dài 7–9 tiếng, nhịp nhanh, vui. Ban đầu chọn nhịp Chậm; khi có bản thu giọng hát của trường, cho bé nghe hát trước rồi mới vỗ tay theo.",
+        hieu: "Bài có nhiều từ miền Nam: té (ngã), bí rợ (bí đỏ), làm chi (làm gì). Đây là dịp giới thiệu tiếng nói các miền. Câu đầu người lớn cũng giải thích mỗi người một khác; không cần tìm nghĩa từng tiếng.",
+        nho: "Bài có cặp đối: chú bán dầu – chú bán ếch; con le le – con bìm bịp. Nhớ cặp là nhớ bài.",
+        choi: "Cặp thang – lang, dầu – cầu nằm ngay trong một câu. Hỏi bé tìm thêm tiếng vần với “cầu” (dầu, sâu, trâu…).",
+        cungChoi: "Vỗ tay đôi giúp bé giữ nhịp và phối hợp hai tay. Bé nhỏ thì chỉ vỗ tay đơn, mỗi tiếng một cái."
+      }
+    },
+
+    {
+      ma: "ly-cay-bong", so: 18, phan: "baihat", trangThai: "san-sang",
+      ten: "Ru em (hát ru xứ Huế)",
+      en: "A Huế lullaby",
+      mien: "Trung Bộ",
+      nguon: "Hát ru dân gian xứ Huế (Trung Bộ)",
+      diBan: "Bản phổ biến; có dị bản “Ru em em théc cho muồi”. Lời ru đủ còn kể thêm các chợ khác; góc học lấy 4 câu đầu.",
+      troChoi: "Ru em búp bê",
+      tempo: { cham: 60, vua: 76 },
+      amThanh: false,
+      loi: [
+        "Ru em em ngủ cho muồi",
+        "Để mẹ đi chợ mua vôi ăn trầu",
+        "Mua vôi chợ Quán chợ Cầu",
+        "Mua cau Nam Phổ mua trầu chợ Dinh"
+      ],
+      gioiThieu: {
+        vi: "Đây là lời ru của xứ Huế, miền Trung. Người chị (hay người bà) ru em bé ngủ thật say để mẹ đi chợ mua vôi, mua cau, mua trầu. Lời ru nhắc tên những chợ quen ở vùng Huế: chợ Quán, chợ Cầu, Nam Phổ, chợ Dinh. Ngày xưa, các bà, các mẹ hay ăn trầu: lá trầu quệt chút vôi, cuốn với miếng cau.",
+        en: "A lullaby from Huế, in central Vietnam. An older sister (or a grandmother) sings the baby to sleep so that mother can go to market to buy lime, areca nuts and betel leaves. The song names markets around Huế: chợ Quán, chợ Cầu, Nam Phổ, chợ Dinh. Long ago, grandmothers and mothers chewed betel: a betel leaf spread with a little lime, rolled around a piece of areca nut."
+      },
+      tuKho: [
+        { tu: "ru", hinh: "🎵", nghia: "hát nhẹ, chậm cho em bé ngủ", en: "to sing a baby to sleep" },
+        { tu: "ngủ cho muồi", hinh: "😴", nghia: "ngủ thật say, ngủ ngon", en: "to sleep soundly" },
+        { tu: "vôi", hinh: "🫙", nghia: "chất trắng, dẻo, quệt lên lá trầu khi ăn trầu", en: "slaked lime, spread on betel leaves" },
+        { tu: "trầu", hinh: "🍃", nghia: "lá cây trầu, cay và thơm; ngày xưa người lớn hay ăn", en: "betel leaf" },
+        { tu: "cau", hinh: "🌴", nghia: "quả của cây cau, ăn cùng lá trầu", en: "areca nut" },
+        { tu: "chợ", hinh: "🧺", nghia: "nơi nhiều người đến mua bán", en: "market" },
+        { tu: "Huế", hinh: "🏯", nghia: "thành phố ở miền Trung, ngày xưa là kinh đô", en: "a city in central Vietnam, the old royal capital" }
+      ],
+      cauHoi: [
+        { hoi: "Lời ru này của vùng nào?", en: "Where is this lullaby from?",
+          chon: [{ chu: "Xứ Huế, miền Trung", hinh: "🏯" }, { chu: "Hà Nội, miền Bắc", hinh: "⛰️" }, { chu: "Cần Thơ, miền Nam", hinh: "🛶" }], dung: 0 },
+        { hoi: "Mẹ đi chợ mua gì?", en: "What does mother buy?",
+          chon: [{ chu: "Vôi, cau, trầu", hinh: "🍃" }, { chu: "Bánh kẹo", hinh: "🍬" }, { chu: "Quần áo", hinh: "👕" }], dung: 0 },
+        { hoi: "Vì sao ru em ngủ?", en: "Why is the baby sung to sleep?",
+          chon: [{ chu: "Để mẹ đi chợ", hinh: "🧺" }, { chu: "Để em đi học", hinh: "🎒" }, { chu: "Để em ăn cơm", hinh: "🍚" }], dung: 0 },
+        { hoi: "Mẹ mua cau ở đâu?", en: "Where does mother buy areca nuts?",
+          chon: [{ chu: "Nam Phổ", hinh: "🌴" }, { chu: "Chợ Cầu", hinh: "🌉" }, { chu: "Chợ Dinh", hinh: "🏪" }], dung: 0 },
+        { hoi: "“Ngủ cho muồi” nghĩa là gì?", en: "What does “ngủ cho muồi” mean?",
+          chon: [{ chu: "Ngủ thật say", hinh: "😴" }, { chu: "Ngủ một chút", hinh: "⏱️" }, { chu: "Không ngủ", hinh: "👀" }], dung: 0 }
+      ],
+      dienTu: [[0, "muồi"], [1, "chợ"], [1, "vôi"], [2, "Cầu"], [3, "cau"], [3, "trầu"], [3, "Dinh"]],
+      nhieu: ["muối", "gạo", "cá", "chè", "Bến"],
+      vanCap: [["trầu", "cầu"], ["vôi", "tôi"], ["Dinh", "xinh"], ["mẹ", "nhẹ"], ["cau", "sau"]],
+      cungChoi: {
+        ten: "Ru em búp bê",
+        nguoi: "1 bạn trở lên",
+        cho: "Trong nhà, chỗ yên tĩnh",
+        buoc: [
+          { hinh: "🧸", chu: "Ôm một em búp bê hoặc gấu bông, hoặc đặt vào chiếc võng nhỏ (khăn buộc hai đầu)." },
+          { hinh: "🎵", chu: "Hát (hoặc đọc) thật chậm, thật nhẹ; đưa võng hoặc vỗ nhẹ lưng búp bê theo nhịp." },
+          { hinh: "🤫", chu: "Hát nhỏ dần ở câu cuối, như em bé đã ngủ." },
+          { hinh: "🧺", chu: "Hát xong, bạn nhỏ làm “mẹ đi chợ”: nói tên một thứ muốn mua bằng tiếng Việt." }
+        ],
+        en: "Hold a doll or teddy, or lay it in a little hammock (a cloth tied at both ends). Sing or say the words very slowly and softly, swinging the hammock or patting the doll's back to the beat. Get quieter on the last line, as if the baby has fallen asleep. Then play “mother goes to market”: name something you want to buy, in Vietnamese.",
+        anToan: "Võng búp bê buộc thấp, sát đất; bé không tự trèo vào võng."
+      },
+      thuThach: [
+        "Hát hoặc đọc lời ru cho ông bà hoặc cha mẹ nghe",
+        "Ru em búp bê ngủ bằng lời ru này",
+        "Hỏi ông bà, cha mẹ: Ngày nhỏ, ai hát ru mình? Hát bài gì?"
+      ],
+      goiY: {
+        nghe: "Hát ru phải chậm, nhẹ. Chọn nhịp Chậm; khi có bản thu giọng hát của trường, cho bé nghe giọng hát thật để cảm được làn điệu ru Huế.",
+        hieu: "Chỉ trên bản đồ Việt Nam: Huế ở miền Trung. Kể bé nghe tục ăn trầu ngày xưa và câu “Miếng trầu là đầu câu chuyện”.",
+        nho: "Bài 4 câu, thể lục bát. Nhớ thứ tự: ru em → mẹ đi chợ → mua vôi → mua cau, mua trầu.",
+        choi: "Tiếp sức đọc bài giúp bé nhớ tên các chợ theo thứ tự. Cặp vần trầu – Cầu nối câu 2 với câu 3.",
+        cungChoi: "Hoạt động yên tĩnh, hợp trước giờ ngủ. Người lớn hát ru bé, rồi bé hát ru búp bê."
+      }
+    },
+
+    {
+      ma: "trong-com", so: 19, phan: "baihat", trangThai: "san-sang",
+      ten: "Trống cơm",
+      en: "The rice drum",
+      mien: "Bắc Bộ",
+      nguon: "Dân ca đồng bằng Bắc Bộ",
+      diBan: "Lời chính, bản phổ biến; khi hát có nhiều tiếng đệm (tình bằng, tang tình, ố mấy…) và câu lặp, mỗi bản hát khác nhau. Bài đủ còn những lời khác.",
+      troChoi: "Gõ trống theo nhịp",
+      tempo: { cham: 66, vua: 84 },
+      amThanh: false,
+      loi: [
+        "Tình bằng có cái trống cơm",
+        "Khen ai khéo vỗ, ố mấy bông mà nên bông",
+        "Một bầy tang tình con nhện",
+        "Ố mấy giăng tơ, ố mấy giăng tơ",
+        "Một bầy tang tình con nhện ơi",
+        "Nó ra ố mấy đường tơ"
+      ],
+      gioiThieu: {
+        vi: "Trống cơm là một loại trống nhỏ, dài, hai mặt bịt da. Khi chơi, người ta lấy cơm nghiền dán lên mặt trống để tiếng trống êm và vang hơn, vì thế mới gọi là trống cơm. Bài dân ca khen người khéo vỗ trống, rồi hát vui về bầy nhện giăng tơ. Những tiếng “tình bằng”, “tang tình”, “ố mấy” là tiếng đệm cho câu hát thêm mượt, thêm vui.",
+        en: "The trống cơm (rice drum) is a small, long drum with two skin heads. Players press a little mashed rice onto the drumheads to make the sound softer and richer – hence its name. The folk song praises whoever plays the drum so skilfully, then sings about a group of spiders spinning their threads. Words like “tình bằng”, “tang tình”, “ố mấy” are filler sounds that make the singing smooth and lively."
+      },
+      tuKho: [
+        { tu: "trống cơm", hinh: "🥁", nghia: "trống nhỏ, dài, hai mặt; dán cơm nghiền lên mặt trống để chỉnh tiếng", en: "a small two-headed drum; mashed rice on the heads tunes its sound" },
+        { tu: "khéo", hinh: "👍", nghia: "giỏi, làm đẹp, làm tốt bằng tay", en: "skilful" },
+        { tu: "vỗ", hinh: "👏", nghia: "đập bàn tay vào", en: "to beat, to tap" },
+        { tu: "bầy", hinh: "👪", nghia: "đàn, nhiều con cùng loại ở với nhau", en: "a group of animals" },
+        { tu: "con nhện", hinh: "🕷️", nghia: "con vật nhỏ, tám chân, giăng tơ làm lưới", en: "spider" },
+        { tu: "giăng tơ", hinh: "🕸️", nghia: "kéo sợi tơ mỏng ra thành lưới", en: "to spin a web" },
+        { tu: "tình bằng, tang tình, ố mấy", hinh: "🎵", nghia: "tiếng đệm trong câu hát, không cần tìm nghĩa", en: "filler sounds in the song" }
+      ],
+      cauHoi: [
+        { hoi: "Bài dân ca này của miền nào?", en: "Which region is this folk song from?",
+          chon: [{ chu: "Bắc Bộ", hinh: "⛰️" }, { chu: "Nam Bộ", hinh: "🛶" }, { chu: "Trung Bộ", hinh: "🏯" }], dung: 0 },
+        { hoi: "Vì sao gọi là trống cơm?", en: "Why is it called a rice drum?",
+          chon: [{ chu: "Vì dán cơm lên mặt trống", hinh: "🍚" }, { chu: "Vì đánh trống lúc ăn cơm", hinh: "🍽️" }, { chu: "Vì trống dùng để đựng cơm", hinh: "🥣" }], dung: 0 },
+        { hoi: "Bài hát khen ai?", en: "Who is praised?",
+          chon: [{ chu: "Người khéo vỗ trống", hinh: "🥁" }, { chu: "Người nấu cơm", hinh: "🍚" }, { chu: "Người bán hàng", hinh: "🧺" }], dung: 0 },
+        { hoi: "Bầy nhện làm gì?", en: "What do the spiders do?",
+          chon: [{ chu: "Giăng tơ", hinh: "🕸️" }, { chu: "Đánh trống", hinh: "🥁" }, { chu: "Bay lượn", hinh: "🕊️" }], dung: 0 },
+        { hoi: "“Tang tình”, “ố mấy” là gì?", en: "What are “tang tình” and “ố mấy”?",
+          chon: [{ chu: "Tiếng đệm cho câu hát", hinh: "🎵" }, { chu: "Tên con vật", hinh: "🐾" }, { chu: "Tên món ăn", hinh: "🍲" }], dung: 0 }
+      ],
+      dienTu: [[0, "trống"], [0, "cơm"], [1, "vỗ"], [2, "nhện"], [3, "tơ"], [5, "đường"]],
+      nhieu: ["chiêng", "sáo", "cá", "lưới", "mèo"],
+      vanCap: [["cơm", "thơm"], ["trống", "cống"], ["tơ", "cờ"], ["vỗ", "gỗ"], ["khen", "đèn"]],
+      cungChoi: {
+        ten: "Gõ trống theo nhịp",
+        nguoi: "Cả nhà, cả lớp",
+        cho: "Trong nhà; dùng hộp giấy, nồi úp hoặc mặt bàn làm trống",
+        buoc: [
+          { hinh: "🥁", chu: "Mỗi bạn có một “trống”: hộp giấy, nồi úp hoặc mặt bàn." },
+          { hinh: "🎵", chu: "Theo nhịp mõ của bài: gõ nhẹ một cái ở mỗi tiếng, gõ mạnh “tùng” ở cuối câu." },
+          { hinh: "👥", chu: "Chia hai nhóm: nhóm 1 hát, nhóm 2 gõ trống; rồi đổi vai." },
+          { hinh: "🕷️", chu: "Đến câu về con nhện, các bạn làm động tác giăng tơ: hai tay kéo sợi tơ từ trên xuống." }
+        ],
+        en: "Everyone gets a “drum”: a cardboard box, an upside-down pot or the table. Follow the woodblock beat: tap softly on each syllable and strike a strong “tùng” at the end of each line. Split into two groups – one sings, one drums – then swap. On the spider lines, mime spinning silk by pulling threads down with both hands.",
+        anToan: "Gõ bằng tay hoặc đũa nhẹ, không gõ vào đồ thuỷ tinh."
+      },
+      thuThach: [
+        "Hát hoặc đọc lời bài cho ông bà hoặc cha mẹ nghe",
+        "Làm một chiếc trống từ hộp giấy và gõ theo nhịp bài",
+        "Tìm hiểu cùng cha mẹ: ngoài trống cơm, Việt Nam còn có những loại trống nào?"
+      ],
+      goiY: {
+        nghe: "Dân ca có nhiều tiếng đệm; cho bé nghe và đọc theo nhịp, chưa cần hát đúng làn điệu. Khi có bản thu giọng hát của trường, nghe nhiều lần trước khi hát theo.",
+        hieu: "Giải thích tiếng đệm: “tình bằng”, “tang tình”, “ố mấy” làm câu hát mềm mại, không cần dịch. Nếu có thể, cho bé xem tranh chiếc trống cơm.",
+        nho: "Học thuộc câu 1 và câu 3 trước (“Tình bằng có cái trống cơm”, “Một bầy tang tình con nhện”); các câu sau lặp lại nhiều.",
+        choi: "Hỏi bé tìm tiếng vần với “cơm” (thơm, rơm, đơm…).",
+        cungChoi: "Gõ trống theo nhịp giúp bé cảm được phách của câu hát. Đây là hoạt động âm nhạc theo bài, không phải trò chơi dân gian riêng."
+      }
+    },
+
+    {
+      ma: "co-la", so: 20, phan: "baihat", trangThai: "san-sang",
+      ten: "Cò lả",
+      en: "The flying stork",
+      mien: "Bắc Bộ",
+      nguon: "Dân ca đồng bằng Bắc Bộ",
+      diBan: "Lời chính dựa trên câu ca dao “Con cò bay lả bay la / Bay qua cửa phủ bay về Đồng Đăng”; khi hát có thêm tiếng đệm và câu lặp, mỗi bản hát khác nhau.",
+      troChoi: "Múa cánh cò",
+      tempo: { cham: 66, vua: 84 },
+      amThanh: false,
+      loi: [
+        "Con cò cò bay lả lả bay la",
+        "Bay qua cửa phủ, bay về Đồng Đăng",
+        "Tình tính tang, tang tính tình",
+        "Dặn rằng, ơ người ơi",
+        "Người có nhớ ta chăng?"
+      ],
+      gioiThieu: {
+        vi: "Cò lả là làn điệu dân ca đồng bằng Bắc Bộ. Bài hát vẽ cảnh con cò trắng bay lả lướt trên cánh đồng, bay qua cửa phủ, bay về Đồng Đăng (một thị trấn ở Lạng Sơn, phía bắc Việt Nam). Câu “Tình tính tang, tang tính tình” là tiếng đệm giả tiếng đàn, nghe rất vui tai. Con cò là hình ảnh quen thuộc của làng quê Việt: cò chăm chỉ lội ruộng kiếm ăn.",
+        en: "Cò lả is a folk tune from the northern Red River delta. The song pictures a white stork gliding over the fields, flying past the district gate and on to Đồng Đăng (a town in Lạng Sơn, in the far north). “Tình tính tang, tang tính tình” imitates the sound of a lute. The stork (or egret) is a beloved symbol of the Vietnamese countryside: it wades patiently through the rice fields looking for food."
+      },
+      tuKho: [
+        { tu: "con cò", hinh: "🕊️", nghia: "chim chân dài, cổ dài, lông trắng, hay lội ruộng bắt tôm cá", en: "a stork or egret: a long-legged white bird that wades in rice fields" },
+        { tu: "bay lả", hinh: "🪶", nghia: "bay chao nghiêng, nhẹ nhàng, mềm mại", en: "to glide gracefully" },
+        { tu: "cửa phủ", hinh: "🏯", nghia: "cổng của phủ, nơi làm việc của quan ngày xưa", en: "the gate of an old district office" },
+        { tu: "Đồng Đăng", hinh: "🗺️", nghia: "tên một thị trấn ở tỉnh Lạng Sơn, phía bắc Việt Nam", en: "a town in Lạng Sơn province, northern Vietnam" },
+        { tu: "tình tính tang", hinh: "🪕", nghia: "tiếng đệm bắt chước tiếng đàn", en: "filler sounds imitating a lute" },
+        { tu: "dặn", hinh: "🗣️", nghia: "nói cho người khác nhớ", en: "to remind, to tell someone to remember" },
+        { tu: "nhớ", hinh: "💭", nghia: "còn nghĩ tới, không quên", en: "to remember, to miss" }
+      ],
+      cauHoi: [
+        { hoi: "Con cò bay thế nào?", en: "How does the stork fly?",
+          chon: [{ chu: "Bay lả, nhẹ nhàng", hinh: "🕊️" }, { chu: "Bay thật nhanh", hinh: "🚀" }, { chu: "Không bay", hinh: "🚫" }], dung: 0 },
+        { hoi: "Cò bay về đâu?", en: "Where does the stork fly to?",
+          chon: [{ chu: "Đồng Đăng", hinh: "🗺️" }, { chu: "Ra biển", hinh: "🌊" }, { chu: "Vào thành phố", hinh: "🏙️" }], dung: 0 },
+        { hoi: "“Tình tính tang” bắt chước tiếng gì?", en: "What does “tình tính tang” imitate?",
+          chon: [{ chu: "Tiếng đàn", hinh: "🪕" }, { chu: "Tiếng mưa", hinh: "🌧️" }, { chu: "Tiếng chim", hinh: "🐦" }], dung: 0 },
+        { hoi: "Cò hay kiếm ăn ở đâu?", en: "Where do storks look for food?",
+          chon: [{ chu: "Ngoài ruộng", hinh: "🌾" }, { chu: "Trên mái nhà", hinh: "🏠" }, { chu: "Trong rừng sâu", hinh: "🌲" }], dung: 0 },
+        { hoi: "Bài dân ca này của miền nào?", en: "Which region is this song from?",
+          chon: [{ chu: "Bắc Bộ", hinh: "⛰️" }, { chu: "Nam Bộ", hinh: "🛶" }, { chu: "Trung Bộ", hinh: "🏯" }], dung: 0 }
+      ],
+      dienTu: [[0, "cò"], [0, "la"], [1, "phủ"], [1, "Đăng"], [2, "tang"], [3, "rằng"], [4, "nhớ"]],
+      nhieu: ["vịt", "sông", "trăng", "đàn", "quên"],
+      vanCap: [["la", "ta"], ["Đăng", "chăng"], ["tang", "sang"], ["cò", "to"], ["bay", "tay"]],
+      cungChoi: {
+        ten: "Múa cánh cò",
+        nguoi: "1 bạn trở lên, cả lớp càng vui",
+        cho: "Chỗ rộng trong nhà hoặc ngoài sân",
+        buoc: [
+          { hinh: "🕊️", chu: "Dang hai tay làm cánh cò, nhón chân, đi nhẹ nhàng." },
+          { hinh: "🎵", chu: "Theo nhịp bài, hai tay chao lên chao xuống như cò bay lả." },
+          { hinh: "🌾", chu: "Đến câu “Tình tính tang”, dừng lại, co một chân, đứng như cò đứng ruộng." },
+          { hinh: "🔁", chu: "Hát lại, đổi chân đứng. Bạn nào đứng một chân lâu nhất làm “cò đầu đàn” dẫn lượt sau." }
+        ],
+        en: "Spread your arms like a stork's wings, go up on tiptoe and walk softly. Follow the beat, gliding your arms up and down. At “Tình tính tang”, stop and stand on one leg like a stork in the rice field. Sing again and switch legs. Whoever balances longest leads the flock next time.",
+        anToan: "Đứng một chân cạnh tường hoặc bàn để vịn khi cần; sàn không trơn."
+      },
+      thuThach: [
+        "Hát hoặc đọc lời bài cho ông bà hoặc cha mẹ nghe",
+        "Múa cánh cò cùng anh chị em hoặc bạn bè",
+        "Tìm Lạng Sơn (Đồng Đăng) trên bản đồ Việt Nam cùng cha mẹ"
+      ],
+      goiY: {
+        nghe: "Câu dài ngắn không đều, có tiếng đệm. Cho bé nghe nhiều lần, đọc theo nhịp Chậm; khi có bản thu giọng hát của trường thì hát theo.",
+        hieu: "Kể về con cò trong ca dao Việt Nam: cò là hình ảnh người nông dân chăm chỉ, hiền lành. Chỉ Đồng Đăng (Lạng Sơn) trên bản đồ.",
+        nho: "Câu 1 có nhiều tiếng lặp (cò cò, lả lả); câu 3 là tiếng đàn. Nhớ hai câu này là thuộc nửa bài.",
+        choi: "Tìm tiếng vần với “la” (ta, xa, nhà…) và với “chăng” (Đăng, trăng, răng…).",
+        cungChoi: "Múa cánh cò là hoạt động vận động nhẹ theo bài, hợp tiết âm nhạc hoặc sinh hoạt lớp."
+      }
+    },
+
+    {
+      ma: "ly-con-sao", so: 21, phan: "baihat", trangThai: "san-sang",
+      ten: "Cái ngủ mày ngủ cho lâu",
+      en: "Sleep, stay a long while",
+      mien: "Bắc Bộ",
+      nguon: "Hát ru dân gian Bắc Bộ",
+      diBan: "Bản phổ biến; có dị bản “Bắt được con giếc con trê”, “Túm cổ lôi về…”. Khi ru, người ta thêm tiếng “à ơi” ở đầu và cuối câu.",
+      troChoi: "Ru em búp bê",
+      tempo: { cham: 60, vua: 76 },
+      amThanh: false,
+      loi: [
+        "Cái ngủ mày ngủ cho lâu",
+        "Mẹ mày đi cấy đồng sâu chưa về",
+        "Bắt được con trắm con trê",
+        "Cầm cổ lôi về cho cái ngủ ăn"
+      ],
+      gioiThieu: {
+        vi: "Đây là lời ru của miền Bắc. Người ru gọi giấc ngủ là “cái ngủ”, như gọi một bạn nhỏ, và dặn cái ngủ ở lại thật lâu với em bé. Mẹ em bé đang đi cấy lúa ở cánh đồng sâu, chưa về. Mẹ bắt được con cá trắm, con cá trê, sẽ mang về cho “cái ngủ” ăn. Lời ru cho thấy công việc vất vả của người mẹ làm ruộng và tình thương mẹ dành cho con.",
+        en: "A lullaby from northern Vietnam. The singer calls sleep “cái ngủ”, as if it were a little friend, and asks it to stay a long time with the baby. The baby's mother is planting rice in a deep, muddy field and hasn't come home yet. She has caught a grass carp and a catfish, and will bring them home to feed “sleep”. The song shows a farming mother's hard work and her love for her child."
+      },
+      tuKho: [
+        { tu: "cái ngủ", hinh: "😴", nghia: "giấc ngủ, được gọi như một bạn nhỏ", en: "sleep, called like a little friend" },
+        { tu: "mày", hinh: "👉", nghia: "tiếng gọi thân mật với người nhỏ hoặc với vật; ở đây người ru nói với “cái ngủ”", en: "an informal “you”; here the singer is talking to “sleep”" },
+        { tu: "đi cấy", hinh: "🌾", nghia: "cắm cây mạ xuống ruộng nước để thành cây lúa", en: "to plant rice seedlings in a flooded field" },
+        { tu: "đồng sâu", hinh: "🏞️", nghia: "cánh đồng xa, nước ngập sâu", en: "a far-off, deep-water field" },
+        { tu: "cá trắm", hinh: "🐟", nghia: "loài cá nước ngọt to, thân dài", en: "grass carp, a big freshwater fish" },
+        { tu: "cá trê", hinh: "🐟", nghia: "loài cá da trơn, có râu, sống ở ao ruộng", en: "catfish" },
+        { tu: "lôi", hinh: "↩️", nghia: "kéo đi theo mình", en: "to drag, to pull along" }
+      ],
+      cauHoi: [
+        { hoi: "“Cái ngủ” là gì?", en: "What is “cái ngủ”?",
+          chon: [{ chu: "Giấc ngủ", hinh: "😴" }, { chu: "Cái giường", hinh: "🛏️" }, { chu: "Cái chăn", hinh: "🧣" }], dung: 0 },
+        { hoi: "Mẹ đi đâu?", en: "Where is mother?",
+          chon: [{ chu: "Đi cấy lúa", hinh: "🌾" }, { chu: "Đi chợ", hinh: "🧺" }, { chu: "Đi học", hinh: "🎒" }], dung: 0 },
+        { hoi: "Mẹ bắt được con gì?", en: "What did mother catch?",
+          chon: [{ chu: "Cá trắm, cá trê", hinh: "🐟" }, { chu: "Con gà", hinh: "🐔" }, { chu: "Con thỏ", hinh: "🐰" }], dung: 0 },
+        { hoi: "Đây là lời ru của miền nào?", en: "Where is this lullaby from?",
+          chon: [{ chu: "Bắc Bộ", hinh: "⛰️" }, { chu: "Nam Bộ", hinh: "🛶" }, { chu: "Trung Bộ", hinh: "🏯" }], dung: 0 },
+        { hoi: "Mẹ đã về chưa?", en: "Has mother come home yet?",
+          chon: [{ chu: "Chưa về", hinh: "🕰️" }, { chu: "Đã về rồi", hinh: "🏠" }, { chu: "Không đi đâu", hinh: "🚫" }], dung: 0 }
+      ],
+      dienTu: [[0, "ngủ"], [0, "lâu"], [1, "cấy"], [1, "sâu"], [2, "trắm"], [2, "trê"], [3, "ăn"]],
+      nhieu: ["chợ", "gà", "nhanh", "trường", "cơm"],
+      vanCap: [["lâu", "sâu"], ["trê", "về"], ["mẹ", "nhẹ"], ["cấy", "lấy"], ["ăn", "chăn"]],
+      cungChoi: {
+        ten: "Ru em búp bê (võng khăn)",
+        nguoi: "2 bạn trở lên",
+        cho: "Chỗ yên tĩnh trong nhà",
+        buoc: [
+          { hinh: "🧸", chu: "Đặt búp bê hoặc gấu bông vào một chiếc khăn, hai bạn cầm hai đầu khăn làm võng." },
+          { hinh: "🎵", chu: "Bắt đầu bằng “À ơi…”, rồi hát (hoặc đọc) thật chậm từng câu; mỗi câu đưa võng hai lần." },
+          { hinh: "🤫", chu: "Hát nhỏ dần ở câu cuối; khi “em bé” đã ngủ, cả nhà đặt ngón tay lên môi: “Suỵt!”" },
+          { hinh: "🌾", chu: "Đổi vai: bạn vừa ru làm “mẹ đi cấy”, bước chậm từng bước như đang cấy lúa dưới ruộng." }
+        ],
+        en: "Lay a doll or teddy in a cloth held at both ends by two children as a hammock. Begin with “À ơi…”, then sing or say each line very slowly, swinging the hammock twice per line. Get quieter on the last line; when the “baby” is asleep, everyone puts a finger to their lips: “Suỵt!” Swap roles: the singer becomes the mother planting rice, stepping slowly as if in a paddy.",
+        anToan: "Hai bạn cầm võng khăn đưa nhẹ, sát mặt đất; không cho em bé thật nằm vào võng khăn."
+      },
+      thuThach: [
+        "Hát hoặc đọc lời ru cho ông bà hoặc cha mẹ nghe",
+        "Ru búp bê ngủ, bắt đầu bằng “À ơi…”",
+        "Hỏi ông bà, cha mẹ: Cấy lúa là làm thế nào? Ông bà đã đi cấy bao giờ chưa?"
+      ],
+      goiY: {
+        nghe: "Lời ru chậm, êm. Chọn nhịp Chậm. Có thể thêm “À ơi” ở đầu như cách ru thật. Khi có bản thu giọng hát của trường, cho bé nghe làn điệu ru Bắc Bộ.",
+        hieu: "Nói với bé: “mày” ở đây là người ru nói với “cái ngủ”; với người lớn, các bạn nói lễ phép, không gọi “mày”. Kể về việc cấy lúa và các loài cá ở ruộng.",
+        nho: "Bài 4 câu lục bát; nhớ chuỗi: ngủ → mẹ đi cấy → bắt cá → mang về.",
+        choi: "Cặp vần lâu – sâu, trê – về nối các câu; chỉ cho bé thấy vần nối hai câu.",
+        cungChoi: "Hoạt động hợp trước giờ ngủ; người lớn ru bé bằng chính lời ru này."
+      }
+    },
+
+    {
+      ma: "ly-ngua-o", so: 22, phan: "baihat", trangThai: "san-sang",
+      ten: "Lý ngựa ô",
+      en: "The black horse",
+      mien: "Nam Bộ",
+      nguon: "Dân ca Nam Bộ",
+      diBan: "Lời chính, bản phổ biến; có dị bản ở nhiều chữ và tiếng đệm khác nhau. Miền Trung cũng có điệu Lý ngựa ô riêng.",
+      troChoi: "Cưỡi ngựa que",
+      tempo: { cham: 84, vua: 108 },
+      amThanh: false,
+      loi: [
+        "Khớp con ngựa ngựa ô",
+        "Ngựa ô anh khớp",
+        "Khớp cái kiệu vàng",
+        "Anh tra khớp bạc",
+        "Lục lạc đồng đen",
+        "Búp sen lá dặm",
+        "Dây cương nhuộm thắm",
+        "Cán roi anh bịt vàng",
+        "Anh đưa nàng",
+        "Anh đưa nàng về dinh"
+      ],
+      gioiThieu: {
+        vi: "Lý ngựa ô là điệu lý Nam Bộ vui, nhịp nhanh như tiếng vó ngựa. Chàng trai thắng con ngựa ô (ngựa lông đen) vào chiếc kiệu vàng và trang trí thật đẹp: khớp bạc, lục lạc đồng, dây cương nhuộm đỏ, cán roi bịt vàng, để đưa cô dâu về nhà. Bài cho các bạn thấy đám cưới ngày xưa ở làng quê: chú rể đi đón cô dâu bằng ngựa và kiệu.",
+        en: "Lý ngựa ô is a lively southern folk tune with a quick beat like galloping hooves. A young man harnesses his black horse to a golden carriage and decorates everything beautifully – a silver bit, copper bells, red-dyed reins, a whip with a gold-capped handle – to bring his bride home. It shows a village wedding of long ago, when the groom fetched the bride by horse and carriage."
+      },
+      tuKho: [
+        { tu: "ngựa ô", hinh: "🐎", nghia: "ngựa có lông màu đen", en: "a black horse" },
+        { tu: "khớp", hinh: "🐴", nghia: "đeo dây và đồ thắng vào đầu, miệng con ngựa để điều khiển", en: "to put the bridle and bit on a horse" },
+        { tu: "kiệu", hinh: "🎠", nghia: "ghế có mui, có đòn khiêng hoặc ngựa kéo, ngày xưa để chở người", en: "a palanquin or carriage" },
+        { tu: "lục lạc", hinh: "🔔", nghia: "cái chuông nhỏ đeo ở cổ ngựa, kêu leng keng", en: "small bells on a horse's collar" },
+        { tu: "dây cương", hinh: "🪢", nghia: "dây buộc vào miệng ngựa để người cưỡi điều khiển", en: "reins" },
+        { tu: "nhuộm thắm", hinh: "🟥", nghia: "nhuộm màu đỏ đậm", en: "dyed deep red" },
+        { tu: "nàng", hinh: "👰", nghia: "cô gái; ở đây là cô dâu", en: "a young woman; here, the bride" },
+        { tu: "về dinh", hinh: "🏡", nghia: "về nhà (nói vui, như về nhà quan)", en: "to go home (playfully, as if to a mansion)" }
+      ],
+      cauHoi: [
+        { hoi: "Ngựa ô là ngựa màu gì?", en: "What colour is a ngựa ô?",
+          chon: [{ chu: "Màu đen", hinh: "🐎" }, { chu: "Màu trắng", hinh: "⬜" }, { chu: "Màu nâu", hinh: "🟫" }], dung: 0 },
+        { hoi: "Lục lạc làm bằng gì?", en: "What are the bells made of?",
+          chon: [{ chu: "Đồng đen", hinh: "🔔" }, { chu: "Gỗ", hinh: "🪵" }, { chu: "Giấy", hinh: "📄" }], dung: 0 },
+        { hoi: "Anh đưa ai về dinh?", en: "Whom does he take home?",
+          chon: [{ chu: "Nàng (cô dâu)", hinh: "👰" }, { chu: "Ông bà", hinh: "👴" }, { chu: "Con ngựa", hinh: "🐎" }], dung: 0 },
+        { hoi: "Bài dân ca này của miền nào?", en: "Which region is this song from?",
+          chon: [{ chu: "Nam Bộ", hinh: "🛶" }, { chu: "Bắc Bộ", hinh: "⛰️" }, { chu: "Tây Bắc", hinh: "🏔️" }], dung: 0 },
+        { hoi: "Bài hát kể về dịp gì?", en: "What occasion is the song about?",
+          chon: [{ chu: "Đám cưới", hinh: "💒" }, { chu: "Sinh nhật", hinh: "🎂" }, { chu: "Tết Trung thu", hinh: "🏮" }], dung: 0 }
+      ],
+      dienTu: [[0, "ô"], [2, "vàng"], [3, "bạc"], [4, "đen"], [6, "thắm"], [8, "nàng"], [9, "dinh"]],
+      nhieu: ["trâu", "xanh", "nhà", "gỗ", "đỏ"],
+      vanCap: [["vàng", "nàng"], ["bạc", "lạc"], ["đen", "sen"], ["ô", "cô"], ["khớp", "lớp"]],
+      cungChoi: {
+        ten: "Cưỡi ngựa que",
+        nguoi: "1 bạn trở lên",
+        cho: "Sân hoặc phòng rộng",
+        buoc: [
+          { hinh: "🎋", chu: "Mỗi bạn lấy một cây gậy dài, nhẹ (ống giấy cuộn, cán chổi, tàu lá chuối) làm ngựa, kẹp giữa hai chân." },
+          { hinh: "🐎", chu: "Hát (hoặc đọc) và phi “ngựa” theo nhịp: mỗi tiếng một bước nhún như ngựa phi." },
+          { hinh: "🔔", chu: "Đến câu “Lục lạc đồng đen”, lắc tay như lắc chuông: leng keng!" },
+          { hinh: "🏡", chu: "Đến câu cuối “Anh đưa nàng về dinh”, cả đàn ngựa phi về “nhà” (một góc sân đã chọn)." }
+        ],
+        en: "Each child takes a long, light stick (a rolled-up paper tube, a broom handle or a banana leaf stem) as a horse and holds it between their legs. Sing or chant and gallop to the beat, one bounce per syllable. At “Lục lạc đồng đen”, shake your hand like ringing bells: jingle! On the last line, all the horses gallop “home” to a chosen corner.",
+        anToan: "Dùng gậy nhẹ, đầu tròn (ống giấy cuộn là tốt nhất); phi ngựa cách xa nhau, không vung gậy."
+      },
+      thuThach: [
+        "Hát hoặc đọc lời bài cho ông bà hoặc cha mẹ nghe",
+        "Làm một con ngựa que và phi theo nhịp bài",
+        "Hỏi ông bà, cha mẹ: Đám cưới ngày xưa và bây giờ khác nhau thế nào?"
+      ],
+      goiY: {
+        nghe: "Câu ngắn, nhịp nhanh như vó ngựa. Chọn nhịp Vừa khi bé đã quen. Khi có bản thu giọng hát của trường, cho bé nghe làn điệu lý Nam Bộ.",
+        hieu: "Nhiều từ chỉ đồ của ngựa (khớp, dây cương, lục lạc, roi): dùng tranh để giải thích. Kể bé nghe về đám cưới ngày xưa: rước dâu bằng kiệu, bằng ngựa.",
+        nho: "Bài là một chuỗi đồ trang trí: khớp bạc, lục lạc, búp sen, dây cương, cán roi. Nhớ theo thứ tự từ đầu ngựa ra sau.",
+        choi: "Cặp vần vàng – nàng, bạc – lạc, đen – sen giúp bé nhớ các câu liền nhau.",
+        cungChoi: "Cưỡi ngựa que là trò chơi dân gian vui; người lớn đếm nhịp và nhắc các bạn giữ khoảng cách."
+      }
+    },
+
+    {
+      ma: "ru-con", so: 23, phan: "baihat", trangThai: "san-sang",
+      ten: "Ru con",
+      en: "A northern lullaby",
+      mien: "Bắc Bộ",
+      nguon: "Hát ru dân gian Bắc Bộ, lời ca dao “Con cò mà đi ăn đêm”",
+      diBan: "Bản phổ biến; khi ru có thêm “à ơi”, “ạ ời”. Có dị bản “Ông ơi ông vớt tôi vào”.",
+      troChoi: "Ru em búp bê",
+      tempo: { cham: 60, vua: 76 },
+      amThanh: false,
+      loi: [
+        "Con cò mà đi ăn đêm",
+        "Đậu phải cành mềm lộn cổ xuống ao",
+        "Ông ơi ông vớt tôi nao",
+        "Tôi có lòng nào ông hãy xáo măng",
+        "Có xáo thì xáo nước trong",
+        "Đừng xáo nước đục đau lòng cò con"
+      ],
+      gioiThieu: {
+        vi: "Lời ru miền Bắc kể chuyện con cò đi kiếm ăn ban đêm, đậu phải cành cây mềm nên ngã lộn xuống ao. Cò kêu ông lão vớt mình lên và nói: tôi chẳng làm gì sai, ông đừng làm hại tôi; nếu ông nhất định nấu thì nấu nước trong, đừng nấu nước đục kẻo cò con đau lòng. Ngày xưa, bà và mẹ ru em bé bằng lời này; con cò là hình ảnh người mẹ vất vả kiếm ăn, lúc nào cũng lo cho con.",
+        en: "A northern lullaby: a stork goes looking for food at night, lands on a weak branch and tumbles into a pond. It begs an old man to pull it out: “I have done nothing wrong, please don't harm me; if you must cook me, use clear water, not muddy water, or my chicks will be heartbroken.” Grandmothers and mothers sang this to put babies to sleep; the stork stands for a hard-working mother who always worries about her children."
+      },
+      tuKho: [
+        { tu: "ăn đêm", hinh: "🌙", nghia: "đi kiếm ăn vào ban đêm", en: "to look for food at night" },
+        { tu: "cành mềm", hinh: "🌿", nghia: "cành cây nhỏ, yếu, dễ gãy", en: "a thin, weak branch" },
+        { tu: "lộn cổ", hinh: "🙃", nghia: "ngã chúc đầu xuống", en: "to fall head first" },
+        { tu: "vớt", hinh: "🪣", nghia: "lấy vật dưới nước lên", en: "to fish something out of the water" },
+        { tu: "nao", hinh: "❓", nghia: "nào (tiếng cũ, dùng khi nhờ vả, kêu gọi)", en: "please, come on (old word)" },
+        { tu: "xáo măng", hinh: "🎍", nghia: "nấu (cò) với măng tre", en: "to cook (the stork) with bamboo shoots" },
+        { tu: "nước đục", hinh: "🟤", nghia: "nước có bùn, không trong", en: "muddy water" },
+        { tu: "đau lòng", hinh: "💔", nghia: "buồn lắm", en: "heartbroken" }
+      ],
+      cauHoi: [
+        { hoi: "Con cò đi ăn lúc nào?", en: "When does the stork go looking for food?",
+          chon: [{ chu: "Ban đêm", hinh: "🌙" }, { chu: "Buổi sáng", hinh: "🌅" }, { chu: "Buổi trưa", hinh: "☀️" }], dung: 0 },
+        { hoi: "Vì sao cò ngã xuống ao?", en: "Why does the stork fall into the pond?",
+          chon: [{ chu: "Đậu phải cành mềm", hinh: "🌿" }, { chu: "Bị mưa to", hinh: "🌧️" }, { chu: "Bị mèo đuổi", hinh: "🐱" }], dung: 0 },
+        { hoi: "Cò nhờ ai vớt lên?", en: "Whom does the stork ask for help?",
+          chon: [{ chu: "Ông lão", hinh: "👴" }, { chu: "Con cá", hinh: "🐟" }, { chu: "Bạn chim", hinh: "🐦" }], dung: 0 },
+        { hoi: "Cò lo cho ai?", en: "Whom does the stork worry about?",
+          chon: [{ chu: "Cò con", hinh: "🐣" }, { chu: "Ông lão", hinh: "👴" }, { chu: "Con cá", hinh: "🐟" }], dung: 0 },
+        { hoi: "Ngày xưa ai hay hát lời ru này?", en: "Who used to sing this lullaby?",
+          chon: [{ chu: "Bà và mẹ", hinh: "👵" }, { chu: "Thầy giáo", hinh: "🧑‍🏫" }, { chu: "Người bán hàng", hinh: "🧺" }], dung: 0 }
+      ],
+      dienTu: [[0, "đêm"], [1, "mềm"], [1, "ao"], [2, "vớt"], [3, "măng"], [4, "trong"], [5, "con"]],
+      nhieu: ["ngày", "sông", "cứng", "cá", "ngọt"],
+      vanCap: [["đêm", "mềm"], ["ao", "nao"], ["trong", "lòng"], ["măng", "trăng"], ["cò", "to"], ["ông", "sông"]],
+      cungChoi: {
+        ten: "Ru em búp bê (à ơi)",
+        nguoi: "1 bạn trở lên",
+        cho: "Chỗ yên tĩnh trong nhà",
+        buoc: [
+          { hinh: "🧸", chu: "Bế búp bê trong tay, ngồi trên ghế hoặc võng." },
+          { hinh: "🎵", chu: "Mở đầu bằng “À ơi…”, hát chậm từng câu, cuối câu kéo dài “ơ…”." },
+          { hinh: "🤲", chu: "Vừa hát vừa đung đưa người nhẹ nhàng sang hai bên." },
+          { hinh: "🤫", chu: "Hát xong, đặt búp bê nằm xuống, đắp chăn, nói nhỏ: “Ngủ ngoan nhé!”" }
+        ],
+        en: "Hold the doll in your arms, sitting on a chair or in a hammock. Begin with “À ơi…”, then sing each line slowly, stretching out the end of each line. Sway gently from side to side. When you finish, lay the doll down, tuck it in and whisper “Ngủ ngoan nhé!” (sleep well).",
+        anToan: "Ngồi vững khi đung đưa; võng thật thì cần người lớn trông."
+      },
+      thuThach: [
+        "Hát hoặc đọc lời ru cho ông bà hoặc cha mẹ nghe",
+        "Nhờ ông bà hoặc cha mẹ hát ru mình bằng lời “Con cò mà đi ăn đêm”",
+        "Nói được câu “Ngủ ngoan nhé!” khi ru búp bê"
+      ],
+      goiY: {
+        nghe: "Lời ru thể lục bát, rất chậm. Khi có bản thu giọng hát của trường, nghe giọng ru thật; giọng đọc và tiếng mõ chỉ để tập nhịp chữ.",
+        hieu: "Lời ru có chuyện buồn; với bé nhỏ, nhấn vào ý con cò thương con và mong ông lão tốt bụng. Giải thích “nao” là tiếng cũ, nghĩa như “nào”.",
+        nho: "Vần lục bát nối câu: đêm – mềm, ao – nao, trong – lòng. Nhớ vần là nhớ câu sau.",
+        choi: "Hỏi bé tìm tiếng vần với “đêm” (mềm, thêm, êm…).",
+        cungChoi: "Gợi ý cha mẹ hát chính lời ru này cho bé trước giờ ngủ vài tối liền."
+      }
+    },
+
+    {
+      ma: "vi-dau", so: 24, phan: "baihat", trangThai: "san-sang",
+      ten: "Ví dầu",
+      en: "A southern lullaby",
+      mien: "Nam Bộ",
+      nguon: "Hát ru dân gian Nam Bộ",
+      diBan: "Bản phổ biến; có dị bản “Cầu tre lắc lẻo gập ghềnh khó đi”. Khi ru, người ta mở đầu bằng “Ầu ơ…”.",
+      troChoi: "Mẹ dắt con qua cầu",
+      tempo: { cham: 60, vua: 76 },
+      amThanh: false,
+      loi: [
+        "Ví dầu cầu ván đóng đinh",
+        "Cầu tre lắt lẻo gập ghềnh khó đi",
+        "Khó đi mẹ dắt con đi",
+        "Con thi trường học, mẹ thi trường đời"
+      ],
+      gioiThieu: {
+        vi: "Đây là lời ru quen thuộc nhất của miền Nam, thường mở đầu bằng tiếng “Ầu ơ…”. Lời ru nói về cây cầu ván đóng đinh, cây cầu tre lắt lẻo, gập ghềnh, rất khó đi. Ở miền Tây Nam Bộ có nhiều kênh rạch, nhiều cầu tre nhỏ. Cầu khó đi thì mẹ dắt con đi; con đi học, đi thi ở trường, còn mẹ thì “thi” với cuộc sống vất vả mỗi ngày để nuôi con.",
+        en: "The best-known southern lullaby, usually beginning with “Ầu ơ…”. It sings of a plank bridge nailed together and a shaky, bumpy bamboo bridge that is hard to cross. The Mekong Delta has many canals and little bamboo bridges. When the bridge is hard to cross, mother holds her child's hand; the child takes tests at school, while mother faces the “tests” of a hard life every day to raise her child."
+      },
+      tuKho: [
+        { tu: "ví dầu", hinh: "🤔", nghia: "giả như, nếu như (tiếng mở đầu lời ru miền Nam)", en: "suppose, if (an opening phrase in southern lullabies)" },
+        { tu: "cầu ván", hinh: "🌉", nghia: "cây cầu làm bằng tấm gỗ", en: "a bridge made of wooden planks" },
+        { tu: "đóng đinh", hinh: "🔨", nghia: "dùng búa đóng đinh để giữ chặt", en: "to nail together" },
+        { tu: "cầu tre", hinh: "🎋", nghia: "cây cầu làm bằng cây tre", en: "a bamboo bridge" },
+        { tu: "lắt lẻo", hinh: "〰️", nghia: "cao, mảnh và chông chênh, dễ rung lắc", en: "high, thin and shaky" },
+        { tu: "gập ghềnh", hinh: "⛰️", nghia: "lồi lõm, không bằng phẳng", en: "bumpy, uneven" },
+        { tu: "dắt", hinh: "🤝", nghia: "nắm tay dẫn đi", en: "to lead by the hand" },
+        { tu: "trường đời", hinh: "🌏", nghia: "cuộc sống, nơi người lớn học hỏi và vượt qua khó khăn", en: "the “school of life”" }
+      ],
+      cauHoi: [
+        { hoi: "Cầu tre thế nào?", en: "What is the bamboo bridge like?",
+          chon: [{ chu: "Lắt lẻo, gập ghềnh", hinh: "🎋" }, { chu: "Rộng và phẳng", hinh: "🛣️" }, { chu: "Làm bằng đá", hinh: "🪨" }], dung: 0 },
+        { hoi: "Ai dắt con đi qua cầu?", en: "Who leads the child across?",
+          chon: [{ chu: "Mẹ", hinh: "👩" }, { chu: "Bạn", hinh: "🧒" }, { chu: "Con mèo", hinh: "🐱" }], dung: 0 },
+        { hoi: "Con thi ở đâu?", en: "Where does the child take tests?",
+          chon: [{ chu: "Trường học", hinh: "🏫" }, { chu: "Trường đời", hinh: "🌏" }, { chu: "Ngoài chợ", hinh: "🧺" }], dung: 0 },
+        { hoi: "Lời ru này thường mở đầu bằng tiếng gì?", en: "How does this lullaby usually begin?",
+          chon: [{ chu: "Ầu ơ", hinh: "🎵" }, { chu: "Xin chào", hinh: "👋" }, { chu: "Một, hai, ba", hinh: "🔢" }], dung: 0 },
+        { hoi: "Vì sao miền Tây Nam Bộ có nhiều cầu nhỏ?", en: "Why are there many small bridges in the Mekong Delta?",
+          chon: [{ chu: "Vì có nhiều kênh rạch", hinh: "🛶" }, { chu: "Vì có nhiều núi", hinh: "⛰️" }, { chu: "Vì có nhiều tuyết", hinh: "❄️" }], dung: 0 }
+      ],
+      dienTu: [[0, "đinh"], [1, "tre"], [1, "ghềnh"], [2, "mẹ"], [2, "con"], [3, "học"], [3, "đời"]],
+      nhieu: ["sắt", "bố", "chơi", "sông", "nhà"],
+      vanCap: [["đi", "thi"], ["tre", "ve"], ["lẻo", "kẹo"], ["học", "cóc"], ["đời", "chơi"], ["đinh", "xinh"]],
+      cungChoi: {
+        ten: "Mẹ dắt con qua cầu",
+        nguoi: "Bé và một người lớn",
+        cho: "Trong nhà; dán một đường băng dính dài trên sàn làm “cầu”",
+        buoc: [
+          { hinh: "🎋", chu: "Dán một đường băng dính dài trên sàn, hoặc đặt một sợi dây thẳng làm “cầu tre”." },
+          { hinh: "🤝", chu: "Người lớn nắm tay bé, cùng đi trên “cầu”, mỗi tiếng một bước, vừa đi vừa đọc bài." },
+          { hinh: "🎵", chu: "Qua hết “cầu”, bé ôm búp bê và ru “Ầu ơ… ví dầu…” thật chậm." },
+          { hinh: "🔄", chu: "Đổi vai: bé “dắt” búp bê hoặc em nhỏ qua cầu." }
+        ],
+        en: "Put a long strip of tape or a straight rope on the floor as the “bamboo bridge”. The grown-up holds the child's hand and they walk along it together, one step per syllable, saying the words. At the end of the bridge, the child cuddles a doll and sings “Ầu ơ… ví dầu…” very slowly. Then swap: the child leads the doll or a younger sibling across.",
+        anToan: "“Cầu” dán sát sàn, không đi trên ghế hay vật cao; người lớn luôn nắm tay bé."
+      },
+      thuThach: [
+        "Hát hoặc đọc lời ru cho ông bà hoặc cha mẹ nghe",
+        "Chơi “Mẹ dắt con qua cầu” với cha hoặc mẹ",
+        "Hỏi cha mẹ: Ở quê mình có cầu tre không? Cha mẹ đã đi qua chưa?"
+      ],
+      goiY: {
+        nghe: "Lời ru Nam Bộ mở bằng “Ầu ơ…”, hát rất chậm, kéo dài cuối câu. Khi có bản thu giọng hát của trường, cho bé nghe giọng ru thật.",
+        hieu: "Giải thích “trường đời”: người lớn cũng phải học và vượt qua khó khăn mỗi ngày. Hỏi bé: “Mẹ đã giúp con qua những việc khó nào?”",
+        nho: "Câu 2 kết thúc bằng “khó đi”, câu 3 lại bắt đầu bằng “Khó đi”: tiếng nối câu giúp bé nhớ.",
+        choi: "Cặp vần đi – thi nối câu 3 và câu 4; cho bé tìm thêm tiếng vần với “đi” (thi, ghi, bi…).",
+        cungChoi: "Hoạt động gắn kết mẹ con theo lời ru; có thể làm lúc chuẩn bị đi ngủ."
+      }
+    }
   ]
 };
