@@ -76,6 +76,28 @@
   var dangChay = null;        // lượt đọc theo nhịp đang chạy
   function dungNhip() { if (dangChay) { dangChay.dung(); dangChay = null; } }
 
+  /* Giọng đọc (quy tắc 7): có tệp của trường (amThanh: true) thì phát tệp; chưa có thì bộ mẫu
+     tạm đọc bằng giọng máy. Chỉ gọi qua TTV.phat (hoặc TTV.giong.phat ở bản bộ mẫu cũ), không gọi speechSynthesis. */
+  function phatGiong(tep, chu) {
+    dungNhip();
+    var T = window.TTV, f = T && (typeof T.phat === "function" ? T.phat : (T.giong && T.giong.phat));
+    if (f) { try { return f({ tep: b.amThanh ? tep : null, chu: chu }); } catch (e) {} }
+    else if (b.amThanh) HC.phatTep(tep);
+  }
+  function dungGiong() { try { if (window.TTV && TTV.giong && TTV.giong.dung) TTV.giong.dung(); } catch (e) {} }
+
+  /* Ghi kết quả học (bộ mẫu gửi lên cổng; khách học thử hoặc ngoài cổng thì không gửi gì).
+     6 trò có tính điểm mỗi bài: nghe, cau-hoi, dien-tu, xep-cau, lat-the, tiep-suc. Không tạo khoá localStorage mới. */
+  var SO_TRO_TINH_DIEM = 6;
+  function ghiKetQua(hoatDong, diem, diemToiDa, batDau) {
+    if (!(window.TTV && typeof TTV.ghiKetQua === "function")) return;
+    var r = diemToiDa ? diem / diemToiDa : 0;
+    try {
+      TTV.ghiKetQua({ bai: b.ma, hoatDong: hoatDong, soTroChoi: SO_TRO_TINH_DIEM, diem: diem, diemToiDa: diemToiDa,
+        sao: r >= 0.9 ? 3 : r >= 0.6 ? 2 : 1, thoiGianGiay: Math.round((Date.now() - batDau) / 1000) });
+    } catch (e) {}
+  }
+
   /* ---------- Năm bước ---------- */
   var BUOC = [
     { id: "nghe", bieu: "🎵", ten: "Nghe & đọc theo", ngan: "Nghe", trau: "trau-listening.png",
@@ -164,8 +186,8 @@
         }
         dong.appendChild(s); o[i].push(s);
       });
-      if (tuyChon.ngheCau && b.amThanh) {
-        var n = nut("hc-cau-nghe", "🔊", function () { HC.phatTep(HC.tepCau(b, i)); });
+      if (tuyChon.ngheCau) {
+        var n = nut("hc-cau-nghe", "🔊", function () { phatGiong(HC.tepCau(b, i), cau); });
         n.setAttribute("aria-label", "Nghe câu " + (i + 1)); dong.appendChild(n);
       }
       khoi.appendChild(dong);
@@ -200,18 +222,19 @@
     var hang = tao("div", "hc-hang-nut");
     var nutDoc = nut("ttv-nut", "▶ Đọc theo nhịp", function () {
       if (dangChay) { dungNhip(); boSang(o); nutDoc.textContent = "▶ Đọc theo nhịp"; return; }
-      HC.moAmThanh();
-      trung = {}; soVo = 0; ketQua.textContent = "Vỗ tay vào đây theo nhịp nhé! Mỗi tiếng một cái vỗ.";
+      HC.moAmThanh(); dungGiong();
+      trung = {}; soVo = 0; var batDau = Date.now(); ketQua.textContent = "Vỗ tay vào đây theo nhịp nhé! Mỗi tiếng một cái vỗ.";
       nutDoc.textContent = "⏹ Dừng";
       docTheoNhip(o, function (r) {
         nutDoc.textContent = "▶ Đọc lại";
         var tong = r.lich.length, dung = Object.keys(trung).length;
         ketQua.textContent = soVo ? "Bạn vỗ trúng nhịp " + dung + "/" + tong + " tiếng. " + (dung >= tong * 0.7 ? "Giỏi quá!" : nhip === "vua" ? "Lần sau thử nhịp Chậm nhé!" : "Đọc lại và vỗ tay cùng mõ nhé!") : "Các bạn đã đọc hết bài theo nhịp. Lần sau vỗ tay cùng nhé!";
         datSao("nghe");
+        ghiKetQua("nghe", dung, tong, batDau);
       });
     });
     hang.appendChild(nutDoc); hang.appendChild(chonNhip());
-    if (b.amThanh) hang.appendChild(nut("ttv-nut-phu", "🔊 Nghe cả bài", function () { dungNhip(); HC.phatTep(HC.tepCaBai(b)); }));
+    hang.appendChild(nut("ttv-nut-phu", "🔊 Nghe cả bài", function () { phatGiong(HC.tepCaBai(b), b.loi.join(". ")); }));
     t.appendChild(hang);
 
     // Ô vỗ tay: chạm đúng lúc mõ gõ thì sáng xanh
@@ -229,7 +252,7 @@
       setTimeout(function () { nutVo.classList.remove("trung", "truot"); }, 160);
     });
     vo.appendChild(nutVo); vo.appendChild(ketQua); t.appendChild(vo);
-    t.appendChild(tao("p", "hc-nho-chu", b.nguon + ". " + (b.diBan || "") + (b.amThanh ? "" : " Giọng đọc của trường sẽ được thêm sau; hiện các bạn đọc theo tiếng mõ.")));
+    t.appendChild(tao("p", "hc-nho-chu", b.nguon + ". " + (b.diBan || "") + (b.amThanh ? "" : " Giọng đọc của trường sẽ được thêm sau; hiện nút 🔊 tạm dùng giọng đọc của máy." + (p.id === "baihat" ? " Bài hát cần giọng hát thật; giọng máy chỉ đọc lời." : ""))));
     noi.appendChild(t);
   }
 
@@ -269,16 +292,17 @@
     capDem();
 
     // Câu hỏi nhanh
-    var t3 = the("Câu hỏi nhanh"), k = 0, khung = tao("div");
+    var t3 = the("Câu hỏi nhanh"), k = 0, khung = tao("div"), dungNgay = 0, saiCau = false, batDauHoi = Date.now();
     t3.appendChild(khung); noi.appendChild(t3);
     function veCau() {
       khung.textContent = "";
       if (k >= b.cauHoi.length) {
         khung.appendChild(tao("p", "ttv-nhan-dung", "Bạn trả lời đúng hết " + b.cauHoi.length + " câu!"));
-        khung.appendChild(nut("ttv-nut-phu", "Làm lại", function () { k = 0; veCau(); }));
-        ghiXong("cauHoi"); kiemSao(); return;
+        khung.appendChild(nut("ttv-nut-phu", "Làm lại", function () { k = 0; dungNgay = 0; batDauHoi = Date.now(); veCau(); }));
+        ghiXong("cauHoi"); kiemSao();
+        ghiKetQua("cau-hoi", dungNgay, b.cauHoi.length, batDauHoi); return;
       }
-      var q = b.cauHoi[k];
+      var q = b.cauHoi[k]; saiCau = false;
       khung.appendChild(tao("p", "hc-tien-do", "Câu " + (k + 1) + "/" + b.cauHoi.length));
       var dh = tao("div", "hc-the-dau"); dh.appendChild(tao("p", "hc-hoi", q.hoi));
       var idE = "en-q" + k; dh.appendChild(nutEn(idE)); khung.appendChild(dh);
@@ -288,8 +312,8 @@
         var n = tao("button"); n.type = "button";
         n.appendChild(tao("span", "hinh", x.c.hinh)); n.appendChild(tao("span", null, x.c.chu));
         n.addEventListener("click", function () {
-          if (x.i === q.dung) { n.classList.add("dung"); nhan(ph, true); chon.querySelectorAll("button").forEach(function (z) { z.disabled = true; }); setTimeout(function () { k++; veCau(); }, 900); }
-          else { n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
+          if (x.i === q.dung) { if (!saiCau) dungNgay++; n.classList.add("dung"); nhan(ph, true); chon.querySelectorAll("button").forEach(function (z) { z.disabled = true; }); setTimeout(function () { k++; veCau(); }, 900); }
+          else { saiCau = true; n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
         });
         chon.appendChild(n);
       });
@@ -355,19 +379,19 @@
       khoi.appendChild(dong);
     });
     t.appendChild(khoi);
-    var chon = tao("div", "hc-chon ngan"), ph = tao("div", "hc-phan-hoi"), k = 0;
+    var chon = tao("div", "hc-chon ngan"), ph = tao("div", "hc-phan-hoi"), k = 0, dungNgay = 0, saiO = false, batDau = Date.now();
     t.appendChild(chon); t.appendChild(ph);
     var kho = ds.map(function (x) { return x[1]; }).concat(b.nhieu || []);
     function veO() {
       Object.keys(o).forEach(function (x) { o[x].classList.toggle("dang", +x === k); });
       chon.textContent = "";
-      if (k >= ds.length) { nhan(ph, true, "Bạn điền đủ " + ds.length + " chỗ trống!"); xong("dienTu"); return; }
+      if (k >= ds.length) { nhan(ph, true, "Bạn điền đủ " + ds.length + " chỗ trống!"); xong("dienTu"); ghiKetQua("dien-tu", dungNgay, ds.length, batDau); return; }
       var dung = ds[k][1];
       var sai = HC.tron(kho.filter(function (w) { return HC.nfc(w) !== HC.nfc(dung); })).slice(0, 2);
       HC.tron([dung].concat(sai)).forEach(function (w) {
         var n = nut("", w, function () {
-          if (w === dung) { o[k].classList.add("dien"); nhan(ph, true); k++; veO(); }
-          else { n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
+          if (HC.nfc(w) === HC.nfc(dung)) { if (!saiO) dungNgay++; saiO = false; o[k].classList.add("dien"); nhan(ph, true); k++; veO(); }
+          else { saiO = true; n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
         });
         chon.appendChild(n);
       });
@@ -383,21 +407,23 @@
     trai.appendChild(tao("h4", null, "Các câu bị xáo trộn")); phai.appendChild(tao("h4", null, "Bài của em"));
     var dsT = tao("div", "hc-xep-ds"), dsP = tao("div", "hc-xep-ds");
     trai.appendChild(dsT); phai.appendChild(dsP); vung.appendChild(trai); vung.appendChild(phai); t.appendChild(vung);
-    var ph = tao("div", "hc-phan-hoi"), canTim = 0, cac = [];
+    var ph = tao("div", "hc-phan-hoi"), canTim = 0, cac = [], dungNgay = 0, saiCau = false, batDau = Date.now();
+    function cung(i, j) { return HC.nfc(b.loi[i]) === HC.nfc(b.loi[j]); }   // hai câu giống hệt nhau thì chạm câu nào cũng đúng
     var thuTu = b.loi.map(function (_, i) { return i; }), tr = HC.tron(thuTu);
     if (tr.every(function (x, i) { return x === i; })) tr.reverse();
     tr.forEach(function (i) {
       var n = nut("", b.loi[i], function () {
-        if (i === canTim) {
-          n.remove(); var d = tao("div", "da"); d.appendChild(tao("span", "so", String(i + 1))); d.appendChild(tao("span", null, b.loi[i])); dsP.appendChild(d);
+        if (cung(i, canTim)) {
+          n.remove(); n.daXep = true; var d = tao("div", "da"); d.appendChild(tao("span", "so", String(canTim + 1))); d.appendChild(tao("span", null, b.loi[canTim])); dsP.appendChild(d);
+          if (!saiCau) dungNgay++; saiCau = false;
           canTim++; nhan(ph, true);
-          if (canTim === b.loi.length) { nhan(ph, true, "Bạn đã xếp xong cả bài!"); goiY.remove(); xong("xepCau"); }
-        } else { nhan(ph, false); lac(n); }
+          if (canTim === b.loi.length) { nhan(ph, true, "Bạn đã xếp xong cả bài!"); goiY.remove(); xong("xepCau"); ghiKetQua("xep-cau", dungNgay, b.loi.length, batDau); }
+        } else { saiCau = true; nhan(ph, false); lac(n); }
       });
       cac[i] = n; dsT.appendChild(n);
     });
     var goiY = nut("ttv-nut-phu", "💡 Gợi ý", function () {
-      var n = cac[canTim]; if (!n) return; n.classList.add("goi-y"); setTimeout(function () { n.classList.remove("goi-y"); }, 1300);
+      var n = cac.filter(function (x, i) { return x && !x.daXep && cung(i, canTim); })[0]; if (!n) return; saiCau = true; n.classList.add("goi-y"); setTimeout(function () { n.classList.remove("goi-y"); }, 1300);
     });
     var hang = tao("div", "hc-hang-nut"); hang.style.marginTop = "10px"; hang.appendChild(goiY);
     t.appendChild(hang); t.appendChild(ph);
@@ -463,7 +489,7 @@
     t.appendChild(dem); t.appendChild(luoi); t.appendChild(ph);
     var the2 = [];
     b.vanCap.forEach(function (c, k) { the2.push({ chu: c[0], cap: k }); the2.push({ chu: c[1], cap: k }); });
-    var mo = [], luot = 0, khop = 0, ban = false;
+    var mo = [], luot = 0, khop = 0, ban = false, batDau = Date.now();
     function capDem() { dem.textContent = "Lượt lật: " + luot + " · Cặp vần đã tìm: " + khop + "/" + b.vanCap.length; }
     HC.tron(the2).forEach(function (x) {
       var n = tao("button", "hc-lat"); n.type = "button"; n.setAttribute("aria-label", "Thẻ úp");
@@ -480,7 +506,7 @@
           if (khop === b.vanCap.length) {
             capDem();
             nhan(ph, true, "Bạn tìm đủ " + khop + " cặp vần sau " + luot + " lượt lật!");
-            xong("latThe"); return;
+            xong("latThe"); ghiKetQua("lat-the", Math.round(10 * khop / Math.max(luot, khop)), 10, batDau); return;
           }
         } else {
           ban = true; nhan(ph, false);
@@ -501,7 +527,7 @@
     t.appendChild(duong);
     var daDoc = tao("div", "hc-da-doc"), hoi = tao("p", "hc-hoi", "Câu tiếp theo là gì?"), chon = tao("div", "hc-chon"), ph = tao("div", "hc-phan-hoi");
     t.appendChild(daDoc); t.appendChild(hoi); t.appendChild(chon); t.appendChild(ph);
-    var k = 0;
+    var k = 0, dungNgay = 0, saiBuoc = false, batDau = Date.now();
     function dat() {
       var w = duong.clientWidth, buoc = (w - 70) / Math.max(1, b.loi.length - 1);
       trau.style.left = (k >= b.loi.length - 1 ? w - 62 : Math.max(4, 8 + k * buoc - 10)) + "px";
@@ -513,13 +539,16 @@
       dat(); chon.textContent = "";
       if (k >= b.loi.length - 1) {
         hoi.textContent = "Trâu Con về đến quê rồi! Cảm ơn các bạn!";
-        nhan(ph, true, "Bạn đã tiếp sức đọc hết bài!"); xong("tiepSuc"); return;
+        nhan(ph, true, "Bạn đã tiếp sức đọc hết bài!"); xong("tiepSuc"); ghiKetQua("tiep-suc", dungNgay, b.loi.length - 1, batDau); return;
       }
-      var dung = k + 1, khac = HC.tron(b.loi.map(function (_, i) { return i; }).filter(function (i) { return i !== dung && i !== k; })).slice(0, 2);
+      // Câu nhiễu: khác chữ với câu đúng và khác chữ nhau (bài có câu lặp lại)
+      var dung = k + 1, daChu = {}; daChu[HC.nfc(b.loi[dung])] = 1;
+      var khac = HC.tron(b.loi.map(function (_, i) { return i; }).filter(function (i) { return i !== dung && i !== k; }))
+        .filter(function (i) { var c = HC.nfc(b.loi[i]); if (daChu[c]) return false; daChu[c] = 1; return true; }).slice(0, 2);
       HC.tron([dung].concat(khac)).forEach(function (i) {
         var n = nut("", b.loi[i], function () {
-          if (i === dung) { nhan(ph, true); k++; ve(); }
-          else { n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
+          if (i === dung) { if (!saiBuoc) dungNgay++; saiBuoc = false; nhan(ph, true); k++; ve(); }
+          else { saiBuoc = true; n.classList.add("sai"); n.disabled = true; nhan(ph, false); lac(n); }
         });
         chon.appendChild(n);
       });

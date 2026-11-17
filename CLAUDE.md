@@ -3,7 +3,7 @@
 Đọc tệp này trước khi sửa bất kỳ trang nào của trường. Trả lời và viết commit bằng tiếng Việt.
 
 ## Bối cảnh
-- Chương trình "Trường Tiếng Việt Của Em" của CVCEC – Canada Vietnam Cultural & Educational Council: lớp văn hoá và tiếng Việt trên web, miễn phí, cho trẻ 5–12 tuổi (tới 14), phần lớn học trên iPad và điện thoại. CVCEC tự xây dựng và quản lý toàn bộ.
+- Chương trình "Trường Tiếng Việt Của Em" của CVCEC – Canada Vietnam Cultural & Educational Council: nền tảng học tiếng Việt và văn hoá trên web, miễn phí, cho mọi lứa tuổi từ trẻ 5 tuổi tới người lớn. Người học chủ yếu là người nước ngoài và trẻ Việt kiều chưa nói được tiếng Việt (bắt đầu từ số 0). Phần lớn học trên iPad và điện thoại. CVCEC tự xây dựng và quản lý toàn bộ.
 - Cổng chính: https://vietclass.cvcec.org (kho CVCEC/cong-truong-tieng-viet), nhúng từng góc học trong khung iframe.
 
 ## Các trang (GitHub Pages, DNS tại Nhân Hòa, tên miền cvcec.org đã xác minh với GitHub)
@@ -35,15 +35,28 @@
 4. Chạy tốt trong khung iframe của cổng: không chặn nhúng khung; âm thanh phát sau khi bé chạm; không phụ thuộc window.top.
 5. Tiếng Việt: chuẩn hoá NFC khi so sánh chữ; đọc chữ cái theo âm (a, bờ, cờ, dờ…); không ghi cách đọc dưới chữ.
 6. Trâu Con xưng "mình", gọi học sinh "các bạn"; hiền, ấm, chậm.
-7. Âm thanh dùng tệp giọng chuẩn của trường; không dùng giọng máy của thiết bị (speechSynthesis).
-   - Ngoại lệ tạm thời – kho truyencotich: giữ giọng máy làm dự phòng khi chưa có tệp giọng Elio trong audio/, vì đọc to là phần chính của truyện. Không gỡ giọng máy cho đến khi đủ 290 tệp trong AM-THANH.md của kho đó.
+7. Âm thanh: ưu tiên tệp giọng chuẩn của trường. Từ 17-11-2026, khi chưa có tệp thì TẠM dùng giọng máy của thiết bị, nhưng chỉ qua bộ mẫu: `TTV.phat({tep, chu})` (có tệp thì phát tệp, không có thì đọc `chu`) hoặc `TTV.giong.doc(chu)`. Không gọi speechSynthesis trực tiếp trong trang. Tên chữ cái đưa cho giọng máy theo âm (`TTV.giong.tenChuCai("b")` → "bờ"). Câu cần thu âm ghi vào kịch bản thu âm (am-thanh/ của kho mau-chung).
 8. Không đưa tên, logo Khai Minh Đức lên game và slide.
 9. Không hiện tên trẻ, phụ huynh. Triển lãm và Về Nhà Em chỉ để xem (hạn chế tải về) và có ghi chú điều khoản sử dụng, liên hệ contact@cvcec.org.
 10. Mỗi trang tối đa 1 GB; mỗi tệp dưới 25 MB. Hỏi tôi trước khi thêm video mới.
 11. Dùng tốt ở iPad (1024px) và điện thoại (390px); vùng chạm tối thiểu 44px.
 
+## Lộ trình học (từ 17-11-2026)
+- Mọi góc học đi theo một lộ trình chung "Đường làng của Trâu Con", đối chiếu Khung năng lực tiếng Việt dùng cho người nước ngoài (TT 17/2015/TT-BGDĐT): Bậc 0 Làm quen (chặng riêng của trường), Sơ cấp Bậc 1–2, Trung cấp Bậc 3–4. Không gọi là chứng chỉ.
+- Nguồn duy nhất: v1/ttv-lo-trinh.js trong kho mau-chung (`TTV_LO_TRINH`): các bậc, câu "Mình làm được…" cho Nghe, Nói, Đọc, Viết, chủ điểm và nhãn bậc của từng bài. Bài mới phải được gắn nhãn ở đó.
+- Nhóm người học dùng chung mã: "5-8", "9-14", "nguoi-lon".
+- Người mới học phần lớn chưa đọc được tiếng Việt: Bậc 0–2 có lời hướng dẫn tiếng Anh (nút VI/EN), Bậc 3 trở đi giảm dần.
+- Không xáo trộn các góc học đang có: lộ trình chỉ gắn nhãn và sắp thứ tự, không đổi nội dung bài.
+
+## Tài khoản và dữ liệu học
+- Chỉ người học có tài khoản và xem thành tích của mình (Góc học tập của em). Không làm chế độ, bảng theo dõi hay tài khoản riêng cho giáo viên, phụ huynh. Người dưới 13 tuổi do cha mẹ đăng ký và đồng ý (đã có ở cổng), nhưng không có trang theo dõi riêng cho cha mẹ.
+- Giáo viên chỉ có tab "Hoạt động" (gợi ý hoạt động trên lớp) của cổng; không làm thêm hướng dẫn giáo viên.
+- Góc học không tự ghi vào Firebase. Khi người học chơi xong một trò, góc học gọi `TTV.ghiKetQua({bai, hoatDong, soTroChoi, diem, diemToiDa, sao, thoiGianGiay})`; cổng ghi vào tài khoản.
+- Không thu ngày sinh, địa chỉ, số điện thoại, ảnh, giọng nói, vị trí. Luyện nói chỉ chạy trên máy. Không hiện tên thật.
+- Chỉ dùng dữ liệu cho nghiên cứu khi Chính sách bảo mật đã ghi mục đích này và người học (hoặc cha mẹ) đã đồng ý.
+
 ## Game bài học
-HTML/CSS/JS thuần; dữ liệu bài trong const BAI_HOC đầu script; chạm/kéo bằng Pointer Events; phản hồi "Đúng rồi!" / "Thử lại nhé".
+HTML/CSS/JS thuần; dữ liệu bài trong const BAI_HOC đầu script; chạm/kéo bằng Pointer Events; phản hồi "Đúng rồi!" / "Thử lại nhé"; xong một trò thì gọi `TTV.ghiKetQua(...)`.
 
 ## Cách làm việc
 - Trước khi sửa nhiều tệp, nêu kế hoạch ngắn và chờ tôi đồng ý.
@@ -52,13 +65,14 @@ HTML/CSS/JS thuần; dữ liệu bài trong const BAI_HOC đầu script; chạm/
 - Khi chép CLAUDE.md vào một kho đã có CLAUDE.md, giữ lại các dòng NGOẠI LỆ RIÊNG của kho đó.
 
 ## Riêng kho này (hatca.cvcec.org – Hát cùng Trâu Con)
-- Học tiếng Việt qua đồng dao, vè, dân ca và hát ru. 3 phần, 24 bài thí điểm: Đồng dao (Bài 1–12), Vè (Bài 13–16), Dân ca & hát ru (Bài 17–24).
-- Bài mẫu đầy đủ: Bài 1 "Dung dăng dung dẻ". Bài khác trangThai "du-kien" (hiện "Sắp có"); soạn theo đúng khuôn bài mẫu rồi đổi thành "san-sang".
+- Học tiếng Việt qua đồng dao, vè, dân ca và hát ru. 3 phần, 24 bài: Đồng dao (Bài 1–12, Bậc 1), Vè (Bài 13–16, Bậc 2), Dân ca & hát ru (Bài 17–24, Bậc 3). Nhãn bậc theo mã bài ở v1/ttv-lo-trinh.js của mau-chung: KHÔNG đổi mã bài (ma).
+- Cả 24 bài đã soạn theo khuôn bài mẫu "Dung dăng dung dẻ" (trangThai "san-sang", 17-11-2026). Năm bài thay thế giữ mã cũ (ve-ca, ve-trai-cay, ve-loai-vat, ly-cay-bong, ly-con-sao), xem README. Lời có chỗ cần CVCEC soát: README, mục "Lời bài cần CVCEC soát".
 - Trang chủ: index.html (Mục tiêu học tập · Học xong các bạn có thể · Tổng quan nội dung · Hướng dẫn cho cha mẹ & thầy cô · Danh sách bài). Bấm vào góc học phải mở trang này trước, không nhảy thẳng vào Bài 1.
 - Trang bài dùng chung: bai.html#<ma-bai>. Mỗi bài 5 bước, 5 sao: Nghe & đọc theo · Hiểu lời (thẻ từ, câu hỏi nhanh) · Nhớ lời (điền từ, xếp câu, che dần) · Chơi mà nhớ (lật thẻ tìm vần, tiếp sức đọc bài) · Cùng chơi (trò chơi dân gian thật, thử thách cho cả nhà).
-- Dữ liệu: data/bai-hat.js (window.HAT_CA). Mỗi bài: loi, gioiThieu, tuKho, cauHoi, dienTu, nhieu, vanCap, cungChoi, thuThach, goiY.
+- Dữ liệu: data/bai-hat.js (window.HAT_CA). Mỗi bài: loi, gioiThieu, tuKho, cauHoi, dienTu, nhieu, vanCap, cungChoi, thuThach, goiY, tempo, nguon, diBan (bài dân ca thêm mien). Kiểm tra trước khi đẩy: node tests/kiem-du-lieu.js --du. Sửa lời thì chạy node tools/tao-am-thanh.js để cập nhật AM-THANH.md.
 - Khoá lưu (mới): hatca:<ma-bai> → { sao: { nghe, hieu, nho, choi, cungChoi }, xong: {…}, thuThach: […] }. Không đổi tên.
-- NGOẠI LỆ RIÊNG – tiếng mõ, tiếng trống: tạo bằng Web Audio trong trình duyệt (js/chung.js, HC.chayNhip), là âm gõ giữ nhịp, KHÔNG phải giọng đọc, nên được dùng. Giọng đọc, giọng hát vẫn chỉ dùng tệp của trường (AM-THANH.md); amThanh: false thì ẩn nút Nghe.
+- NGOẠI LỆ RIÊNG – tiếng mõ, tiếng trống: tạo bằng Web Audio trong trình duyệt (js/chung.js, HC.chayNhip), là âm gõ giữ nhịp, KHÔNG phải giọng đọc, nên được dùng. Giọng đọc, giọng hát theo quy tắc 7: có tệp của trường (AM-THANH.md, amThanh: true) thì phát tệp; amThanh: false thì nút Nghe (từng câu, cả bài) tạm đọc lời bằng giọng máy qua TTV.phat({ tep, chu }). Không gọi speechSynthesis trực tiếp.
+- Ghi kết quả (17-11-2026): bai.html gọi TTV.ghiKetQua với bai = mã bài; hoatDong = nghe (đọc theo nhịp, điểm = số tiếng vỗ trúng), cau-hoi, dien-tu, xep-cau, tiep-suc (điểm = số lần đúng ngay lần đầu), lat-the (điểm 0–10 theo số lượt lật); soTroChoi = 6; sao 3/2/1 theo tỉ lệ ≥ 90% / ≥ 60% / còn lại. Thẻ từ, Che dần và Cùng chơi không tính điểm. Không thêm khoá localStorage.
 - Bản quyền lời bài: chỉ văn học dân gian (đồng dao, vè, dân ca, hát ru). Bài hát thiếu nhi có tác giả chỉ đưa lên khi có giấy phép bằng văn bản. Không chép bản thu âm của người khác (YouTube, CD…).
 - Phần 3 (dân ca, hát ru) cần bản thu giọng hát thật; chưa làm phần tô sáng lời theo bản thu (dự kiến thêm mocThoiGian: giây bắt đầu mỗi câu).
 - Màu góc (hồng sen #BF55A0 / #7E2A6B / #F6E4F1) và ảnh Trâu Con (trau-listening.png) lấy từ TTV_DANH_SACH, id "hatca".
