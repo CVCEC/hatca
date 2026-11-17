@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#FFF8EC">
 <meta name="robots" content="noimageindex">
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
-<link rel="stylesheet" href="css/hat-ca.css">
+<link rel="stylesheet" href="css/hat-ca.css?v=3">
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="data/bai-hat.js"></script>
 <script src="js/chung.js"></script>
@@ -109,9 +109,13 @@
     { id: "choi", bieu: "🎮", ten: "Chơi mà nhớ", ngan: "Chơi", trau: "trau-cheer.png",
       loi: "Đến giờ chơi rồi! Các bạn lật thẻ tìm tiếng cùng vần, rồi tiếp sức đọc bài để đưa mình về quê nhé." },
     { id: "cungChoi", bieu: "🤸", ten: "Cùng chơi", ngan: "Cùng chơi", trau: "trau-wave.png",
-      loi: "Bây giờ các bạn rủ cả nhà, rủ bạn bè cùng chơi trò dân gian thật nhé!" }
+      loi: "Bây giờ các bạn rủ cả nhà, rủ bạn bè cùng chơi trò dân gian thật nhé!" },
+    // Bước cuối, không tính sao (vẫn 5 sao mỗi bài): video giảng viên âm nhạc dạy hát (b.videoGiangVien)
+    { id: "hocHat", bieu: "🎼", ten: "Học hát cùng giảng viên", ngan: "Học hát", trau: "trau-listening.png", khongSao: true,
+      loi: "Cuối cùng, mình cùng học hát với thầy cô dạy nhạc nhé! Các bạn nghe thầy cô hát từng câu rồi hát theo." }
   ];
-  var buocHien = Math.max(0, BUOC.findIndex(function (x) { return !tt.sao[x.id]; }));
+  var BUOC_CUOI_CO_SAO = 4; // "Cùng chơi"
+  var buocHien = Math.max(0, BUOC.findIndex(function (x) { return !x.khongSao && !tt.sao[x.id]; }));
   if (HC.soSao(b.ma) === 5) buocHien = 0;
 
   function veNav() {
@@ -121,8 +125,10 @@
       if (i === buocHien) n.setAttribute("aria-current", "step");
       n.appendChild(tao("span", "bieu", x.bieu));
       n.appendChild(tao("span", "chu", x.ngan));
-      var s = tao("span", "ttv-sao" + (tt.sao[x.id] ? "" : " ttv-sao-tat"));
-      s.setAttribute("aria-label", tt.sao[x.id] ? "đã có sao" : "chưa có sao"); n.appendChild(s);
+      if (!x.khongSao) {
+        var s = tao("span", "ttv-sao" + (tt.sao[x.id] ? "" : " ttv-sao-tat"));
+        s.setAttribute("aria-label", tt.sao[x.id] ? "đã có sao" : "chưa có sao"); n.appendChild(s);
+      }
       n.setAttribute("aria-label", "Bước " + (i + 1) + ": " + x.ten);
       n.addEventListener("click", function () { moBuoc(i); });
       nav.appendChild(n);
@@ -585,6 +591,31 @@
     noi.appendChild(t2);
   }
 
+  /* ---------- Bước cuối: Học hát cùng giảng viên âm nhạc ---------- */
+  // b.videoGiangVien: đường dẫn tệp .mp4 trong kho (video/<ma-bai>.mp4) khi đã có. Chưa có thì hiện khung "Đang cập nhật".
+  // Thêm video mới: hỏi CVCEC trước (quy tắc 10), mỗi tệp dưới 25 MB.
+  function veHocHat(noi) {
+    var o = the("Học hát cùng giảng viên âm nhạc");
+    o.appendChild(tao("p", "hc-phu", "Thầy cô dạy nhạc hướng dẫn các bạn hát bài “" + b.ten + "” từng câu, đúng nhịp, đúng thanh điệu."));
+    var k = tao("div", "hc-video");
+    if (b.videoGiangVien) {
+      var v = tao("video");
+      v.src = b.videoGiangVien; v.controls = true; v.preload = "metadata"; v.playsInline = true;
+      v.setAttribute("controlslist", "nodownload"); v.setAttribute("disablepictureinpicture", "");
+      v.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+      v.setAttribute("aria-label", "Video học hát bài " + b.ten);
+      k.appendChild(v);
+    } else {
+      k.classList.add("cho");
+      var im = tao("img"); im.src = HC.trau("trau-listening.png"); im.alt = ""; k.appendChild(im);
+      k.appendChild(tao("strong", null, "Video đang cập nhật"));
+      var en = tao("span", null, "Video coming soon"); en.lang = "en"; k.appendChild(en);
+      k.setAttribute("role", "img"); k.setAttribute("aria-label", "Video học hát đang cập nhật");
+    }
+    o.appendChild(k);
+    noi.appendChild(o);
+  }
+
   /* ---------- Xong bài ---------- */
   function veXongBai() {
     var o = tao("section", "hc-xong-bai");
@@ -601,7 +632,7 @@
   }
 
   /* ---------- Mở một bước ---------- */
-  var VE = { nghe: veNghe, hieu: veHieu, nho: veNho, choi: veChoi, cungChoi: veCungChoi };
+  var VE = { nghe: veNghe, hieu: veHieu, nho: veNho, choi: veChoi, cungChoi: veCungChoi, hocHat: veHocHat };
   function moBuoc(i) {
     dungNhip(); buocHien = i; veNav(); noiDung.textContent = "";
     var x = BUOC[i];
@@ -610,7 +641,7 @@
     var lt = tao("div", "hc-loi-trau"), im = tao("img"); im.src = HC.trau(x.trau); im.alt = "Trâu Con";
     lt.appendChild(im); lt.appendChild(tao("div", "ttv-bong-thoai", x.loi)); noiDung.appendChild(lt);
     VE[x.id](noiDung);
-    if (i === 4 && HC.soSao(b.ma) === 5) noiDung.appendChild(veXongBai());
+    if (i === BUOC_CUOI_CO_SAO && HC.soSao(b.ma) === 5) noiDung.appendChild(veXongBai());
     if (b.goiY && b.goiY[x.id]) {
       var gy = tao("details", "hc-goi-y"), sm = tao("summary");
       sm.appendChild(tao("span", null, "🧭")); sm.appendChild(tao("span", null, "Gợi ý cho cha mẹ & thầy cô"));
@@ -618,7 +649,7 @@
     }
     var cv = tao("div", "hc-chuyen");
     cv.appendChild(i > 0 ? nut("ttv-nut-phu", "← " + BUOC[i - 1].ten, function () { moBuoc(i - 1); go(); }) : tao("span"));
-    if (i < 4) cv.appendChild(nut("ttv-nut", BUOC[i + 1].ten + " →", function () { moBuoc(i + 1); go(); }));
+    if (i < BUOC.length - 1) cv.appendChild(nut("ttv-nut", BUOC[i + 1].ten + " →", function () { moBuoc(i + 1); go(); }));
     else { var a = tao("a", "ttv-nut-phu", "Về danh sách bài"); a.href = "index.html"; cv.appendChild(a); }
     noiDung.appendChild(cv);
   }

@@ -109,3 +109,11 @@ Phần Cùng chơi: Bài 1–10, 14 (Mèo đuổi chuột), 17 (vỗ tay đôi),
 3. Có tệp giọng thì chép vào `audio/<ma-bai>/` rồi đổi `amThanh: true`.
 
 Lời bài chỉ dùng văn học dân gian. Bài hát có tác giả cần giấy phép bằng văn bản trước khi đưa lên.
+
+## Bước 6: Học hát cùng giảng viên âm nhạc (17-11-2026)
+
+Sau 5 bước có sao, mỗi bài có thêm bước "Học hát cùng giảng viên" (không tính sao). Khi có video của giảng viên âm nhạc:
+1. Hỏi CVCEC trước khi thêm (quy tắc 10), mỗi tệp dưới 25 MB.
+2. Đặt tệp vào `video/<ma-bai>.mp4`.
+3. Thêm `videoGiangVien: "video/<ma-bai>.mp4"` vào bài đó trong `data/bai-hat.js`.
+Bài chưa có video thì trang hiện khung "Video đang cập nhật".
