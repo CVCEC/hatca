@@ -1,0 +1,11 @@
+Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+1.00  Dung dăng dung dẻ  |  dung dăng dung dẻ
+1.00  Dắt trẻ đi chơi  |  Dắt, trẻ, đi, chơi
+0.75  Đến cửa nhà trời  |  Đến cửa nhà trôi
+0.50  Lạy cậu lạy mợ  |  Lạy, cầu, lạy, mở
+1.00  Cho cháu về quê  |  Cho cháu về quê
+1.00  Cho dê đi học  |  Cho dê đi học
+0.25  Cho cóc ở nhà  |  Cho, cốc, ừ, nha
+0.75  Cho gà bới bếp  |  Cho gà bưới bếp
+0.75  Xì xà xì xụp  |  xì, xà, xì, sụp
+1.00  Ngồi thụp xuống đây  |  Ngồi thụp xuống đây
