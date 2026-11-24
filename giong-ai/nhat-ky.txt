@@ -50,3 +50,10 @@ Gạo tiền như nước
 Đổ niêu nước chè
 Đổ phải nhà nào
 Nhà ấy phải chịu  |  Thả đĩa ba ba Chớ bắt đàn bà Phải tội đàn ông Cơm trắng như bông Gạo tiền như nước Đổ mắm đổ muối Đổ chuối hạt tiêu Đổ niêu nước chè Đổ phải nhà nào Nhà ấy phải chịu
+Lô 6 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+0.33  Lộn cầu vồng  |  Lộn câu vòng
+1.00  Nước trong nước chảy  |  nước trong nước chảy
+1.00  Có cô mười bảy  |  có, cô, mười, bảy
+1.00  Có chị mười ba  |  có, chị, mười, ba
+1.00  Hai chị em ta  |  hai, chị, em, ta
+0.25  Ra lộn cầu vồng  |  Gia, lột, cầu, vòng
