@@ -25,3 +25,8 @@ Tay nào không?  |  tập tầm vông tay không, tay có tập tầm vỏ tay 
 1.00  Có nhà điểm binh  |  có nhà điểm binh
 1.00  Hỏi thăm thầy thuốc  |  hỏi, thăm, thầy, thuốc
 1.00  Có nhà hay không?  |  Có nhà hay không
+0.95  Rồng rắn lên mây
+Có cây lúc lắc
+Có nhà điểm binh
+Hỏi thăm thầy thuốc
+Có nhà hay không?  |  dòng rắn lên mây có cây lúc lắc có nhà điểm binh hỏi thăm thầy thuốc có nhà hay không

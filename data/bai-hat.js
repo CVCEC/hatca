@@ -409,7 +409,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản: “Có cây núc nắc”, “Có nhà hiển binh”, “Thầy thuốc có nhà hay không?”. Phần hỏi đáp giữa thầy thuốc và rồng rắn mỗi nơi nói một khác.",
       troChoi: "Rồng rắn",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Rồng rắn lên mây",
         "Có cây lúc lắc",
