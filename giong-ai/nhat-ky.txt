@@ -14,3 +14,9 @@ Tay xoè chân rụt  |  nu na nu nóng cái cống nằm trong cái ong nằm n
 0.50  Tay có tay không  |  Tây có, tây không?
 0.67  Tay nào có  |  Tây nào có?
 1.00  Tay nào không?  |  tay nào không?
+0.95  Tập tầm vông
+Tay không tay có
+Tập tầm vó
+Tay có tay không
+Tay nào có
+Tay nào không?  |  tập tầm vông tay không, tay có tập tầm vỏ tay có, tay không tay nào có tay nào không

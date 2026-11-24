@@ -339,7 +339,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản đọc thêm “Tay nào không / Tay nào có?”. Bài hát thiếu nhi “Tập tầm vông” có tác giả là một bài khác; góc học chỉ dùng lời đồng dao.",
       troChoi: "Đoán tay",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Tập tầm vông",
         "Tay không tay có",
