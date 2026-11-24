@@ -68,3 +68,8 @@ Ra lộn cầu vồng  |  lộn cầu vòng nước trong nước chảy có cô
 1.00  Chân nào đẹp  |  Chân nào đẹp?
 1.00  Đi buôn men  |  Đi buôn men
 1.00  Chân nào đen  |  chân nào đen
+0.93  Xỉa cá mè
+Đè cá chép
+Chân nào đẹp
+Đi buôn men
+Chân nào đen  |  xìa, cá, mè đè, cá, chép chân, nào, đẹp đi, buôn, men chân, nào, đen

@@ -630,7 +630,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; nhiều nơi đọc tiếp thêm vài câu sau “Chân nào đen”, mỗi nơi một khác. Góc học dùng 5 câu đầu quen thuộc nhất.",
       troChoi: "Chọn người",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Xỉa cá mè",
         "Đè cá chép",
