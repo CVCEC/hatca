@@ -30,3 +30,13 @@ Có cây lúc lắc
 Có nhà điểm binh
 Hỏi thăm thầy thuốc
 Có nhà hay không?  |  dòng rắn lên mây có cây lúc lắc có nhà điểm binh hỏi thăm thầy thuốc có nhà hay không
+0.50  Thả đỉa ba ba  |  tha, địa, ba, ba
+0.75  Chớ bắt đàn bà  |  chữ bắt đàn bà
+1.00  Phải tội đàn ông  |  phải, tội, đàn, ông
+0.75  Cơm trắng như bông  |  Cơm chẳng như bông
+1.00  Gạo tiền như nước  |  Gạo tiền như nước.
+0.50  Đổ mắm đổ muối  |  đồ mắm, đồ muối
+0.75  Đổ chuối hạt tiêu  |  Đồ, chuối, hạt, tiêu
+1.00  Đổ niêu nước chè  |  đổ, niêu, nước, chè
+0.75  Đổ phải nhà nào  |  Đủ phải nhà nào
+1.00  Nhà ấy phải chịu  |  Nhà ấy phải chịu
