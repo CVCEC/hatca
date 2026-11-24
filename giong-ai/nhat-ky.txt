@@ -107,3 +107,4 @@ Tép tôm nhặt được trả bà mua rau  |  Bà cọng đi chợ trời mưa
 Hỏi thăm chú chuột đi đâu vắng nhà
 Chú chuột đi chợ đường xa
 Mua mắm mua muối giỗ cha chú mèo  |  Con mèo mà chèo cây cao Hỏi thăm chú chuột đi đâu vắng nhà Chú chuột đi chợ đường xa Mua mắm, mua muối, rỗ cha chú mèo
+Lô 6 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
