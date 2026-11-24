@@ -558,7 +558,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Có em mười bảy”, “Cùng lộn cầu vồng”.",
       troChoi: "Lộn cầu vồng",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Lộn cầu vồng",
         "Nước trong nước chảy",

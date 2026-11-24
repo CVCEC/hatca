@@ -57,3 +57,9 @@ Lô 6 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Có chị mười ba  |  có, chị, mười, ba
 1.00  Hai chị em ta  |  hai, chị, em, ta
 0.25  Ra lộn cầu vồng  |  Gia, lột, cầu, vòng
+0.91  Lộn cầu vồng
+Nước trong nước chảy
+Có cô mười bảy
+Có chị mười ba
+Hai chị em ta
+Ra lộn cầu vồng  |  lộn cầu vòng nước trong nước chảy có cô 17 có chị 13 hai chị em ta ra lộn cầu vòng
