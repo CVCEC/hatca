@@ -87,3 +87,9 @@ Hai chân sau đi sau
 Còn cái đuôi thì đi sau rốt
 Tôi xin kể nốt
 Cái chuyện con voi  |  con vòi, con voi cái vòi, đi trước hai chân trước, đi trước hai chân sau, đi sau còn cái đuôi, thì đi sau rốt tôi xin kể nốt cái chuyện, con voi
+1.00  Bà còng đi chợ trời mưa  |  Bà Còng đi chợ trời mưa
+0.75  Cái tôm cái tép đi đưa bà còng  |  cãi tôm, cãi tép, đi, đưa, bà, còng
+0.67  Đưa bà đến quãng đường cong  |  Đưa bà đến Quảng Đường Công
+1.00  Đưa bà vào tận ngõ trong nhà bà  |  đưa bà vào tận ngõ trong nhà bà
+1.00  Tiền bà trong túi rơi ra  |  tiền, bà, trong, túi, rơi, ra
+0.75  Tép tôm nhặt được trả bà mua rau  |  Tép, tôm, nhật, được, trà, bà, mua, rau
