@@ -93,3 +93,9 @@ Cái chuyện con voi  |  con vòi, con voi cái vòi, đi trước hai chân tr
 1.00  Đưa bà vào tận ngõ trong nhà bà  |  đưa bà vào tận ngõ trong nhà bà
 1.00  Tiền bà trong túi rơi ra  |  tiền, bà, trong, túi, rơi, ra
 0.75  Tép tôm nhặt được trả bà mua rau  |  Tép, tôm, nhật, được, trà, bà, mua, rau
+0.93  Bà còng đi chợ trời mưa
+Cái tôm cái tép đi đưa bà còng
+Đưa bà đến quãng đường cong
+Đưa bà vào tận ngõ trong nhà bà
+Tiền bà trong túi rơi ra
+Tép tôm nhặt được trả bà mua rau  |  Bà cọng đi chợ trời mưa Cái tôm, cái tép đi đưa bà cọng Đưa bà đến quãng đường công Đưa bà vào tận ngõ trong nhà bà Tiền bà trong túi rơi ra Tép tôm nhặt được trả bà mua rau

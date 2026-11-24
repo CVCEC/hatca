@@ -773,7 +773,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Đưa bà qua quãng đường cong”. Lời bài là ca dao, đồng dao dân gian; các bản phổ nhạc có tác giả không dùng ở đây.",
       troChoi: "Đóng vai",
       tempo: { cham: 72, vua: 96 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Bà còng đi chợ trời mưa",
         "Cái tôm cái tép đi đưa bà còng",
