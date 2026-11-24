@@ -191,7 +191,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có một dị bản khác cũng rất quen: “Kéo cưa lừa xẻ / Làm ít ăn nhiều / Nằm đâu ngủ đấy / Nó lấy mất cưa / Lấy gì mà kéo”. Góc học dùng bản “Ông thợ nào khoẻ”.",
       troChoi: "Kéo cưa",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Kéo cưa lừa xẻ",
         "Ông thợ nào khoẻ",

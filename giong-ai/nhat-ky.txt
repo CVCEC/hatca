@@ -36,3 +36,8 @@ Chấp chế đi tìm
 1.00  Về ăn cơm vua  |  Về ăn cơm vua
 1.00  Ông thợ nào thua  |  Ông thợ nào thua?
 1.00  Về bú tí mẹ  |  Về bú tí mẹ
+1.00  Kéo cưa lừa xẻ
+Ông thợ nào khoẻ
+Về ăn cơm vua
+Ông thợ nào thua
+Về bú tí mẹ  |  Kéo, cưa, lừa, xẻ Ông thợ nào khỏe? Về ăn cơm vua Ông thợ nào thua? Về bú tí mẹ
