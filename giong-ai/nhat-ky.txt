@@ -103,3 +103,7 @@ Tép tôm nhặt được trả bà mua rau  |  Bà cọng đi chợ trời mưa
 1.00  Hỏi thăm chú chuột đi đâu vắng nhà  |  Hỏi thăm chú chuột Đi đâu vắng nhà?
 1.00  Chú chuột đi chợ đường xa  |  Chú chuột đi chợ đường xa
 0.75  Mua mắm mua muối giỗ cha chú mèo  |  mua mắm, mua muối dỗ tra chú mèo
+0.89  Con mèo mà trèo cây cau
+Hỏi thăm chú chuột đi đâu vắng nhà
+Chú chuột đi chợ đường xa
+Mua mắm mua muối giỗ cha chú mèo  |  Con mèo mà chèo cây cao Hỏi thăm chú chuột đi đâu vắng nhà Chú chuột đi chợ đường xa Mua mắm, mua muối, rỗ cha chú mèo

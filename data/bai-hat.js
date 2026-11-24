@@ -1002,7 +1002,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Chú chuột đi chợ đằng xa”.",
       troChoi: "Mèo đuổi chuột",
       tempo: { cham: 72, vua: 96 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Con mèo mà trèo cây cau",
         "Hỏi thăm chú chuột đi đâu vắng nhà",
