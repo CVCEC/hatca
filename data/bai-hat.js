@@ -846,7 +846,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; góc học lấy 6 câu đầu. Bài đủ còn dài và mỗi nơi đọc tiếp một khác. “Giăng” là cách nói của một số vùng miền Bắc, nghĩa là “trăng”.",
       troChoi: "Ngắm trăng Trung thu",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Ông giẳng ông giăng",
         "Xuống chơi với tôi",
