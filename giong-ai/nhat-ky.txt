@@ -24,3 +24,20 @@ Có bầu có bạn
 Có ván cơm xôi
 Có nồi cơm nếp
 Có nệp bánh chưng  |  Ông Giăng xuống chơi với tôi Có bầu, có bạn Có ván cơm xôi Có nồi cơm nếp Có nẹp bánh chưng
+Lô 16 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.50  Hay chạy lon xon  |  Hay jay, lon son
+1.00  Là gà mới nở  |  là gà mới nở
+1.00  Vừa đi vừa nhảy  |  Vừa đi, vừa nhảy
+0.50  Là em sáo xinh  |  là em sảo sinh
+0.75  Hay nói linh tinh  |  Hay nổi linh tinh
+0.50  Là con liếu điếu  |  là con liểu điểu
+0.50  Hay nghịch hay tếu  |  hay ngịch hay tiểu
+0.75  Là cậu chìa vôi  |  là cậu chia vôi
+0.50  Hay chao đớp mồi  |  hay trao đớp mùi
+1.00  Là chim chèo bẻo  |  là chim chèo bẻo.
+1.00  Tính hay mách lẻo  |  tính hay mách lẻo
+0.75  Thím khách trước nhà  |  tìm khách trước nhà.
+0.50  Hay nhặt lân la  |  hay nhạc linh la
+0.75  Là bà chim sẻ  |  là bà chim sảy
+1.00  Có tình có nghĩa  |  có tình có nghĩa?
+1.00  Là mẹ chim sâu  |  là mẹ chim sâu
