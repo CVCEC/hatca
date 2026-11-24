@@ -1,53 +1,10 @@
-Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-1.00  Dung dăng dung dẻ  |  dung dăng dung dẻ
-1.00  Dắt trẻ đi chơi  |  Dắt, trẻ, đi, chơi
-0.75  Đến cửa nhà trời  |  Đến cửa nhà trôi
-0.50  Lạy cậu lạy mợ  |  Lạy, cầu, lạy, mở
-1.00  Cho cháu về quê  |  Cho cháu về quê
-1.00  Cho dê đi học  |  Cho dê đi học
-0.25  Cho cóc ở nhà  |  Cho, cốc, ừ, nha
-0.75  Cho gà bới bếp  |  Cho gà bưới bếp
-0.75  Xì xà xì xụp  |  xì, xà, xì, sụp
-1.00  Ngồi thụp xuống đây  |  Ngồi thụp xuống đây
-0.78  Dung dăng dung dẻ
-Dắt trẻ đi chơi
-Đến cửa nhà trời
-Lạy cậu lạy mợ
-Cho cháu về quê
-Cho dê đi học
-Cho cóc ở nhà
-Cho gà bới bếp
-Xì xà xì xụp
-Ngồi thụp xuống đây  |  Rung răng rung rẻ, rắt trẻ đi chơi Đến cửa nhà chơi, lạy cậu lạy mợ Cho cháu về quê, cho dê đi học Cho cốc ở nhà, cho gà bới bếp Xì già xì sụp, ngồi thụp xuống đây
-0.00  Chi chi chành chành  |  Chí Chí Trăng Trăng
-0.75  Cái đanh thổi lửa  |  cái đanh thổi lừa
-0.75  Con ngựa chết trương  |  Con ngựa, chết, chương
-1.00  Ba vương ngũ đế  |  Ba vương ngũ đế
-1.00  Chấp chế đi tìm  |  Chấp, chế, đi, tìm
-0.25  Ù à ù ập  |  u à u tập
-0.88  Chi chi chành chành
-Cái đanh thổi lửa
-Con ngựa chết trương
-Ba vương ngũ đế
-Chấp chế đi tìm
-Ù à ù ập  |  Chi chi chành chành Cái đanh thổi lửa Con ngựa chết chương Ba vương ngũ đế Chấp chế đi tìm U à u ập
-0.75  Kéo cưa lừa xẻ  |  Kéo cưa Lừa xe
-1.00  Ông thợ nào khoẻ  |  Ông thợ nào khỏe!
-1.00  Về ăn cơm vua  |  Về ăn cơm vua
-1.00  Ông thợ nào thua  |  Ông thợ nào thua?
-1.00  Về bú tí mẹ  |  Về bú tí mẹ
-1.00  Kéo cưa lừa xẻ
-Ông thợ nào khoẻ
-Về ăn cơm vua
-Ông thợ nào thua
-Về bú tí mẹ  |  Kéo, cưa, lừa, xẻ Ông thợ nào khỏe? Về ăn cơm vua Ông thợ nào thua? Về bú tí mẹ
-0.25  Nu na nu nống  |  Nô na nô nông
-0.50  Cái cống nằm trong  |  Cải cổng nằm trong
-1.00  Cái ong nằm ngoài  |  cái ong nằm ngoài
-0.75  Củ khoai chấm mật  |  củ, hoái, chấm, mật
-1.00  Phật ngồi phật khóc  |  Phật ngồi Phật khóc
-0.75  Con cóc nhảy ra  |  con, cóc, nhảy, da
-0.57  Con gà ú ụ  |  con gà u
-0.50  Nhà mụ thổi xôi  |  Nhà, mũ, thổi, sôi
-1.00  Nhà tôi nấu chè  |  Nhà tôi nấu chè
-1.00  Tay xoè chân rụt  |  tay xoè, chân rụt
+0.95  Nu na nu nống
+Cái cống nằm trong
+Cái ong nằm ngoài
+Củ khoai chấm mật
+Phật ngồi phật khóc
+Con cóc nhảy ra
+Con gà ú ụ
+Nhà mụ thổi xôi
+Nhà tôi nấu chè
+Tay xoè chân rụt  |  nu na nu nóng cái cống nằm trong cái ong nằm ngoài củ khoai chấm mật phật ngồi phật khóc con cóc nhảy ra con gà ú ụ nhà mụ thổi sôi Nhà tôi nấu chè, tay xoè, chân rụt.

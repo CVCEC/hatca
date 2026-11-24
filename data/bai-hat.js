@@ -262,7 +262,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản: có nơi đọc “Bụt ngồi bụt khóc”, “Con gà ú ù”, “Nhà tôi cũng nấu chè”.",
       troChoi: "Đếm chân",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Nu na nu nống",
         "Cái cống nằm trong",
