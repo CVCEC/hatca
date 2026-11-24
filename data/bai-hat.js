@@ -481,7 +481,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Nhà nấy phải chịu”; có nơi đọc khác vài câu giữa bài.",
       troChoi: "Đuổi bắt",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Thả đỉa ba ba",
         "Chớ bắt đàn bà",

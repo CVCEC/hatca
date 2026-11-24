@@ -40,3 +40,13 @@ Có nhà hay không?  |  dòng rắn lên mây có cây lúc lắc có nhà đi�
 1.00  Đổ niêu nước chè  |  đổ, niêu, nước, chè
 0.75  Đổ phải nhà nào  |  Đủ phải nhà nào
 1.00  Nhà ấy phải chịu  |  Nhà ấy phải chịu
+0.97  Thả đỉa ba ba
+Chớ bắt đàn bà
+Phải tội đàn ông
+Cơm trắng như bông
+Gạo tiền như nước
+Đổ mắm đổ muối
+Đổ chuối hạt tiêu
+Đổ niêu nước chè
+Đổ phải nhà nào
+Nhà ấy phải chịu  |  Thả đĩa ba ba Chớ bắt đàn bà Phải tội đàn ông Cơm trắng như bông Gạo tiền như nước Đổ mắm đổ muối Đổ chuối hạt tiêu Đổ niêu nước chè Đổ phải nhà nào Nhà ấy phải chịu
