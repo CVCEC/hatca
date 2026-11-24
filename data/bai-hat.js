@@ -1144,7 +1144,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản: “Thóc giống đuổi chuột trong bồ”, “Con gà be rượu nuốt người lao đao”… mỗi nơi đọc khác vài chữ.",
       troChoi: "Nói ngược, làm ngược",
       tempo: { cham: 72, vua: 96 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Bao giờ cho đến tháng ba",
         "Ếch cắn cổ rắn tha ra ngoài đồng",

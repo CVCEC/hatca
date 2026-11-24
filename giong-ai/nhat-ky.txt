@@ -69,3 +69,13 @@ Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 0.62  Một đàn cào cào đuổi bắt cá rô  |  Một đàn cao cao Đuổi bắt cá dô
 1.00  Thóc giống cắn chuột trong bồ  |  thóc giống, cắn chuột trong bồ
 0.88  Một trăm lá mạ đổ xô nhổ người  |  Một chăm lá mạ, đổ xô nhổ người
+0.91  Bao giờ cho đến tháng ba
+Ếch cắn cổ rắn tha ra ngoài đồng
+Hùm nằm cho lợn liếm lông
+Một chục quả hồng nuốt lão tám mươi
+Nắm xôi nuốt trẻ lên mười
+Con gà, be rượu nuốt người lao đao
+Lươn nằm cho trúm bò vào
+Một đàn cào cào đuổi bắt cá rô
+Thóc giống cắn chuột trong bồ
+Một trăm lá mạ đổ xô nhổ người  |  Bao giờ cho đến tháng ba Ấch cắn cổ rắn tha ra ngoài đồng Hùm nằm cho lợn liếm lông Một chục quả hồng nuốt lão tám mươi Nắm xôi nuốt trẻ lên mười Con gà be diệu nuốt người lao đao Lươn nằm cho chúng bò vào Một đàn cào cào đuổi bắt cá dô, thóc giống cắn chuột trong bồ, một trăm lá mạng đổ sô nhổ người.
