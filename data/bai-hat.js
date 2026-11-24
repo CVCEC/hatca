@@ -118,7 +118,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản: có nơi đọc “Bắt dế đi tìm”, “Cấp kế đi tìm”, có nơi đọc thêm “Đóng sập cửa vào”. Nhiều tiếng trong bài là tiếng cổ, mỗi người giải thích một khác.",
       troChoi: "Bắt ngón tay",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Chi chi chành chành",
         "Cái đanh thổi lửa",
