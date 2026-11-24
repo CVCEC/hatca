@@ -80,3 +80,10 @@ Chân nào đen  |  xìa, cá, mè đè, cá, chép chân, nào, đẹp đi, bu�
 1.00  Còn cái đuôi thì đi sau rốt  |  Còn cái đuôi thì đi sau rốt
 1.00  Tôi xin kể nốt  |  Tôi xin kể nốt
 1.00  Cái chuyện con voi  |  Cái chuyện con voi
+0.97  Con vỏi con voi
+Cái vòi đi trước
+Hai chân trước đi trước
+Hai chân sau đi sau
+Còn cái đuôi thì đi sau rốt
+Tôi xin kể nốt
+Cái chuyện con voi  |  con vòi, con voi cái vòi, đi trước hai chân trước, đi trước hai chân sau, đi sau còn cái đuôi, thì đi sau rốt tôi xin kể nốt cái chuyện, con voi

@@ -700,7 +700,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Còn cái đuôi đi sau rốt”.",
       troChoi: "Làm voi đi",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Con vỏi con voi",
         "Cái vòi đi trước",
