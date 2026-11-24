@@ -58,3 +58,14 @@ Hay nhặt lân la
 Là bà chim sẻ
 Có tình có nghĩa
 Là mẹ chim sâu  |  Hay chạy lon son Là gà mới nở Vừa đi vừa nhảy Là em sáo sinh Hay nói linh tinh Là con liếu điếu Hay nghịch hay tiếu Là cậu chìa vôi Hay trao đớp mồi Là chim trèo bèo Tính hay mách lẻo Thím khách trước nhà Hay nhặt lân la Là bà chim sẻ Có tình có nghĩa Là mẹ chim sâu
+Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+1.00  Bao giờ cho đến tháng ba  |  Bao giờ cho đến tháng ba?
+0.75  Ếch cắn cổ rắn tha ra ngoài đồng  |  Ấch cánh cổ rắn, tha ra ngoài đồng
+1.00  Hùm nằm cho lợn liếm lông  |  Hùm nằm, cho lợn liếm lông.
+1.00  Một chục quả hồng nuốt lão tám mươi  |  Một chục quả hồng Nuốt lão tám mươi
+0.67  Nắm xôi nuốt trẻ lên mười  |  nắm sôi, nuốt chẻ lên 10
+0.75  Con gà, be rượu nuốt người lao đao  |  con gà bê diệu nuốt người lao đao
+0.83  Lươn nằm cho trúm bò vào  |  Lươn nằm Cho chúng bò vào
+0.62  Một đàn cào cào đuổi bắt cá rô  |  Một đàn cao cao Đuổi bắt cá dô
+1.00  Thóc giống cắn chuột trong bồ  |  thóc giống, cắn chuột trong bồ
+0.88  Một trăm lá mạ đổ xô nhổ người  |  Một chăm lá mạ, đổ xô nhổ người
