@@ -37,7 +37,7 @@ window.HAT_CA = {
       diBan: "Bài có nhiều dị bản: có nơi đọc “Đến ngõ nhà trời”, “Ngồi xệp xuống đây”. Góc học dùng bản phổ biến.",
       troChoi: "Dắt tay đi chơi",
       tempo: { cham: 76, vua: 100 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Dung dăng dung dẻ",
         "Dắt trẻ đi chơi",

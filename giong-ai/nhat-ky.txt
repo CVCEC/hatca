@@ -9,3 +9,13 @@ Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 0.75  Cho gà bới bếp  |  Cho gà bưới bếp
 0.75  Xì xà xì xụp  |  xì, xà, xì, sụp
 1.00  Ngồi thụp xuống đây  |  Ngồi thụp xuống đây
+0.78  Dung dăng dung dẻ
+Dắt trẻ đi chơi
+Đến cửa nhà trời
+Lạy cậu lạy mợ
+Cho cháu về quê
+Cho dê đi học
+Cho cóc ở nhà
+Cho gà bới bếp
+Xì xà xì xụp
+Ngồi thụp xuống đây  |  Rung răng rung rẻ, rắt trẻ đi chơi Đến cửa nhà chơi, lạy cậu lạy mợ Cho cháu về quê, cho dê đi học Cho cốc ở nhà, cho gà bới bếp Xì già xì sụp, ngồi thụp xuống đây
