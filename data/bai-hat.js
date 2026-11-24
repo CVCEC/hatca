@@ -919,7 +919,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến (bản quen thuộc trong sách Tiếng Việt lớp 2); có dị bản. Góc học lấy 16 câu đầu; bài đủ còn có cô tu hú và bác cú mèo.",
       troChoi: "Đố tên chim",
       tempo: { cham: 84, vua: 108 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Hay chạy lon xon",
         "Là gà mới nở",

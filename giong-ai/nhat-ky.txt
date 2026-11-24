@@ -41,3 +41,20 @@ Lô 16 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 0.75  Là bà chim sẻ  |  là bà chim sảy
 1.00  Có tình có nghĩa  |  có tình có nghĩa?
 1.00  Là mẹ chim sâu  |  là mẹ chim sâu
+Lô 1 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.91  Hay chạy lon xon
+Là gà mới nở
+Vừa đi vừa nhảy
+Là em sáo xinh
+Hay nói linh tinh
+Là con liếu điếu
+Hay nghịch hay tếu
+Là cậu chìa vôi
+Hay chao đớp mồi
+Là chim chèo bẻo
+Tính hay mách lẻo
+Thím khách trước nhà
+Hay nhặt lân la
+Là bà chim sẻ
+Có tình có nghĩa
+Là mẹ chim sâu  |  Hay chạy lon son Là gà mới nở Vừa đi vừa nhảy Là em sáo sinh Hay nói linh tinh Là con liếu điếu Hay nghịch hay tiếu Là cậu chìa vôi Hay trao đớp mồi Là chim trèo bèo Tính hay mách lẻo Thím khách trước nhà Hay nhặt lân la Là bà chim sẻ Có tình có nghĩa Là mẹ chim sâu
