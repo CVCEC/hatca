@@ -5,3 +5,10 @@ Lô 6 câu – Gemini không trả tiếng: không có tiếng trả về: {"can
 0.83  Dưa gang là nàng dưa hấu  |  Dưa, gang là nàng, dưa, hẩu
 0.83  Dưa hấu là cậu lúa ngô  |  Dưa hẩu là cậu lúa ngô
 1.00  Lúa ngô là cô đậu nành  |  Lúa ngô là cô đậu nành
+Lô 1 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+1.00  Lúa ngô là cô đậu nành
+Đậu nành là anh dưa chuột
+Dưa chuột là ruột dưa gang
+Dưa gang là nàng dưa hấu
+Dưa hấu là cậu lúa ngô
+Lúa ngô là cô đậu nành  |  Lúa ngô là cô đậu nành Đậu nành là anh dưa chuột Dưa chuột là ruột dưa gang Dưa gang là nàng dưa hấu Dưa hấu là cậu lúa ngô Lúa ngô là cô đậu nành

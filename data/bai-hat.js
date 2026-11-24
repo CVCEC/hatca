@@ -1072,7 +1072,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản đổi thứ tự hoặc tên vài loại cây. Lời đồng dao dân gian; các bản phổ nhạc có tác giả không dùng ở đây.",
       troChoi: "Nối vòng cây trái",
       tempo: { cham: 80, vua: 104 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Lúa ngô là cô đậu nành",
         "Đậu nành là anh dưa chuột",
