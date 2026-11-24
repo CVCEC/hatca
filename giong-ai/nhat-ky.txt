@@ -12,3 +12,9 @@ Dưa chuột là ruột dưa gang
 Dưa gang là nàng dưa hấu
 Dưa hấu là cậu lúa ngô
 Lúa ngô là cô đậu nành  |  Lúa ngô là cô đậu nành Đậu nành là anh dưa chuột Dưa chuột là ruột dưa gang Dưa gang là nàng dưa hấu Dưa hấu là cậu lúa ngô Lúa ngô là cô đậu nành
+0.50  Ông giẳng ông giăng  |  Ông dặng Ông dặng
+1.00  Xuống chơi với tôi  |  xuống chơi với tôi
+1.00  Có bầu có bạn  |  Có bầu, có bạn
+1.00  Có ván cơm xôi  |  có ván cơm xôi
+1.00  Có nồi cơm nếp  |  có nồi cơm nếp
+1.00  Có nệp bánh chưng  |  có nệp bánh chưng
