@@ -99,3 +99,7 @@ Cái tôm cái tép đi đưa bà còng
 Đưa bà vào tận ngõ trong nhà bà
 Tiền bà trong túi rơi ra
 Tép tôm nhặt được trả bà mua rau  |  Bà cọng đi chợ trời mưa Cái tôm, cái tép đi đưa bà cọng Đưa bà đến quãng đường công Đưa bà vào tận ngõ trong nhà bà Tiền bà trong túi rơi ra Tép tôm nhặt được trả bà mua rau
+0.67  Con mèo mà trèo cây cau  |  Con mèo mà chèo cây câu
+1.00  Hỏi thăm chú chuột đi đâu vắng nhà  |  Hỏi thăm chú chuột Đi đâu vắng nhà?
+1.00  Chú chuột đi chợ đường xa  |  Chú chuột đi chợ đường xa
+0.75  Mua mắm mua muối giỗ cha chú mèo  |  mua mắm, mua muối dỗ tra chú mèo
