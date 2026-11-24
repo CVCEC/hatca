@@ -20,3 +20,8 @@ Tập tầm vó
 Tay có tay không
 Tay nào có
 Tay nào không?  |  tập tầm vông tay không, tay có tập tầm vỏ tay có, tay không tay nào có tay nào không
+0.75  Rồng rắn lên mây  |  dồng, rắn, lên, mây
+1.00  Có cây lúc lắc  |  có, cây, lúc, lắc
+1.00  Có nhà điểm binh  |  có nhà điểm binh
+1.00  Hỏi thăm thầy thuốc  |  hỏi, thăm, thầy, thuốc
+1.00  Có nhà hay không?  |  Có nhà hay không
