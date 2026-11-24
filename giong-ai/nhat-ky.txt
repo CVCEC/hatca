@@ -73,3 +73,10 @@ Ra lộn cầu vồng  |  lộn cầu vòng nước trong nước chảy có cô
 Chân nào đẹp
 Đi buôn men
 Chân nào đen  |  xìa, cá, mè đè, cá, chép chân, nào, đẹp đi, buôn, men chân, nào, đen
+0.50  Con vỏi con voi  |  Con voi, con voi
+1.00  Cái vòi đi trước  |  Cái vòi đi trước
+1.00  Hai chân trước đi trước  |  Hai chân trước đi trước
+1.00  Hai chân sau đi sau  |  Hai chân sau đi sau
+1.00  Còn cái đuôi thì đi sau rốt  |  Còn cái đuôi thì đi sau rốt
+1.00  Tôi xin kể nốt  |  Tôi xin kể nốt
+1.00  Cái chuyện con voi  |  Cái chuyện con voi
