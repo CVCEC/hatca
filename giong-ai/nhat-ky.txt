@@ -6,3 +6,8 @@ Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"can
 1.00  Tình tính tang, tang tính tình  |  Tình tính tang tang tính tình
 0.80  Dặn rằng, ơ người ơi  |  Dặn dặng ơ người ơi
 0.60  Người có nhớ ta chăng?  |  Người cố nhớ ta chẳng
+0.69  Con cò cò bay lả lả bay la
+Bay qua cửa phủ, bay về Đồng Đăng
+Tình tính tang, tang tính tình
+Dặn rằng, ơ người ơi
+Người có nhớ ta chăng?  |  Con co co bay la la bay la Bay qua cửa phú bay về đồng đăng Tính tính tang tang tinh tình Dặng dặng ơ người ơi Người có nhớ ta chẳng

@@ -1441,7 +1441,7 @@ window.HAT_CA = {
       diBan: "Lời chính dựa trên câu ca dao “Con cò bay lả bay la / Bay qua cửa phủ bay về Đồng Đăng”; khi hát có thêm tiếng đệm và câu lặp, mỗi bản hát khác nhau.",
       troChoi: "Múa cánh cò",
       tempo: { cham: 66, vua: 84 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Con cò cò bay lả lả bay la",
         "Bay qua cửa phủ, bay về Đồng Đăng",
