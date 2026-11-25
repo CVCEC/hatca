@@ -1,6 +1,6 @@
 name: Giọng đọc AI
 
-# Robot giọng đọc AI cho góc Hát cùng Trâu Con (Bài 1–24) (tools/giong_ai.py, Google Gemini, giọng Kore miền Bắc – giống vuihoctiengviet và venhaem).
+# Robot giọng đọc AI cho góc Hát cùng Trâu Con (Bài 1–16) (tools/giong_ai.py, Google Gemini, giọng Kore miền Bắc – giống vuihoctiengviet và venhaem).
 # Danh sách câu: giong-ai/can-doc.tsv · kết quả: giong-ai/trang-thai.md · câu cần nghe kỹ: giong-ai/kiem-tra.tsv
 # Chạy khi giong-ai/chay.txt thay đổi, khi bấm tay (Actions → Giọng đọc AI → Run workflow),
 # và mỗi ngày lúc 08:26 UTC để làm tiếp phần còn lại (làm tiếp phần còn lại).
