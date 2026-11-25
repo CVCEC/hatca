@@ -3,3 +3,6 @@ Lô 5 câu có 3 câu lệch nhiều – có thể cắt sai, chia đôi để �
 Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
 0.12  Con cò cò bay lả lả bay la  |  Còn có có bấy la la bấy la
 0.75  Bay qua cửa phủ, bay về Đồng Đăng  |  bay qua cưa phú, bay về đồng đăng.
+1.00  Tình tính tang, tang tính tình  |  Tình tính tang tang tính tình
+0.80  Dặn rằng, ơ người ơi  |  Dặn dặng ơ người ơi
+0.60  Người có nhớ ta chăng?  |  Người cố nhớ ta chẳng
