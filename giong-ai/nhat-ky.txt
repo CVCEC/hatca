@@ -58,3 +58,7 @@ Lô 1 câu – Gemini không trả tiếng: không có tiếng trả về: {"can
 Tôi có lòng nào ông hãy xáo măng
 Có xáo thì xáo nước trong
 Đừng xáo nước đục đau lòng cò con  |  Còn cờ mà đi ăn đen Đâu phải canh mềm lộn cổ xuống ao Ông ơi, ông vỡ tuổi nào Tôi có lòng nào ông hãy sao măng Có sau thì sau nước trong Đừng sau nước đục đau lòng cầu câu
+0.67  Ví dầu cầu ván đóng đinh  |  Ví dầu cầu dạng đông đinh
+0.38  Cầu tre lắt lẻo gập ghềnh khó đi  |  Cầu tre lắc lèo gặp gần khô đi.
+0.83  Khó đi mẹ dắt con đi  |  Khô đi! Mẹ dắt con đi!
+1.00  Con thi trường học, mẹ thi trường đời  |  Con thi trường học, mẹ thi trường đời.
