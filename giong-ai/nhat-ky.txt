@@ -51,3 +51,10 @@ Lô 3 câu – Gemini không trả tiếng: không có tiếng trả về: {"can
 0.62  Tôi có lòng nào ông hãy xáo măng  |  Tối có lòng nào, ông hãy sao mong?
 0.50  Có xáo thì xáo nước trong  |  Có sao thì sao nước trông
 0.75  Đừng xáo nước đục đau lòng cò con  |  Đừng sao nước đục, đau lòng cỏ con.
+Lô 1 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.67  Con cò mà đi ăn đêm
+Đậu phải cành mềm lộn cổ xuống ao
+Ông ơi ông vớt tôi nao
+Tôi có lòng nào ông hãy xáo măng
+Có xáo thì xáo nước trong
+Đừng xáo nước đục đau lòng cò con  |  Còn cờ mà đi ăn đen Đâu phải canh mềm lộn cổ xuống ao Ông ơi, ông vỡ tuổi nào Tôi có lòng nào ông hãy sao măng Có sau thì sau nước trong Đừng sau nước đục đau lòng cầu câu

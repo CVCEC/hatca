@@ -1662,7 +1662,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; khi ru có thêm “à ơi”, “ạ ời”. Có dị bản “Ông ơi ông vớt tôi vào”.",
       troChoi: "Ru em búp bê",
       tempo: { cham: 60, vua: 76 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Con cò mà đi ăn đêm",
         "Đậu phải cành mềm lộn cổ xuống ao",
