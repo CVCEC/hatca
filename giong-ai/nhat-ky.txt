@@ -15,3 +15,7 @@ Con bìm bịp thổi tò tí te tò te  |  Bắc kim thang cả lang bí rờ C
 0.38  Để mẹ đi chợ mua vôi ăn trầu  |  Đệ mẹ đi chờ múa vối ăn trâu.
 0.33  Mua vôi chợ Quán chợ Cầu  |  Mua vôi, chờ quảng, chờ câu
 0.50  Mua cau Nam Phổ mua trầu chợ Dinh  |  mua câu nam phổ, mua trâu chờ dính
+0.36  Ru em em ngủ cho muồi
+Để mẹ đi chợ mua vôi ăn trầu
+Mua vôi chợ Quán chợ Cầu
+Mua cau Nam Phổ mua trầu chợ Dinh  |  Ru em em ngủ cho mùi Để mẹ đi chơi mùa vui ăn tràu Mùa vui chờ quảng chờ câu mùa câu nam phụ, mùa trâu trụ yên.

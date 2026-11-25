@@ -1297,7 +1297,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Ru em em théc cho muồi”. Lời ru đủ còn kể thêm các chợ khác; góc học lấy 4 câu đầu.",
       troChoi: "Ru em búp bê",
       tempo: { cham: 60, vua: 76 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Ru em em ngủ cho muồi",
         "Để mẹ đi chợ mua vôi ăn trầu",
