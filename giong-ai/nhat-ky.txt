@@ -26,3 +26,10 @@ Lô 6 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 0.25  Ố mấy giăng tơ, ố mấy giăng tơ  |  Ô mây răng tơ, ô mây răng tơ
 0.75  Một bầy tang tình con nhện ơi  |  Một bầy tang tình con nhện ơ ơ ơ
 0.67  Nó ra ố mấy đường tơ  |  Nó ra ốm mây đường tơ
+Lô 1 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.47  Tình bằng có cái trống cơm
+Khen ai khéo vỗ, ố mấy bông mà nên bông
+Một bầy tang tình con nhện
+Ố mấy giăng tơ, ố mấy giăng tơ
+Một bầy tang tình con nhện ơi
+Nó ra ố mấy đường tơ  |  Tình bằng co cái chống cơm Khen nay khẽo vỗ, ô mây bông mà nên bông Một bảy tăng tình con nhện, ô mây dăng tờ, ô mây dăng tờ Một bảy tăng tình con nhện, ôi, no ra, ô mây đường tờ

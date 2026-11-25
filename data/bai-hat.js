@@ -1368,7 +1368,7 @@ window.HAT_CA = {
       diBan: "Lời chính, bản phổ biến; khi hát có nhiều tiếng đệm (tình bằng, tang tình, ố mấy…) và câu lặp, mỗi bản hát khác nhau. Bài đủ còn những lời khác.",
       troChoi: "Gõ trống theo nhịp",
       tempo: { cham: 66, vua: 84 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Tình bằng có cái trống cơm",
         "Khen ai khéo vỗ, ố mấy bông mà nên bông",
