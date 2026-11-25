@@ -1,7 +1,7 @@
 # Giọng đọc AI – trạng thái (Hát cùng Trâu Con (Bài 1–24))
 
-- Lần chạy gần nhất: 2026-11-25 02:47 UTC
+- Lần chạy gần nhất: 2026-11-25 02:48 UTC
 - Mô hình: gemini-3.1-flash-tts-preview · giọng Kore · miền Bắc
-- Đã có tiếng: **146 / 187** câu (lần này thêm 12, dùng 4 lượt gọi)
-- Câu Whisper nghe hơi khác chữ (cần nghe kỹ, xem kiem-tra.tsv): 40
+- Đã có tiếng: **152 / 187** câu (lần này thêm 18, dùng 5 lượt gọi)
+- Câu Whisper nghe hơi khác chữ (cần nghe kỹ, xem kiem-tra.tsv): 43
 - Câu bỏ qua theo yêu cầu (bo.txt): 0 · câu lỗi: 0

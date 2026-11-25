@@ -19,3 +19,10 @@ Con bìm bịp thổi tò tí te tò te  |  Bắc kim thang cả lang bí rờ C
 Để mẹ đi chợ mua vôi ăn trầu
 Mua vôi chợ Quán chợ Cầu
 Mua cau Nam Phổ mua trầu chợ Dinh  |  Ru em em ngủ cho mùi Để mẹ đi chơi mùa vui ăn tràu Mùa vui chờ quảng chờ câu mùa câu nam phụ, mùa trâu trụ yên.
+Lô 6 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+0.67  Tình bằng có cái trống cơm  |  Tình bằng có gái chống cơm
+0.80  Khen ai khéo vỗ, ố mấy bông mà nên bông  |  Khen ai khéo vỗ, ố mây bông mà ninh bông.
+1.00  Một bầy tang tình con nhện  |  Một bầy tang tình con nhện
+0.25  Ố mấy giăng tơ, ố mấy giăng tơ  |  Ô mây răng tơ, ô mây răng tơ
+0.75  Một bầy tang tình con nhện ơi  |  Một bầy tang tình con nhện ơ ơ ơ
+0.67  Nó ra ố mấy đường tơ  |  Nó ra ốm mây đường tơ
