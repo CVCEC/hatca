@@ -1223,7 +1223,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; khi hát, mỗi nơi thêm tiếng đệm và lặp lời khác nhau. Câu đầu được giải thích theo nhiều cách.",
       troChoi: "Vỗ tay đôi theo nhịp",
       tempo: { cham: 84, vua: 108 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Bắc kim thang cà lang bí rợ",
         "Cột qua kèo là kèo qua cột",
