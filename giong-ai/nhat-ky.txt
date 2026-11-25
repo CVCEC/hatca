@@ -41,3 +41,9 @@ Dây cương nhuộm thắm
 Cán roi anh bịt vàng
 Anh đưa nàng
 Anh đưa nàng về dinh  |  Khớp con ngựa, ngựa ô anh khớp, khớp cay kiểu vang, anh cha khớp bạc, lục lạc đỏng đèn, bốc xèn la rằm, dây cương nhuộm thấm, can dòi anh bịt vàng, anh đưa nàng, anh đưa nàng về dinh.
+Lô 6 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 6 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 3 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+0.83  Con cò mà đi ăn đêm  |  Con có mà đi ăn đêm
+0.62  Đậu phải cành mềm lộn cổ xuống ao  |  Đậu phải canh mềm, lỗn cổ xuống áo.
+0.67  Ông ơi ông vớt tôi nao  |  Ông ơi, ông vỡt tôi nào
