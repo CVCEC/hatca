@@ -13,7 +13,8 @@
      ly-con-sao   → "Cái ngủ mày ngủ cho lâu"   (lời "Lý con sáo" chỉ chắc 2 câu ca dao, không đủ cho bài học)
 
    amThanh: false → nút Nghe đọc tạm bằng giọng máy qua bộ mẫu (TTV.phat, quy tắc 7).
-   Khi đã chép đủ tệp giọng của trường vào audio/<ma>/ (xem AM-THANH.md) thì đổi thành true. */
+   amThanh: true  → phát tệp audio/<ma>/ (giọng AI Kore của robot giong-ai/, hoặc bản thu người thật đặt đè lên);
+   trang ghi rõ "giọng AI" dưới bài (bai.html). Xem AM-THANH.md. */
 window.HAT_CA = {
   phan: [
     { id: "dongdao", so: 1, ten: "Đồng dao", en: "Children's chants", bieu: "👫",

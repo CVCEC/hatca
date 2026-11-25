@@ -258,7 +258,11 @@
       setTimeout(function () { nutVo.classList.remove("trung", "truot"); }, 160);
     });
     vo.appendChild(nutVo); vo.appendChild(ketQua); t.appendChild(vo);
-    t.appendChild(tao("p", "hc-nho-chu", b.nguon + ". " + (b.diBan || "") + (b.amThanh ? "" : " Giọng đọc của trường sẽ được thêm sau; hiện nút 🔊 tạm dùng giọng đọc của máy." + (p.id === "baihat" ? " Bài hát cần giọng hát thật; giọng máy chỉ đọc lời." : ""))));
+    t.appendChild(tao("p", "hc-nho-chu", b.nguon + ". " + (b.diBan || "") + (b.amThanh
+      ? (p.id === "baihat"
+        ? " 🔊 Trâu Con hát lời bằng giọng AI để các bạn tập theo; bản hát của thầy cô đang được thu."
+        : " 🔊 Trâu Con đọc bằng giọng AI.")
+      : " Giọng đọc của trường sẽ được thêm sau; hiện nút 🔊 tạm dùng giọng đọc của máy." + (p.id === "baihat" ? " Bài hát cần giọng hát thật; giọng máy chỉ đọc lời." : ""))));
     noi.appendChild(t);
   }
 
