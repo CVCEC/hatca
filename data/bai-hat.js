@@ -1513,7 +1513,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Bắt được con giếc con trê”, “Túm cổ lôi về…”. Khi ru, người ta thêm tiếng “à ơi” ở đầu và cuối câu.",
       troChoi: "Ru em búp bê",
       tempo: { cham: 60, vua: 76 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Cái ngủ mày ngủ cho lâu",
         "Mẹ mày đi cấy đồng sâu chưa về",

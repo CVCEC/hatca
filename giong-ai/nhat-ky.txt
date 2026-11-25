@@ -17,3 +17,7 @@ Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 0.88  Mẹ mày đi cấy đồng sâu chưa về  |  Mẹ mày đi cây đồng sâu chưa về.
 0.50  Bắt được con trắm con trê  |  Mất được con trầm con chê.
 0.75  Cầm cổ lôi về cho cái ngủ ăn  |  cầm cổ lui về cho cái ngủ anh.
+0.71  Cái ngủ mày ngủ cho lâu
+Mẹ mày đi cấy đồng sâu chưa về
+Bắt được con trắm con trê
+Cầm cổ lôi về cho cái ngủ ăn  |  Cái ngô, mày ngô cho lâu Mẹ mày đi cây đông sâu chưa về Bắt được con chấm con chê Cầm cổ lôi về cho cái ngụ anh.
