@@ -21,3 +21,13 @@ Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 Mẹ mày đi cấy đồng sâu chưa về
 Bắt được con trắm con trê
 Cầm cổ lôi về cho cái ngủ ăn  |  Cái ngô, mày ngô cho lâu Mẹ mày đi cây đông sâu chưa về Bắt được con chấm con chê Cầm cổ lôi về cho cái ngụ anh.
+1.00  Khớp con ngựa ngựa ô  |  Khớp con ngựa ngựa ô.
+0.75  Ngựa ô anh khớp  |  Ngửa ô anh khớp.
+0.75  Khớp cái kiệu vàng  |  Khớp cái kiểu vàng.
+0.75  Anh tra khớp bạc  |  Anh cha khớp bạc
+0.75  Lục lạc đồng đen  |  Lục lạc đông đen
+0.75  Búp sen lá dặm  |  Búp sen lá rậm
+0.50  Dây cương nhuộm thắm  |  dây cương nhụm thâm
+0.60  Cán roi anh bịt vàng  |  Càng rơi anh bịt vàng.
+0.67  Anh đưa nàng  |  Anh đưa năng
+1.00  Anh đưa nàng về dinh  |  Anh đưa nàng về dinh.
