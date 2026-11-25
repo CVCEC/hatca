@@ -31,3 +31,13 @@ Cầm cổ lôi về cho cái ngủ ăn  |  Cái ngô, mày ngô cho lâu Mẹ m
 0.60  Cán roi anh bịt vàng  |  Càng rơi anh bịt vàng.
 0.67  Anh đưa nàng  |  Anh đưa năng
 1.00  Anh đưa nàng về dinh  |  Anh đưa nàng về dinh.
+0.66  Khớp con ngựa ngựa ô
+Ngựa ô anh khớp
+Khớp cái kiệu vàng
+Anh tra khớp bạc
+Lục lạc đồng đen
+Búp sen lá dặm
+Dây cương nhuộm thắm
+Cán roi anh bịt vàng
+Anh đưa nàng
+Anh đưa nàng về dinh  |  Khớp con ngựa, ngựa ô anh khớp, khớp cay kiểu vang, anh cha khớp bạc, lục lạc đỏng đèn, bốc xèn la rằm, dây cương nhuộm thấm, can dòi anh bịt vàng, anh đưa nàng, anh đưa nàng về dinh.

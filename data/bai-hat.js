@@ -1584,7 +1584,7 @@ window.HAT_CA = {
       diBan: "Lời chính, bản phổ biến; có dị bản ở nhiều chữ và tiếng đệm khác nhau. Miền Trung cũng có điệu Lý ngựa ô riêng.",
       troChoi: "Cưỡi ngựa que",
       tempo: { cham: 84, vua: 108 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Khớp con ngựa ngựa ô",
         "Ngựa ô anh khớp",
