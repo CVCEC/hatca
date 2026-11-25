@@ -47,3 +47,7 @@ Lô 3 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 0.83  Con cò mà đi ăn đêm  |  Con có mà đi ăn đêm
 0.62  Đậu phải cành mềm lộn cổ xuống ao  |  Đậu phải canh mềm, lỗn cổ xuống áo.
 0.67  Ông ơi ông vớt tôi nao  |  Ông ơi, ông vỡt tôi nào
+Lô 3 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.62  Tôi có lòng nào ông hãy xáo măng  |  Tối có lòng nào, ông hãy sao mong?
+0.50  Có xáo thì xáo nước trong  |  Có sao thì sao nước trông
+0.75  Đừng xáo nước đục đau lòng cò con  |  Đừng sao nước đục, đau lòng cỏ con.
