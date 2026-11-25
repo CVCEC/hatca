@@ -1223,7 +1223,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; khi hát, mỗi nơi thêm tiếng đệm và lặp lời khác nhau. Câu đầu được giải thích theo nhiều cách.",
       troChoi: "Vỗ tay đôi theo nhịp",
       tempo: { cham: 84, vua: 108 },
-      amThanh: true,
+      amThanh: false,
       loi: [
         "Bắc kim thang cà lang bí rợ",
         "Cột qua kèo là kèo qua cột",
@@ -1297,7 +1297,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Ru em em théc cho muồi”. Lời ru đủ còn kể thêm các chợ khác; góc học lấy 4 câu đầu.",
       troChoi: "Ru em búp bê",
       tempo: { cham: 60, vua: 76 },
-      amThanh: true,
+      amThanh: false,
       loi: [
         "Ru em em ngủ cho muồi",
         "Để mẹ đi chợ mua vôi ăn trầu",
@@ -1368,7 +1368,7 @@ window.HAT_CA = {
       diBan: "Lời chính, bản phổ biến; khi hát có nhiều tiếng đệm (tình bằng, tang tình, ố mấy…) và câu lặp, mỗi bản hát khác nhau. Bài đủ còn những lời khác.",
       troChoi: "Gõ trống theo nhịp",
       tempo: { cham: 66, vua: 84 },
-      amThanh: true,
+      amThanh: false,
       loi: [
         "Tình bằng có cái trống cơm",
         "Khen ai khéo vỗ, ố mấy bông mà nên bông",
