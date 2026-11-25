@@ -2,7 +2,7 @@
 """Robot giọng đọc AI (Google Gemini) của Trường Tiếng Việt Của Em – bản dùng chung cho mọi kho. Chạy trên GitHub Actions.
 
 Chép từ công cụ giọng đọc AI của vuihoctiengviet / venhaem (cùng mô hình, cùng giọng Kore, cùng cách nghe lại bằng Whisper).
-Đọc giong-ai/can-doc.tsv (cột: tep, chu, nhom, cach) → ghi tệp mp3 đúng đường dẫn ở cột "tep".
+Đọc giong-ai/can-doc.tsv (cột: tep, chu, nhom, cach, vung) → ghi tệp mp3 đúng đường dẫn ở cột "tep".
 Tệp đã có (kể cả bản thu giọng người thật) thì bỏ qua, không ghi đè.
 Mỗi lượt gọi đọc một lô nhiều câu, nghỉ giữa các câu, rồi cắt theo các khoảng lặng dài nhất.
 Whisper nghe lại từng câu; câu nghe khác chữ được đánh dấu trong giong-ai/kiem-tra.tsv để người nghe kiểm tra.
@@ -10,6 +10,8 @@ Sau mỗi lô, nếu kho có tools/gan_giong.py thì chạy để trang biết c
 
 Cột "cach" (cách đọc):  (trống) câu thường · van = chữ cái, vần, đánh vần · truyen = kể chuyện
                         nhip = đồng dao, vè đọc theo nhịp · ca-bai = cả bài đồng dao (đọc riêng, một lô một bài)
+                        dan-ca / ru = câu dân ca, hát ru (hát nhẹ) · dan-ca-ca-bai / ru-ca-bai = cả bài (một lô một bài)
+Cột "vung" (tuỳ chọn): bac | trung | nam – giọng miền cho riêng câu đó; trống thì theo GIONG_VUNG.
 
 Biến môi trường (đặt trong giong-ai/chay.txt):
   GEMINI_API_KEY   khoá API (GitHub secret)
@@ -45,7 +47,8 @@ TOI_DA = int(os.environ.get('TOI_DA_LUOT') or 400)
 HAN = time.time() + 60 * int(os.environ.get('PHUT') or 300)
 VUNG = (os.environ.get('GIONG_VUNG') or 'bac').strip().lower()
 CHI = [x.strip() for x in (os.environ.get('CHI_NHOM') or '').split(',') if x.strip()]
-GIONG_VN = {'bac': 'a standard Northern Vietnamese (Hà Nội) accent', 'nam': 'a standard Southern Vietnamese (Sài Gòn) accent'}
+GIONG_VN = {'bac': 'a standard Northern Vietnamese (Hà Nội) accent', 'nam': 'a standard Southern Vietnamese (Sài Gòn) accent',
+            'trung': 'a gentle Central Vietnamese (Huế) accent'}
 
 
 NK = []  # nhật ký lần chạy → giong-ai/nhat-ky.txt
@@ -101,13 +104,29 @@ CACH = {
              "one even beat per syllable, like children playing a clapping game."),
     'ca-bai': (" This is a whole Vietnamese children's folk rhyme (đồng dao, vè). Chant all of it once, rhythmically and cheerfully, "
                "one even beat per syllable, with a short pause at the end of each line."),
+    'dan-ca': (" These are lines of a traditional Vietnamese folk song (dân ca) for children. Sing them softly and tunefully "
+               "in a simple, lilting folk melody, slowly and clearly, keeping every tone and every word exactly as written."),
+    'dan-ca-ca-bai': (" This is a whole traditional Vietnamese folk song (dân ca) for children. Sing all of it once, softly and tunefully, "
+                      "in a simple, lilting folk melody, slowly and clearly, keeping every tone and every word exactly as written, "
+                      "with a short breath at the end of each line."),
+    'ru': (" These are lines of a traditional Vietnamese lullaby (hát ru). Sing them very softly, slowly and soothingly, "
+           "like a mother lulling a baby to sleep, drawing out the last word of each line, "
+           "keeping every tone and every word exactly as written."),
+    'ru-ca-bai': (" This is a whole traditional Vietnamese lullaby (hát ru). Sing all of it once, very softly, slowly and soothingly, "
+                  "like a mother lulling a baby to sleep, drawing out the last word of each line, "
+                  "keeping every tone and every word exactly as written."),
 }
 
+CA_BAI = ('ca-bai', 'dan-ca-ca-bai', 'ru-ca-bai')   # cả bài: mỗi lô một bài
 
-def loi_nhac(cau, cach=''):
-    head = ("Read the following Vietnamese lines aloud for young children who are learning Vietnamese. "
-            f"Use {GIONG_VN.get(VUNG, GIONG_VN['bac'])} and a warm, friendly, natural voice. Speak slowly and very clearly, "
-            "pronouncing every tone carefully. Read each line exactly as written, once, in order, without adding, "
+
+def loi_nhac(cau, cach='', vung=''):
+    hat = cach.startswith(('dan-ca', 'ru'))
+    head = (("Sing" if hat else "Read") + " the following Vietnamese lines aloud for young children who are learning Vietnamese. "
+            f"Use {GIONG_VN.get(vung or VUNG, GIONG_VN['bac'])} and a warm, friendly, natural voice. "
+            + ("" if hat else "Speak slowly and very clearly, ")
+            + ("Pronounce" if hat else "pronouncing") + " every tone carefully. " + ("Sing" if hat else "Read")
+            + " each line exactly as written, once, in order, without adding, "
             "skipping or explaining anything." + CACH.get(cach, ''))
     if len(cau) > 1:
         head += " Pause between lines."
@@ -343,9 +362,10 @@ def tep_cua(r):
 def main():
     rows = []
     for l in TSV.read_text(encoding='utf-8').splitlines()[1:]:
-        tep, chu, nhom, cach = (l.split('\t') + ['', '', '', ''])[:4]
+        tep, chu, nhom, cach, vung = (l.split('\t') + ['', '', '', '', ''])[:5]
         if tep and chu:
-            rows.append({'ma': tep, 'giong': GIONG, 'chu': chu.replace('\\n', '\n'), 'nhom': nhom, 'cach': cach.strip()})
+            rows.append({'ma': tep, 'giong': GIONG, 'chu': chu.replace('\\n', '\n'), 'nhom': nhom, 'cach': cach.strip(),
+                         'vung': vung.strip().lower()})
     bo = set((OUT / 'bo.txt').read_text(encoding='utf-8').split()) if (OUT / 'bo.txt').exists() else set()
     kt = doc_tsv(KT, 2)
     loi = doc_tsv(LOI, 2)
@@ -383,8 +403,9 @@ def main():
     lo, cur = [], []
     for r in viec:
         if cur and (r['nhom'] != cur[0]['nhom'] or r['cach'] != cur[0]['cach'] or len(cur) >= LO
-                    or sum(len(x['chu']) for x in cur) + len(r['chu']) > LO_CHU or r['cach'] == 'ca-bai'
-                    or cur[0]['cach'] == 'ca-bai'):
+                    or r['vung'] != cur[0]['vung']
+                    or sum(len(x['chu']) for x in cur) + len(r['chu']) > LO_CHU or r['cach'] in CA_BAI
+                    or cur[0]['cach'] in CA_BAI):
             lo.append(cur); cur = []
         cur.append(r)
     if cur: lo.append(cur)
@@ -401,7 +422,7 @@ def main():
                 if luot >= TOI_DA: break
                 luot += 1                   # mỗi lần gọi đều tính vào lượt trong ngày, kể cả lần hỏng
                 try:
-                    pcm, rate = goi(loi_nhac(cau, nhom[0]['cach']), nhom[0]['giong']); break
+                    pcm, rate = goi(loi_nhac(cau, nhom[0]['cach'], nhom[0]['vung']), nhom[0]['giong']); break
                 except ValueError as e:
                     loi_goi = e; ghi(f'Lô {len(nhom)} câu – Gemini không trả tiếng: {str(e)[:160]}')
             if pcm is None:
