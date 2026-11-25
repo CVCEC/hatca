@@ -1,35 +1,5 @@
-Lô 6 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
-0.86  Bắc kim thang cà lang bí rợ  |  Bắc Kim Thang, Cà Lan Bí Rợ
-0.57  Cột qua kèo là kèo qua cột  |  Cốt qua kẹo là kẹo qua cột
-1.00  Chú bán dầu qua cầu mà té  |  Chú bán dầu qua cầu mà té
-0.71  Chú bán ếch ở lại làm chi  |  Chu ban ếch, ở lại làm chi?
-0.00  Con le le đánh trống thổi kèn  |  Còn lè lè đanh trong thối kèng.
-0.56  Con bìm bịp thổi tò tí te tò te  |  con bìm bịp thúi tò ti tè tò tè
-0.67  Bắc kim thang cà lang bí rợ
-Cột qua kèo là kèo qua cột
-Chú bán dầu qua cầu mà té
-Chú bán ếch ở lại làm chi
-Con le le đánh trống thổi kèn
-Con bìm bịp thổi tò tí te tò te  |  Bắc kim thang cả lang bí rờ Cột qua kèo là kèo qua cột Chú bán dầu qua cầu mà tè Chú bán ếch ở lại làm chi Con lè lè đánh trong thối kì dần Con bìm bìp thối tỏ tí tè tỏ tè
-0.67  Ru em em ngủ cho muồi  |  Rủ em, em ngủ cho mùi
-0.38  Để mẹ đi chợ mua vôi ăn trầu  |  Đệ mẹ đi chờ múa vối ăn trâu.
-0.33  Mua vôi chợ Quán chợ Cầu  |  Mua vôi, chờ quảng, chờ câu
-0.50  Mua cau Nam Phổ mua trầu chợ Dinh  |  mua câu nam phổ, mua trâu chờ dính
-0.36  Ru em em ngủ cho muồi
-Để mẹ đi chợ mua vôi ăn trầu
-Mua vôi chợ Quán chợ Cầu
-Mua cau Nam Phổ mua trầu chợ Dinh  |  Ru em em ngủ cho mùi Để mẹ đi chơi mùa vui ăn tràu Mùa vui chờ quảng chờ câu mùa câu nam phụ, mùa trâu trụ yên.
-Lô 6 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
-0.67  Tình bằng có cái trống cơm  |  Tình bằng có gái chống cơm
-0.80  Khen ai khéo vỗ, ố mấy bông mà nên bông  |  Khen ai khéo vỗ, ố mây bông mà ninh bông.
-1.00  Một bầy tang tình con nhện  |  Một bầy tang tình con nhện
-0.25  Ố mấy giăng tơ, ố mấy giăng tơ  |  Ô mây răng tơ, ô mây răng tơ
-0.75  Một bầy tang tình con nhện ơi  |  Một bầy tang tình con nhện ơ ơ ơ
-0.67  Nó ra ố mấy đường tơ  |  Nó ra ốm mây đường tơ
-Lô 1 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-0.47  Tình bằng có cái trống cơm
-Khen ai khéo vỗ, ố mấy bông mà nên bông
-Một bầy tang tình con nhện
-Ố mấy giăng tơ, ố mấy giăng tơ
-Một bầy tang tình con nhện ơi
-Nó ra ố mấy đường tơ  |  Tình bằng co cái chống cơm Khen nay khẽo vỗ, ô mây bông mà nên bông Một bảy tăng tình con nhện, ô mây dăng tờ, ô mây dăng tờ Một bảy tăng tình con nhện, ôi, no ra, ô mây đường tờ
+Lô 5 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+Lô 5 câu có 3 câu lệch nhiều – có thể cắt sai, chia đôi để đọc lại
+Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.12  Con cò cò bay lả lả bay la  |  Còn có có bấy la la bấy la
+0.75  Bay qua cửa phủ, bay về Đồng Đăng  |  bay qua cưa phú, bay về đồng đăng.
