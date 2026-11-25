@@ -1736,7 +1736,7 @@ window.HAT_CA = {
       diBan: "Bản phổ biến; có dị bản “Cầu tre lắc lẻo gập ghềnh khó đi”. Khi ru, người ta mở đầu bằng “Ầu ơ…”.",
       troChoi: "Mẹ dắt con qua cầu",
       tempo: { cham: 60, vua: 76 },
-      amThanh: false,
+      amThanh: true,
       loi: [
         "Ví dầu cầu ván đóng đinh",
         "Cầu tre lắt lẻo gập ghềnh khó đi",

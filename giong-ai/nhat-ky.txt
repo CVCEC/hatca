@@ -62,3 +62,7 @@ Có xáo thì xáo nước trong
 0.38  Cầu tre lắt lẻo gập ghềnh khó đi  |  Cầu tre lắc lèo gặp gần khô đi.
 0.83  Khó đi mẹ dắt con đi  |  Khô đi! Mẹ dắt con đi!
 1.00  Con thi trường học, mẹ thi trường đời  |  Con thi trường học, mẹ thi trường đời.
+0.79  Ví dầu cầu ván đóng đinh
+Cầu tre lắt lẻo gập ghềnh khó đi
+Khó đi mẹ dắt con đi
+Con thi trường học, mẹ thi trường đời  |  Vì dầu cầu gian đóng đinh, cầu tre lắc léo gập gình khó đi, khó đi mẹ vắt con đi, con thi trường học mẹ thi trường đời.
