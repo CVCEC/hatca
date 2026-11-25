@@ -11,3 +11,9 @@ Bay qua cửa phủ, bay về Đồng Đăng
 Tình tính tang, tang tính tình
 Dặn rằng, ơ người ơi
 Người có nhớ ta chăng?  |  Con co co bay la la bay la Bay qua cửa phú bay về đồng đăng Tính tính tang tang tinh tình Dặng dặng ơ người ơi Người có nhớ ta chẳng
+Lô 4 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+0.83  Cái ngủ mày ngủ cho lâu  |  Cái ngủ mầy ngủ cho lâu
+0.88  Mẹ mày đi cấy đồng sâu chưa về  |  Mẹ mày đi cây đồng sâu chưa về.
+0.50  Bắt được con trắm con trê  |  Mất được con trầm con chê.
+0.75  Cầm cổ lôi về cho cái ngủ ăn  |  cầm cổ lui về cho cái ngủ anh.
